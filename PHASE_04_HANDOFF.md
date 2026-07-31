@@ -26,6 +26,8 @@ Verified before modification:
 
 The older `modelb_semantic_jrsi_repo.zip` and `03_SUBMITTED_CODE_REPOSITORY.zip` were not used.
 
+Phase 4 scientific implementation, production outputs, and Gate 4 decision were recorded in commit `204010b439bcaf0921a3ed3a82a3e48468ee704e`.
+
 ## 3. Frozen pre-production decisions
 
 Approved entries D16–D20 in `revision/DECISIONS_LOG.md` resolve P01–P05:

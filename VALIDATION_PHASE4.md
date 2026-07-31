@@ -17,6 +17,8 @@ Before any modification:
 
 No older archive was used to reconstruct code or history.
 
+The validated Phase 4 scientific implementation, complete corrected production dataset, and Gate 4 decision are recorded in commit `204010b439bcaf0921a3ed3a82a3e48468ee704e`.
+
 ## 2. Test suite
 
 Command:
