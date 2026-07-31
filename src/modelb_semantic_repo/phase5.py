@@ -983,7 +983,7 @@ def analyze_phase5_results(
 
     phase4_summary = pd.read_csv(phase4_dir / "replicate_frontier_summary.csv")
     native = phase4_summary[(phase4_summary["condition"] == "selective") & np.isclose(phase4_summary["inherit_prob"], PRIMARY_FIDELITY)].copy()
-    native["seed_block"] = native["baseline_replicate"].str.extract(r"r(\d+)$").astype(int)
+    native["seed_block"] = native["baseline_replicate"].str.extract(r"r(\d+)$")[0].astype(int)
     native = native[["seed_block", "value_of_information", "target_reached", "semantic_information", "semantic_lower_bound"]].rename(
         columns={"value_of_information": "native_full_voi"}
     )
