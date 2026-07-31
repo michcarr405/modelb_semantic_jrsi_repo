@@ -14,7 +14,7 @@ This handoff closes the result-freeze phase and defines the sole permitted evide
 
 ## 2. Source provenance
 
-Phase 7 began from the versioned Phase 6 Gate 7 package at Git commit `f9a3030`.
+Phase 7 began from the versioned Phase 6 Gate 7 package at Git commit `f9a3030`. The result-freeze scientific and validation commit is `2c7d78694579755402c0a1896e109b29dec4d6a0`, and the release tag is `phase7-gate8-passed-v1`.
 
 D16–D31 and all archived Phase 4–6 states were preserved. D32 prespecified the result-freeze protocol. D33 records the Gate 8 decision and frozen claim boundary.
 
@@ -42,6 +42,8 @@ Gate 8 passed because:
 - `results/result_freeze/GATE_8_DECISION.json`
 - `results/result_freeze/FILE_MANIFEST_SHA256.csv`
 - `validation/result_freeze/`
+- `PHASE_07_PACKAGE_MANIFEST.md`
+- `TEST_RESULTS_PHASE7.txt`
 
 ## 5. Frozen scientific state
 

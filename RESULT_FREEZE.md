@@ -19,6 +19,8 @@ No production simulation was rerun. No model, estimator, grouping map, target ru
 - Source package: `JRSI_MAJOR_REVISION_PHASE6_GATE7_PASSED_v1`
 - Starting Git commit: `f9a3030` — Close Phase 6 documentation for versioned release
 - Phase 7 planning commit: `340071e`
+- Result-freeze scientific and validation commit: `2c7d78694579755402c0a1896e109b29dec4d6a0`
+- Result-freeze release tag: `phase7-gate8-passed-v1`
 - Preserved decisions: D16–D31
 - Controlling records: `revision/REVISION_SPEC_v2.md`, approved entries in `revision/DECISIONS_LOG.md`, `revision/REVIEWER_MATRIX.md`, and `PHASE_06_HANDOFF.md`
 
