@@ -1121,3 +1121,140 @@ Save the fixed panel before production, require unique hashes, and record method
 ### Supersedes
 
 Resolves P05. P06 remains deferred because affinity-profile clustering is not run in Phase 4.
+
+# Phase 5 approved pre-production decisions
+
+## D21 — Phase 5 is restricted to the primary Gate 4 fidelity and archived core reference
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 5 pre-production freeze  
+**Phase:** Causal specificity  
+**Reviewer items affected:** R1.2, R1.5, R2.3
+
+### Decision
+
+Run focused causal-specificity controls at `p = 1.0` with 20 matched evolutionary seed blocks. Read the full-selection native reference directly from the archived Phase 4 outputs. Do not rerun or retune the corrected core analysis. Preserve D16–D20 exactly.
+
+### Rationale
+
+Gate 4 designated `p = 1.0` as the primary confirmatory fidelity. Phase 5 asks whether that surviving result is selection-dependent and mapping-specific, not whether it is general across parameter space.
+
+### Consequences
+
+**Code affected:** New Phase 5 control module only.  
+**Analyses affected:** Focused causal controls and Gate 5.  
+**Figures affected:** No final figures.  
+**Previously generated outputs invalidated:** None.
+
+### Verification required
+
+Archive hashes and the Phase 4 Git tree must remain unchanged; the Phase 5 validator must compare the archived Phase 4 manifest before and after the run.
+
+### Supersedes
+
+None.
+
+---
+
+## D22 — Neutral and reduced selection use an explicit mixture law
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 5 pre-production freeze  
+**Phase:** Causal specificity  
+**Reviewer items affected:** R1.2
+
+### Decision
+
+Use parent probabilities `pi_i(alpha) = (1-alpha)/N + alpha F_i/sum(F)` with `alpha = 0.0` for neutral propagation and `alpha = 0.25` for reduced selection. Use the archived `alpha = 1.0` Phase 4 result as the full-selection reference. Maintain the selected alpha during intervention continuations.
+
+### Rationale
+
+The mixture law changes only selection strength, has exact neutral and full-selection endpoints, and preserves the rest of the Phase 4 operator.
+
+### Verification required
+
+`alpha = 1.0` must be numerically identical to the audited Phase 4 propagation law and `alpha = 0.0` must give uniform parent probabilities.
+
+### Supersedes
+
+None.
+
+---
+
+## D23 — Mapping disruptions use two nested complete realizations per archived baseline
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 5 pre-production freeze  
+**Phase:** Causal specificity  
+**Reviewer items affected:** R1.2
+
+### Decision
+
+For each archived selective `p = 1.0` baseline, use two nested complete affinity-profile derangements and two nested non-native matched fitness-topology evaluations. Construct a separate frontier for every realization, then aggregate to one seed-block result. Do not regenerate or tune the D20 grouping panel.
+
+### Rationale
+
+Two realizations reduce dependence on one random disruption while preserving the evolved baseline population as the inferential unit. Derangements guarantee complete reassignment rather than a permutation with unchanged motif identities.
+
+### Verification required
+
+Each affinity realization must have zero fixed points and exactly preserve the profile multiset. Each topology mismatch must preserve topology category counts and differ from native.
+
+### Supersedes
+
+None.
+
+---
+
+## D24 — Alternative and unstable topology controls use a matched topology universe
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 5 pre-production freeze  
+**Phase:** Causal specificity  
+**Reviewer items affected:** R1.2, R2.3
+
+### Decision
+
+Enumerate all symmetric four-state topologies with the native category counts. Select two fixed alternatives by maximum categorical Hamming distance with deterministic lexicographic tie-breaking. Evolve 20 populations under each and test native versus cross-topology evaluation. For the temporal null, redraw from the same universe every generation without immediate repetition using a dedicated schedule stream.
+
+### Rationale
+
+This holds topology density and effect scale fixed while testing whether stable mapping identity, rather than arbitrary fitness sensitivity, is required for evolved enrichment.
+
+### Verification required
+
+Save the complete topology manifest, topology hashes, A/B selection rule, and every temporal schedule. Actual and intervened continuations must share the same schedule.
+
+### Supersedes
+
+None.
+
+---
+
+## D25 — Gate 5 uses six paired value-of-information contrasts
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 5 pre-production freeze  
+**Phase:** Causal specificity  
+**Reviewer items affected:** R1.2, R1.5
+
+### Decision
+
+Use value of information as the primary always-defined metric. Test six paired seed-block contrasts: full-minus-neutral, full-minus-reduced, native-minus-affinity-reassigned, native-minus-topology-mismatch, alternative-native-minus-cross-evaluated, and stable-fixed-minus-temporally-unstable. Apply Benjamini–Hochberg correction across the six two-sided tests. Gate 5 passes only if every mean difference is positive with `q < 0.05`, all identity endpoints recover, censoring is explicit, and the Phase 4 archive is unchanged.
+
+### Rationale
+
+Phase 4 semantic estimates reached the strict target only at identity. Value of information therefore provides the noncensored measure needed to isolate selection-dependent, mapping-specific excess, while semantic estimates remain secondary and transparently censored.
+
+### Verification required
+
+All paired inputs must contain exactly one aggregate value per matched evolutionary seed block. Control realizations and continuation seeds must not enter the inferential sample size.
+
+### Supersedes
+
+None.
