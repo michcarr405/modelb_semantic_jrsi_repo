@@ -1,0 +1,15 @@
+{
+  "gate": "Gate 4 - core-result survival",
+  "status": "PASSED",
+  "primary_fidelity": 1.0,
+  "identity_endpoints_all_recovered": true,
+  "corrected_information_observed_difference_selective_minus_control": 0.2534182739942556,
+  "corrected_information_p_value": 0.0001,
+  "value_of_information_observed_difference_selective_minus_control": 11.907186414930555,
+  "value_of_information_p_value": 0.0001,
+  "selective_mean_value_of_information": 11.907186414930555,
+  "semantic_test_available_without_censoring": true,
+  "semantic_test_passed": true,
+  "n_production_baseline_blocks": 400,
+  "n_continuation_rows": 28000
+}

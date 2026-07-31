@@ -27,6 +27,7 @@ This matrix is subordinate to `REVISION_SPEC_v2.md`. If a proposed action confli
 | Gate 1 — code validity | `PASSED` | `PHASE_01_HANDOFF.md` |
 | Gate 2 — information-measure validity | `PASSED` | `INFORMATION_MEASURE_VALIDATION.md`; `PHASE_02_HANDOFF.md` |
 | Gate 3 — statistical-pipeline validity | `PASSED` | `STATISTICAL_PIPELINE_VALIDATION.md`; `PHASE_03_HANDOFF.md` |
+| Gate 4 — core-result survival | `PASSED` | `CORE_RESULT_SURVIVAL.md`; `VALIDATION_PHASE4.md`; `PHASE_04_HANDOFF.md` |
 
 ## Revision-order rule
 
@@ -79,9 +80,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Replace raw MI as the primary sequence-specific measure with position-conditioned MI. |
 | **Required action** | Calculate `I(M;Z|S)`, permutation-correct it within segment, and report `I(M;S)`. Consider exact-position conditioning as a robustness check. |
 | **Dependency** | Code validation and MI unit tests. |
-| **Evidence** | Phase 2: hand-computable and population-limit checks pass; within-segment permutation correction and dedicated RNG streams are verified. Production selective-versus-agnostic evidence remains pending. |
+| **Evidence** | Phase 4 production: 400 independent evolved baselines were analyzed with 200 within-segment permutations each. At fidelity 1.0, corrected conditional information differed by 0.25342 bits (selective minus agnostic; replicate-level permutation p=0.0001); the agnostic mean was -0.00023 bits. |
 | **Manuscript location** | Analytical expectations; Methods; Results; revised baseline figure. |
-| **Status** | `PILOT PASSED` |
+| **Status** | `IN PROGRESS` |
 
 ## R1.4 — Preserved-information heuristic is not actual retained information
 
@@ -91,9 +92,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Replace the heuristic with directly measured retained information. |
 | **Required action** | Compute `I(g(M);Z|S)` for every intervention. Add constant and identity endpoints. Compare empirical and expected-channel estimates where useful. |
 | **Dependency** | Corrected conditional-MI implementation and finalized grouping-map inventory. |
-| **Evidence** | Phase 2: constant and identity endpoints pass exactly; arbitrary dense and mapping-based groupings are supported; label-renaming and duplicate-map invariance pass. Revised production frontiers remain pending. |
+| **Evidence** | Phase 4 production: actual retained information was computed for every one of 34 unique maps in every baseline block; all 400 identity endpoints recovered baseline information and paired viability exactly. The strict target was reached in all blocks without imputation. |
 | **Manuscript location** | Methods; Appendix; all intervention figures and tables. |
-| **Status** | `PILOT PASSED` |
+| **Status** | `IN PROGRESS` |
 
 ## R1.5 — Pseudoreplication and intervention-point statistics
 
@@ -103,9 +104,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | The independently evolved baseline population is the primary inferential unit. |
 | **Required action** | Build one frontier and semantic estimate per baseline replicate; use replicate-level permutation tests and block bootstrap; treat continuation seeds as technical replicates. |
 | **Dependency** | Corrected intervention pipeline. |
-| **Evidence** | Phase 3: one frontier per independent baseline replicate, nested continuation aggregation, exact identity recovery, explicit right censoring, complete-block bootstrap, target-reach counts, and replicate-level permutation tests are validated on synthetic/tiny diagnostic data. Corrected production evidence remains pending. |
+| **Evidence** | Phase 4 production: one frontier was constructed for each of 400 independent evolved baselines. Two continuation seeds were nested within map and baseline. Inference used 2,000 complete-block bootstrap draws per fidelity and replicate-level permutation tests; no intervention point or continuation seed was counted as independent. |
 | **Manuscript location** | Statistical Methods; Results; every relevant figure caption. |
-| **Status** | `PILOT PASSED` |
+| **Status** | `IN PROGRESS` |
 
 ## R1.6 — Insufficient parameter sensitivity and generality
 
@@ -139,9 +140,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Treat reproducibility as a formal phase gate before new production runs. |
 | **Required action** | Audit all RNG use; add deterministic tests, analytical checks, seed ledger, locked environment, exact commands, archived raw data, release tag, DOI, license, and clean-room rerun. |
 | **Dependency** | None; this is an initial prerequisite. |
-| **Evidence** | Passing test suite; same-seed deterministic run; versioned repository release; `VALIDATION.md`; reproducibility manifest. |
+| **Evidence** | Phase 4: 57 tests pass; all states, assignments, hashes, trajectories, and seed ledgers are archived; a clean deterministic rerun reproduced one full baseline and its complete intervention block exactly. Release tag, DOI, license review, and external clean-room execution remain later release tasks. |
 | **Manuscript location** | Software and reproducibility subsection; Data accessibility; AI-use statement. |
-| **Status** | `PILOT PASSED` |
+| **Status** | `IN PROGRESS` |
 
 ## R1.9 — Figure and manuscript presentation problems
 
@@ -309,9 +310,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Correct the implementation description and remove orientation arbitrariness from the primary sequence-based intervention family. |
 | **Required action** | Inventory every distinct grouping map. Add explicit constant and identity endpoints. Use leading, trailing, and internal substring maps at natural resolutions, or another prespecified orientation-neutral sequence grouping. Do not count duplicate maps as distinct interventions. |
 | **Dependency** | Code audit before corrected intervention rerun. |
-| **Evidence** | Phase 1 map manifest and duplicate audit; Phase 2 constant/identity constructors, map hashing, and endpoint tests. Final sequence-based family and revised intervention results remain pending. |
+| **Evidence** | Phase 4 decision D16 fixed all 14 contiguous-substring maps spanning leading, trailing, and internal positions. The 34-map production panel has unique canonical hashes, explicit constant and identity endpoints, and no duplicate assignments. |
 | **Manuscript location** | Intervention Methods; Appendix; supplementary method-ablation figure. |
-| **Status** | `PILOT PASSED` |
+| **Status** | `IN PROGRESS` |
 
 ## R2.6.1 — Equations are not labeled
 
@@ -349,6 +350,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | Conditional-MI validation suite | R1.3 | `VERIFIED` |
 | Retained-information endpoint tests | R1.4 | `VERIFIED` |
 | Replicate-frontier statistical pipeline | R1.5 | `VERIFIED` |
+| Corrected core production dataset and Gate 4 test | R1.3–R1.5, R1.8, R2.5.9 | `VERIFIED` |
 | Causal disruption controls | R1.2 | `PLANNED` |
 | Focused sensitivity design | R1.6, R2.5.1, R2.5.4–R2.5.7 | `PLANNED` |
 

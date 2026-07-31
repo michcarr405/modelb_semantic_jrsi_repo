@@ -663,6 +663,88 @@ def run_production_interventions(
     return raw
 
 
+
+def fast_block_bootstrap_from_replicate_summary(
+    replicate_summary: pd.DataFrame,
+    *,
+    n_bootstrap: int,
+    stream: AnalysisStream,
+    confidence_level: float = 0.95,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Resample complete evolved-replicate summary blocks, stratified by condition.
+
+    Each frontier is constructed before this function is called, so resampling the
+    one-row-per-baseline summary is mathematically identical to resampling raw
+    nested rows and reconstructing the same independent frontiers. Censored
+    semantic values are never imputed.
+    """
+    required = {
+        "condition", "baseline_replicate", "target_reached",
+        "semantic_information", "semantic_lower_bound", "value_of_information",
+    }
+    missing = required.difference(replicate_summary.columns)
+    if missing:
+        raise ValueError(f"missing replicate-summary columns: {sorted(missing)}")
+    if replicate_summary.duplicated(["condition", "baseline_replicate"]).any():
+        raise ValueError("replicate summary contains duplicate independent blocks")
+    if n_bootstrap < 1:
+        raise ValueError("n_bootstrap must be positive")
+    rng = stream.generator()
+    draws: list[dict[str, Any]] = []
+    by_condition = {c: part.reset_index(drop=True) for c, part in replicate_summary.groupby("condition", sort=True)}
+    for b in range(n_bootstrap):
+        for condition, part in by_condition.items():
+            sampled = part.iloc[rng.integers(0, len(part), size=len(part))]
+            reached = sampled[sampled["target_reached"].astype(bool)]
+            censored = sampled[~sampled["target_reached"].astype(bool)]
+            draws.append(
+                {
+                    "bootstrap_index": b,
+                    "condition": condition,
+                    "reach_fraction": float(sampled["target_reached"].mean()),
+                    "median_semantic_information_among_reached": float(reached["semantic_information"].median()) if len(reached) else np.nan,
+                    "median_censored_lower_bound": float(censored["semantic_lower_bound"].median()) if len(censored) else np.nan,
+                    "mean_value_of_information": float(sampled["value_of_information"].mean()),
+                    "n_reached": int(len(reached)),
+                    "n_censored": int(len(censored)),
+                }
+            )
+    draws_df = pd.DataFrame(draws)
+    alpha = (1.0 - confidence_level) / 2.0
+    rows: list[dict[str, Any]] = []
+    notes = {
+        "reach_fraction": "All independent replicates; censoring retained as target_reached=False.",
+        "median_semantic_information_among_reached": "Conditional on target-reached replicates; censored values are not imputed.",
+        "median_censored_lower_bound": "Conditional on right-censored replicates; reports their tested lower bounds.",
+        "mean_value_of_information": "Defined for every independent replicate.",
+    }
+    for condition, part in replicate_summary.groupby("condition", sort=True):
+        reached = part[part["target_reached"].astype(bool)]
+        censored = part[~part["target_reached"].astype(bool)]
+        observed = {
+            "reach_fraction": float(part["target_reached"].mean()),
+            "median_semantic_information_among_reached": float(reached["semantic_information"].median()) if len(reached) else np.nan,
+            "median_censored_lower_bound": float(censored["semantic_lower_bound"].median()) if len(censored) else np.nan,
+            "mean_value_of_information": float(part["value_of_information"].mean()),
+        }
+        condition_draws = draws_df[draws_df["condition"] == condition]
+        for metric, note in notes.items():
+            vals = condition_draws[metric].dropna().to_numpy(dtype=float)
+            rows.append(
+                {
+                    "condition": condition,
+                    "metric": metric,
+                    "estimate": observed[metric],
+                    "confidence_level": confidence_level,
+                    "lower": float(np.quantile(vals, alpha)) if len(vals) else np.nan,
+                    "upper": float(np.quantile(vals, 1 - alpha)) if len(vals) else np.nan,
+                    "n_independent_replicates": int(len(part)),
+                    "n_bootstrap": int(n_bootstrap),
+                    "note": note,
+                }
+            )
+    return pd.DataFrame(rows), draws_df
+
 def _bh_adjust(pvalues: Iterable[float]) -> np.ndarray:
     p = np.asarray(list(pvalues), dtype=float)
     order = np.argsort(p)
@@ -696,9 +778,8 @@ def analyze_phase4_results(
             frame.insert(0, "inherit_prob", p)
         reach = target_reach_table(analysis.replicate_summary)
         reach.insert(0, "inherit_prob", p)
-        intervals, draws = block_bootstrap(
-            part,
-            target_rule=target_rule,
+        intervals, draws = fast_block_bootstrap_from_replicate_summary(
+            analysis.replicate_summary,
             n_bootstrap=settings.n_bootstrap,
             stream=AnalysisStream(settings.root_seed, "phase4-block-bootstrap", f"p{p:.1f}"),
             confidence_level=0.95,

@@ -1,17 +1,25 @@
-# JRSI major-revision validation branch
+# JRSI major-revision Phase 4 branch
 
-**Current gate:** Phase 3 statistical-pipeline validity passed.
+**Current gate:** Gate 4 core-result survival passed.
 
-The submitted paper-mode outputs and the legacy `run_pipeline.py` workflow below are retained only for provenance. They are **not** the corrected revision production pipeline and must not be used to generate revised scientific claims. The corrected production rerun remains blocked until the pre-production choices in `PHASE_03_HANDOFF.md` are frozen.
+The corrected production pipeline is `scripts/run_phase4_production.py`. Its frozen settings, results, and validation are documented in:
 
-Validated Phase 3 commands:
+- `PHASE_04_PILOT_PLAN.md`;
+- `revision/DECISIONS_LOG.md` entries D16–D20;
+- `CORE_RESULT_SURVIVAL.md`;
+- `VALIDATION_PHASE4.md`;
+- `PHASE_04_HANDOFF.md`.
+
+Validated Phase 4 commands:
 
 ```bash
-python -m pytest -q
-python scripts/validate_statistical_pipeline.py
+PYTHONPATH=src python scripts/run_phase4_pilots.py --outdir validation/phase4_pilots --workers 5
+PYTHONPATH=src python scripts/run_phase4_production.py --outdir results/phase4_core --continuations 2 --horizon 36 --workers 5
+PYTHONPATH=src python scripts/validate_phase4.py
+PYTHONPATH=src python -m pytest -q
 ```
 
-These commands use unit tests, synthetic continuation tables, and one tiny identity-endpoint diagnostic only. See `STATISTICAL_PIPELINE_VALIDATION.md`.
+The submitted paper-mode outputs and legacy `run_pipeline.py` workflow below remain only for provenance and must not be used for revised scientific claims. No causal controls, final figures, or manuscript rewriting have yet been completed.
 
 ---
 

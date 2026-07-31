@@ -1,0 +1,34 @@
+{
+  "gate4_status": "PASSED",
+  "n_baseline_blocks": 400,
+  "expected_baseline_blocks": 400,
+  "n_continuation_rows": 28000,
+  "expected_rows_per_block": 70,
+  "all_block_sizes_correct": true,
+  "n_unique_maps": 34,
+  "map_hashes_unique": true,
+  "all_identity_information_recovered": true,
+  "all_identity_viability_recovered": true,
+  "all_actual_identity_viabilities_exact": true,
+  "all_actual_identity_trajectories_exact": true,
+  "all_actual_identity_final_populations_exact": true,
+  "n_right_censored": 0,
+  "baseline_deterministic_rerun": {
+    "baseline_replicate": "selective_p1.0_r00",
+    "state_hash_equal": true,
+    "trajectory_hash_equal": true,
+    "corrected_information_equal": true,
+    "conditional_information_equal": true,
+    "final_mean_fitness_equal": true
+  },
+  "intervention_deterministic_rerun": {
+    "baseline_replicate": "selective_p1.0_r00",
+    "row_count_equal": true,
+    "numeric_values_equal": true,
+    "string_values_equal": true
+  },
+  "production_figures_generated": false,
+  "manuscript_rewritten": false,
+  "causal_controls_run": false,
+  "broad_parameter_sweeps_run": false
+}

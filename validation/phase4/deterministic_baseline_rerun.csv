@@ -1,0 +1,2 @@
+baseline_replicate,state_hash_equal,trajectory_hash_equal,corrected_information_equal,conditional_information_equal,final_mean_fitness_equal
+selective_p1.0_r00,True,True,True,True,True
