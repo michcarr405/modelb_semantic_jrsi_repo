@@ -66,3 +66,19 @@ def test_unstable_schedule_has_no_immediate_repeats_and_is_reproducible():
     assert a == b
     assert a != c
     assert all(x != y for x, y in zip(a[:-1], a[1:]))
+
+
+def test_cached_observer_matches_phase4_observer_for_same_random_stream():
+    from modelb_semantic_repo.original_model.simulation import init_population, observe_population
+    from modelb_semantic_repo.phase5 import observe_population_cached, precompute_state_cdf
+    params = default_parameters()
+    topologies = enumerate_matched_topologies()
+    native = next(t for t in topologies if t.is_native)
+    pop = init_population(params["n_cells"], params["n_seqs"], params["seq_len"], np.random.default_rng(8))
+    rng_a = np.random.default_rng(99)
+    rng_b = np.random.default_rng(99)
+    expected = observe_population(pop, params["motif_affinity_matrix"], params, rng_a)
+    observed = observe_population_cached(pop, precompute_state_cdf(params["motif_affinity_matrix"], params), params, native, rng_b)
+    assert np.array_equal(expected[1], observed[1])
+    assert np.array_equal(expected[2], observed[2])
+    assert np.array_equal(expected[0], observed[0])

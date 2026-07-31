@@ -16,6 +16,7 @@ from typing import Any, Iterable, Sequence
 
 import numpy as np
 import pandas as pd
+from numba import njit
 
 from .information import (
     corrected_conditional_mutual_information,
@@ -238,6 +239,96 @@ def apply_topology(params: dict[str, Any], topology: FitnessTopology) -> dict[st
     return out
 
 
+
+
+@njit(cache=True)
+def _compute_fitnesses_from_cdf(
+    population,
+    cumulative_probabilities,
+    productive_pairs_matrix,
+    anti_pairs_matrix,
+    reward_strength,
+    penalty_strength,
+    local_state_uniforms,
+):
+    """Phase 5 fast observer with precomputed motif/segment state CDFs."""
+    n_cells, n_seqs, seq_len = population.shape
+    chain_len = seq_len - 4
+    n_segments = cumulative_probabilities.shape[1]
+    seg_len = chain_len // n_segments
+    total_windows = n_cells * n_seqs * chain_len
+    motif_obs = np.empty(total_windows, dtype=np.int64)
+    state_obs = np.empty(total_windows, dtype=np.int64)
+    fitnesses = np.empty(n_cells, dtype=np.float64)
+    obs_idx = 0
+    for ci in range(n_cells):
+        promoting = 0.0
+        reducing = 0.0
+        for si in range(n_seqs):
+            previous = -1
+            for pos in range(chain_len):
+                motif_idx = 0
+                for k in range(5):
+                    motif_idx = motif_idx * 4 + int(population[ci, si, pos + k])
+                segment = pos // seg_len
+                if segment >= n_segments:
+                    segment = n_segments - 1
+                u = local_state_uniforms[obs_idx]
+                chosen = cumulative_probabilities.shape[2] - 1
+                for state in range(cumulative_probabilities.shape[2]):
+                    if u <= cumulative_probabilities[motif_idx, segment, state]:
+                        chosen = state
+                        break
+                motif_obs[obs_idx] = motif_idx
+                state_obs[obs_idx] = chosen
+                obs_idx += 1
+                if pos > 0:
+                    if productive_pairs_matrix[previous, chosen]:
+                        promoting += 1.0
+                    if anti_pairs_matrix[previous, chosen]:
+                        reducing += 1.0
+                previous = chosen
+        fit = 1.0 + reward_strength * (promoting / n_seqs) - penalty_strength * (reducing / n_seqs)
+        if fit < 0.1:
+            fit = 0.1
+        fitnesses[ci] = fit
+    return fitnesses, motif_obs, state_obs
+
+
+def precompute_state_cdf(motif_affinity_matrix: np.ndarray, params: dict[str, Any]) -> np.ndarray:
+    matrix = np.asarray(motif_affinity_matrix, dtype=np.float64)
+    n_segments = len(params["segment_favored_met"])
+    logits = np.repeat(matrix[:, None, :], n_segments, axis=1)
+    for segment, favored in enumerate(np.asarray(params["segment_favored_met"], dtype=int)):
+        logits[:, segment, int(favored)] += float(params["bias_strength"])
+    logits = logits - logits.max(axis=2, keepdims=True)
+    weights = np.exp(logits / float(params["temperature"]))
+    probabilities = weights / weights.sum(axis=2, keepdims=True)
+    cdf = np.cumsum(probabilities, axis=2)
+    cdf[:, :, -1] = 1.0
+    return np.ascontiguousarray(cdf, dtype=np.float64)
+
+
+def observe_population_cached(
+    population: np.ndarray,
+    cumulative_probabilities: np.ndarray,
+    params: dict[str, Any],
+    topology: FitnessTopology,
+    rng: np.random.Generator,
+):
+    n_cells, n_seqs, seq_len = population.shape
+    uniforms = rng.random(n_cells * n_seqs * (seq_len - 4))
+    return _compute_fitnesses_from_cdf(
+        population,
+        cumulative_probabilities,
+        topology.productive_pairs,
+        topology.anti_pairs,
+        float(params["reward_strength"]),
+        float(params["penalty_strength"]),
+        uniforms,
+    )
+
+
 def selection_probabilities(fitnesses: np.ndarray, selection_strength: float) -> np.ndarray:
     alpha = float(selection_strength)
     if not 0.0 <= alpha <= 1.0:
@@ -317,11 +408,11 @@ def run_control_evolution(
     observation_rng = make_generator(run_seed, "baseline-observation")
     propagation_rng = make_generator(run_seed, "baseline-propagation")
     population = init_population(params["n_cells"], params["n_seqs"], params["seq_len"], initialization_rng)
+    cumulative_probabilities = precompute_state_cdf(motif_affinity_matrix, params)
     fitness_history = []
     for generation in range(int(params["n_gens"])):
         topology = fixed_topology if fixed_topology is not None else topology_lookup[str(topology_schedule[generation])]
-        step_params = apply_topology(params, topology)
-        fitnesses, _, _ = observe_population(population, motif_affinity_matrix, step_params, observation_rng)
+        fitnesses, _, _ = observe_population_cached(population, cumulative_probabilities, params, topology, observation_rng)
         fitness_history.append(float(np.mean(fitnesses)))
         population = reproduce_with_selection_strength(
             population,
@@ -332,9 +423,8 @@ def run_control_evolution(
             selection_strength,
         )
     final_topology = fixed_topology if fixed_topology is not None else topology_lookup[str(topology_schedule[-1])]
-    final_params = apply_topology(params, final_topology)
-    final_fitnesses, final_motifs, final_states = observe_population(
-        population, motif_affinity_matrix, final_params, observation_rng
+    final_fitnesses, final_motifs, final_states = observe_population_cached(
+        population, cumulative_probabilities, params, final_topology, observation_rng
     )
     return {
         "population": np.asarray(population),
@@ -371,11 +461,11 @@ def simulate_control_horizon(
     observation_rng = stream.observation_generator()
     propagation_rng = stream.propagation_generator()
     pop = np.array(population, copy=True)
+    cumulative_probabilities = precompute_state_cdf(motif_affinity_matrix, params)
     means = []
     for generation in range(int(horizon)):
         topology = fixed_topology if fixed_topology is not None else topology_lookup[str(topology_schedule[generation])]
-        step_params = apply_topology(params, topology)
-        fitnesses, _, _ = observe_population(pop, motif_affinity_matrix, step_params, observation_rng)
+        fitnesses, _, _ = observe_population_cached(pop, cumulative_probabilities, params, topology, observation_rng)
         means.append(float(np.mean(fitnesses)))
         pop = reproduce_with_selection_strength(
             pop,
@@ -413,7 +503,9 @@ def _observe_information(
     n_permutations: int,
 ) -> dict[str, Any]:
     observation_rng = make_generator(root_seed, "phase5-information-observation", observation_key)
-    fitnesses, motifs, states = observe_population(population, matrix, apply_topology(params, topology), observation_rng)
+    fitnesses, motifs, states = observe_population_cached(
+        population, precompute_state_cdf(matrix, params), params, topology, observation_rng
+    )
     segments = segment_indices_for_observations(params)
     corrected = corrected_conditional_mutual_information(
         motifs,
@@ -507,7 +599,7 @@ def _baseline_job(job: dict[str, Any]) -> dict[str, Any]:
         schedule_file.parent.mkdir(parents=True, exist_ok=True)
         schedule_file.write_text(json.dumps(schedule, indent=2), encoding="utf-8")
         schedule_path = str(schedule_file)
-    return {
+    record = {
         "mode": mode,
         "condition": mode,
         "replicate": replicate,
@@ -530,6 +622,10 @@ def _baseline_job(job: dict[str, Any]) -> dict[str, Any]:
         "permutation_std": information["permutation_std"],
         "corrected_conditional_information": information["corrected_conditional_information"],
     }
+    block_dir = Path(job["baseline_block_dir"])
+    block_dir.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame([record]).to_csv(block_dir / f"{baseline_id}.csv", index=False)
+    return record
 
 
 def run_control_baselines(
@@ -558,15 +654,72 @@ def run_control_baselines(
                     "settings": settings.to_dict(),
                     "state_dir": str(state_dir),
                     "schedule_dir": str(schedule_dir),
+                    "baseline_block_dir": str(outdir / "baseline_blocks"),
                 }
             )
-    rows = []
-    with ProcessPoolExecutor(max_workers=settings.workers) as executor:
-        futures = [executor.submit(_baseline_job, job) for job in jobs]
-        for index, future in enumerate(as_completed(futures), start=1):
-            rows.append(future.result())
-            if index % 10 == 0 or index == len(futures):
-                print(f"Phase 5 baseline controls: {index}/{len(futures)}", flush=True)
+    block_dir = outdir / "baseline_blocks"
+    block_dir.mkdir(parents=True, exist_ok=True)
+    # Recover completed jobs from an interrupted run. Older partial runs may have
+    # state files but no one-row block record, so reconstruct those records.
+    existing_records = {}
+    for block_file in block_dir.glob("*.csv"):
+        record = pd.read_csv(block_file).iloc[0].to_dict()
+        existing_records[str(record["baseline_replicate"])] = record
+    pending = []
+    for job in jobs:
+        mode = str(job["mode"])
+        replicate = int(job["replicate"])
+        baseline_id = f"{mode}_p1.0_r{replicate:02d}"
+        if baseline_id in existing_records:
+            continue
+        state_path = Path(job["state_dir"]) / mode / f"rep_{replicate:02d}.npz"
+        if state_path.exists():
+            loaded = np.load(state_path)
+            motifs = np.asarray(loaded["final_observation_motifs"])
+            states = np.asarray(loaded["final_observation_states"])
+            segments = np.asarray(loaded["final_observation_segments"])
+            corrected = corrected_conditional_mutual_information(
+                motifs, states, segments,
+                n_permutations=settings.n_information_permutations,
+                stream=PermutationStream(settings.root_seed, baseline_id, 0),
+            )
+            phase4_row = job["phase4_row"]
+            topologies = enumerate_matched_topologies()
+            native, topology_a, topology_b = select_alternative_topologies(topologies)
+            topology_by_mode = {"selection_neutral": native, "selection_reduced": native, "alternative_a": topology_a, "alternative_b": topology_b}
+            alpha_by_mode = {"selection_neutral": SELECTION_NEUTRAL, "selection_reduced": SELECTION_REDUCED, "alternative_a": SELECTION_FULL, "alternative_b": SELECTION_FULL, "temporally_unstable": SELECTION_FULL}
+            schedule_path = Path(job["schedule_dir"]) / f"{baseline_id}_baseline_schedule.json"
+            final_topology_id = topology_by_mode[mode].topology_id if mode != "temporally_unstable" else json.loads(schedule_path.read_text())[-1]
+            record = {
+                "mode": mode, "condition": mode, "replicate": replicate, "seed_block": replicate,
+                "pairing_baseline_replicate": str(phase4_row["baseline_replicate"]),
+                "baseline_replicate": baseline_id, "baseline_run_seed": int(phase4_row["baseline_run_seed"]),
+                "selection_strength": alpha_by_mode[mode],
+                "evolution_topology_id": topology_by_mode[mode].topology_id if mode != "temporally_unstable" else "temporally_unstable",
+                "final_topology_id": final_topology_id, "state_path": str(state_path),
+                "schedule_path": str(schedule_path) if schedule_path.exists() else "",
+                "state_hash": array_sha256(np.asarray(loaded["population"])),
+                "trajectory_hash": array_sha256(np.asarray(loaded["fitness_trajectory"])),
+                "final_mean_fitness": float(np.mean(np.asarray(loaded["final_observation_fitnesses"]))),
+                "total_information": mutual_information(motifs, states),
+                "positional_information": positional_information(motifs, segments),
+                "conditional_information": corrected.observed,
+                "permutation_mean": corrected.permutation_mean,
+                "permutation_std": corrected.permutation_std,
+                "corrected_conditional_information": corrected.corrected,
+            }
+            pd.DataFrame([record]).to_csv(block_dir / f"{baseline_id}.csv", index=False)
+            existing_records[baseline_id] = record
+        else:
+            pending.append(job)
+    rows = list(existing_records.values())
+    if pending:
+        with ProcessPoolExecutor(max_workers=settings.workers) as executor:
+            futures = [executor.submit(_baseline_job, job) for job in pending]
+            for index, future in enumerate(as_completed(futures), start=1):
+                rows.append(future.result())
+                if index % 10 == 0 or index == len(futures):
+                    print(f"Phase 5 baseline controls: {index}/{len(pending)} pending", flush=True)
     frame = pd.DataFrame(rows).sort_values(["mode", "replicate"])
     frame.to_csv(path, index=False)
     return frame
@@ -859,7 +1012,14 @@ def run_control_evaluations(
     phase4_info = phase4_baselines.set_index("baseline_replicate")["conditional_information"].to_dict()
     control_info = control_baselines.set_index("baseline_replicate")["conditional_information"].to_dict()
     jobs = []
+    existing_paths = []
+    block_dir = outdir / "continuation_blocks"
+    block_dir.mkdir(parents=True, exist_ok=True)
     for spec in specs:
+        block_path = block_dir / f"{spec['baseline_replicate']}.csv"
+        if resume and block_path.exists():
+            existing_paths.append(str(block_path))
+            continue
         jobs.append(
             {
                 "settings": settings.to_dict(),
@@ -870,13 +1030,17 @@ def run_control_evaluations(
                 "control_conditional_information": control_info.get(spec["source_baseline_id"], np.nan),
             }
         )
-    paths = []
-    with ProcessPoolExecutor(max_workers=settings.workers) as executor:
-        futures = [executor.submit(_evaluation_job, job) for job in jobs]
-        for index, future in enumerate(as_completed(futures), start=1):
-            paths.append(future.result())
-            if index % 10 == 0 or index == len(futures):
-                print(f"Phase 5 control evaluations: {index}/{len(futures)}", flush=True)
+    paths = list(existing_paths)
+    if jobs:
+        with ProcessPoolExecutor(max_workers=settings.workers) as executor:
+            futures = [executor.submit(_evaluation_job, job) for job in jobs]
+            for index, future in enumerate(as_completed(futures), start=1):
+                paths.append(future.result())
+                if index % 10 == 0 or index == len(futures):
+                    print(f"Phase 5 control evaluations: {index}/{len(futures)} pending", flush=True)
+    expected = len(specs)
+    if len(paths) != expected:
+        raise RuntimeError(f"expected {expected} evaluation blocks, found {len(paths)}")
     raw = pd.concat([pd.read_csv(path) for path in sorted(paths)], ignore_index=True)
     raw.to_csv(raw_path, index=False)
     info_files = sorted((outdir / "evaluation_information_blocks").glob("*.csv"))
