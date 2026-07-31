@@ -353,7 +353,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | Replicate-frontier statistical pipeline | R1.5 | `VERIFIED` |
 | Corrected core production dataset and Gate 4 test | R1.3–R1.5, R1.8, R2.5.9 | `VERIFIED` |
 | Causal disruption controls | R1.2 | `VERIFIED` |
-| Focused sensitivity design | R1.6, R2.5.1, R2.5.4–R2.5.7 | `PLANNED` |
+| Focused sensitivity design | R1.6, R2.5.1, R2.5.4–R2.5.7 | `IN PROGRESS` |
 
 ## B. Manuscript deliverables
 

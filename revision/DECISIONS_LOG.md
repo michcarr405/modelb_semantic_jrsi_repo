@@ -1258,3 +1258,77 @@ All paired inputs must contain exactly one aggregate value per matched evolution
 ### Supersedes
 
 None.
+
+# Phase 6 approved pre-production decisions
+
+## D26 — Staged non-factorial robustness design
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Author opening prompt and Phase 6 pre-production freeze  
+**Phase:** Focused robustness and generality  
+**Reviewer items affected:** R1.6, R2.5.1–R2.5.7
+
+### Decision
+Use the Stage A–D design in `PHASE_06_PLAN.md`. Do not run a full cross-product of all parameters.
+
+### Rationale
+The design covers mechanistic, global, structural, and protocol sensitivity while preventing post-hoc expansion and unmanageable factorial multiplicity.
+
+### Verification required
+Archive every design row, parameter value, seed, and deterministic representative-selection score before confirmatory analysis.
+
+### Supersedes
+Resolves P07 for this revision.
+
+## D27 — Fixed regime thresholds
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 6 pre-production freeze  
+**Phase:** Focused robustness and generality
+
+### Decision
+Use `delta_I=0.01` bit, `delta_V=0.25` fitness unit, and `delta_F=1.0` fitness unit with replicate-level 95% bootstrap intervals. Boundary/uncertain points do not count as positive evidence.
+
+### Verification required
+Every classification must be reproducible from archived replicate rows and bootstrap seeds.
+
+## D28 — Structural variants preserve estimator and intervention logic
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 6 pre-production freeze  
+**Phase:** Focused robustness and generality
+
+### Decision
+For altered motif length, state count, window density, or segment structure, retain position-conditioned information, within-segment permutation correction, actual retained information, common-random-number continuations, independently evolved replicate inference, strict target/censoring, and D20 method families. Use the exact contiguous-substring analogue of D16 for altered motif length. Do not modify archived core code or maps.
+
+### Verification required
+Constant and identity endpoints must recover exactly in every structural universe.
+
+## D29 — Deterministic Stage D selection and archived default reference
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 6 pre-production freeze  
+**Phase:** Focused robustness and generality
+
+### Decision
+Select Stage D representatives only by the algorithm in `PHASE_06_PLAN.md`. Use the archived Phase 4 default as the default confirmatory reference; do not rerun or retune it. Run eight independent populations for each nondefault representative.
+
+### Verification required
+Archive the candidate table, depth/boundary scores, selected IDs, and Phase 4 source hashes.
+
+## D30 — Prespecified broad, narrow, or no-generality decision
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 6 pre-production freeze  
+**Phase:** Focused robustness and generality
+
+### Decision
+Apply the Gate 7 rules in `PHASE_06_PLAN.md` before result freeze. Report design-domain support fractions only as descriptive coverage.
+
+### Verification required
+The Gate file must evaluate every criterion separately and cannot be overridden by visual inspection.
