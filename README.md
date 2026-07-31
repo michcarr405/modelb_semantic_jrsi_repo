@@ -1,24 +1,38 @@
-# JRSI major-revision Phase 5 branch
+# JRSI major-revision Phase 6 branch
 
-**Current gate:** Gate 5 causal specificity passed.
+**Current gate:** Gate 7 generality passed; broad generality is supported within the prespecified Model B design domain.
 
-Phase 5 started from the versioned Phase 4 package, preserved D16–D20 and the archived core states, and implemented the prespecified causal controls without rerunning or retuning the corrected core analysis. The controlling Phase 5 records are:
+Phase 6 started from the checksum-verified Phase 5 release, preserved D16–D25 and all archived Phase 4/5 states, and executed the staged non-factorial sensitivity design frozen in D26–D30. Controlling and evidentiary records are:
 
-- `PHASE_05_PLAN.md`;
-- `revision/DECISIONS_LOG.md` entries D21–D25;
-- `CAUSAL_SPECIFICITY.md`;
-- `VALIDATION_PHASE5.md`;
-- `PHASE_05_HANDOFF.md`.
+- `PHASE_06_PLAN.md`;
+- `revision/DECISIONS_LOG.md` entries D26–D31;
+- `GENERALITY_ANALYSIS.md`;
+- `VALIDATION_PHASE6.md`;
+- `PHASE_06_HANDOFF.md`.
 
-Validated Phase 5 commands:
+Validated Phase 6 commands:
 
 ```bash
-PYTHONPATH=src python scripts/run_phase5_production.py --workers 1
-PYTHONPATH=src python scripts/validate_phase5.py
-PYTHONPATH=src pytest -q
+PYTHONPATH=src python scripts/run_phase6_batch.py A --batch 8 --outdir results/phase6_generality
+PYTHONPATH=src python scripts/run_phase6_batch.py B1 --batch 8 --outdir results/phase6_generality
+PYTHONPATH=src python scripts/run_phase6_batch.py B2 --batch 8 --outdir results/phase6_generality
+PYTHONPATH=src python scripts/run_phase6_batch.py select-c --outdir results/phase6_generality
+PYTHONPATH=src python scripts/run_phase6_batch.py C --batch 8 --outdir results/phase6_generality
+PYTHONPATH=src python scripts/run_phase6_batch.py select-d --outdir results/phase6_generality
+PYTHONPATH=src python scripts/run_phase6_batch.py D --batch 2 --outdir results/phase6_generality
+PYTHONPATH=src python scripts/run_phase6_batch.py finalize --outdir results/phase6_generality
+PYTHONPATH=src python scripts/validate_phase6.py
 ```
 
-Gate 5 passed because all six prespecified replicate-level value-of-information contrasts were positive after BH correction, all identity endpoints recovered exactly, explicit censoring was retained, and the Phase 4 archive hashes remained unchanged. Broad sensitivity analysis, final figures, and manuscript rewriting remain blocked.
+Gate 7 passed because 71.875% of Stage A and 37.5% of Stage B1 points were definitively viability-relevant or strong-adaptation, all four structural families retained positive support, the archived default plus two nondefault Stage D representatives confirmed, and all endpoint/archive checks passed. Final publication figures and manuscript rewriting remain blocked until result freeze.
+
+---
+
+# JRSI major-revision Phase 5 branch
+
+**Archived gate:** Gate 5 causal specificity passed.
+
+Phase 5 records are `PHASE_05_PLAN.md`, `CAUSAL_SPECIFICITY.md`, `VALIDATION_PHASE5.md`, and `PHASE_05_HANDOFF.md`. The archived results remain under `results/phase5_causal_specificity/` and were hash-verified after Phase 6.
 
 ---
 

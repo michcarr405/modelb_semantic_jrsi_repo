@@ -1,0 +1,25 @@
+check,passed,detail
+stage_a_design_count,True,32
+stage_a_replicate_count,True,128
+stage_b1_design_count,True,16
+stage_b1_replicate_count,True,48
+stage_b2_design_count,True,17
+stage_b2_replicate_count,True,68
+stage_c_design_count,True,12
+stage_c_replicate_count,True,48
+screen_identity_exact,True,292
+stage_d_selection_count,True,"['A_high_2', 'B2_reward3', 'A_low_3', 'B2_default']"
+stage_d_nondefault_replicates,True,24
+stage_d_continuation_rows,True,1680
+stage_d_two_continuations_per_map,True,{2: 840}
+stage_d_identity_information,True,24
+stage_d_identity_viability,True,24
+stage_d_censoring_explicit,True,{'none': 24}
+stage_d_two_nondefault_positive,True,"[{'design_id': 'A_high_2', 'positive': True}, {'design_id': 'B2_reward3', 'positive': True}, {'design_id': 'A_low_3', 'positive': False}]"
+gate_stage_a_fraction_recomputes,True,0.71875
+gate_stage_b1_fraction_recomputes,True,0.375
+gate_structural_families_recompute,True,"{'window': True, 'position': True, 'metabolite': True, 'fitness': True}"
+gate7_broad_pass,True,"{'gate': 'Gate 7 - Generality', 'status': 'PASSED', 'generality_decision': 'BROAD_GENERALITY_SUPPORTED', 'stage_a_positive_fraction': 0.71875, 'stage_b1_positive_fraction': 0.375, 'structural_family_support': {'window': True, 'position': True, 'metabolite': True, 'fitness': True}, 'default_archived_confirmed': True, 'nondefault_confirmed': 2, 'identity_exact': True, 'broad': True, 'narrow': False}"
+phase4_archive_integrity,True,1215/1215
+phase5_archive_integrity,True,818/818
+phase6_result_integrity,True,71/71

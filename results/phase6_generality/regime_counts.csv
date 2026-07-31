@@ -1,0 +1,12 @@
+stage,regime,n_points
+A,R0_null,8
+A,R2_viability_relevant,19
+A,R3_strong_adaptation,4
+A,boundary_uncertain,1
+B1,R0_null,2
+B1,R1_syntactic_only,8
+B1,R2_viability_relevant,5
+B1,R3_strong_adaptation,1
+B2,R1_syntactic_only,1
+B2,R2_viability_relevant,1
+B2,R3_strong_adaptation,15

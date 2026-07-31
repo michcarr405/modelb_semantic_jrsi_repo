@@ -1,0 +1,18 @@
+{
+  "gate": "Gate 7 - Generality",
+  "status": "PASSED",
+  "generality_decision": "BROAD_GENERALITY_SUPPORTED",
+  "stage_a_positive_fraction": 0.71875,
+  "stage_b1_positive_fraction": 0.375,
+  "structural_family_support": {
+    "window": true,
+    "position": true,
+    "metabolite": true,
+    "fitness": true
+  },
+  "default_archived_confirmed": true,
+  "nondefault_confirmed": 2,
+  "identity_exact": true,
+  "broad": true,
+  "narrow": false
+}

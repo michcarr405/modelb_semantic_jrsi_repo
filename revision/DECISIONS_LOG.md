@@ -2,8 +2,8 @@
 
 ## Project
 
-**Manuscript:** `rsif-2026-0516`  
-**Project:** *JRSI Major Revision — Semantic Information in Model B*  
+**Manuscript:** `rsif-2026-0516`
+**Project:** *JRSI Major Revision — Semantic Information in Model B*
 **Purpose:** Record decisions that constrain downstream code, analyses, figures, manuscript text, and reviewer responses.
 
 This file is a change-control record. It is not a general notebook. Only decisions that affect the scientific interpretation, analytical pipeline, revision scope, or reproducibility should be entered here.
@@ -26,11 +26,11 @@ Copy this template for every new decision.
 ```markdown
 ## DXX — Short decision title
 
-**Date:** YYYY-MM-DD  
-**Status:** PROPOSED | APPROVED | SUPERSEDED | REJECTED  
-**Requested by:**  
-**Phase:**  
-**Reviewer items affected:**  
+**Date:** YYYY-MM-DD
+**Status:** PROPOSED | APPROVED | SUPERSEDED | REJECTED
+**Requested by:**
+**Phase:**
+**Reviewer items affected:**
 
 ### Decision
 
@@ -47,11 +47,11 @@ Copy this template for every new decision.
 
 ### Consequences
 
-**Code affected:**  
-**Analyses affected:**  
-**Figures affected:**  
-**Manuscript sections affected:**  
-**Previously generated outputs invalidated:**  
+**Code affected:**
+**Analyses affected:**
+**Figures affected:**
+**Manuscript sections affected:**
+**Previously generated outputs invalidated:**
 
 ### Verification required
 
@@ -68,10 +68,10 @@ Copy this template for every new decision.
 
 ## D01 — Revised primary scientific question
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Author and revision planning process  
-**Phase:** Project setup  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Author and revision planning process
+**Phase:** Project setup
 **Reviewer items affected:** R1.1, R1.3, R1.4, R1.7, R2.1, R2.3
 
 ### Decision
@@ -94,10 +94,10 @@ The previous Model B paper already reported inheritance-dependent raw mutual inf
 
 ### Consequences
 
-**Code affected:** Conditional-MI and intervention analyses become central.  
-**Analyses affected:** Raw MI becomes descriptive rather than the primary semantic measure.  
-**Figures affected:** Main results must show the information hierarchy.  
-**Manuscript sections affected:** Title, abstract, Introduction, Results, Discussion, Conclusion.  
+**Code affected:** Conditional-MI and intervention analyses become central.
+**Analyses affected:** Raw MI becomes descriptive rather than the primary semantic measure.
+**Figures affected:** Main results must show the information hierarchy.
+**Manuscript sections affected:** Title, abstract, Introduction, Results, Discussion, Conclusion.
 **Previously generated outputs invalidated:** Submitted semantic estimates are provisional until the corrected pipeline is complete.
 
 ### Verification required
@@ -112,10 +112,10 @@ None.
 
 ## D02 — Position-conditioned mutual information is the primary sequence-specific association measure
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Corrected information measures  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Corrected information measures
 **Reviewer items affected:** R1.3, R2.3
 
 ### Decision
@@ -154,10 +154,10 @@ In the sequence-agnostic regime, metabolite state depends on segment rather than
 
 ### Consequences
 
-**Code affected:** Add conditional-MI and within-segment permutation functions.  
-**Analyses affected:** All baseline information results must be recalculated.  
-**Figures affected:** Baseline figure must show total, positional, and conditional information.  
-**Manuscript sections affected:** Analytical expectations, Methods, Results, Discussion.  
+**Code affected:** Add conditional-MI and within-segment permutation functions.
+**Analyses affected:** All baseline information results must be recalculated.
+**Figures affected:** Baseline figure must show total, positional, and conditional information.
+**Manuscript sections affected:** Analytical expectations, Methods, Results, Discussion.
 **Previously generated outputs invalidated:** Any conclusion equating total MI with sequence-specific information.
 
 ### Verification required
@@ -172,10 +172,10 @@ None.
 
 ## D03 — Actual retained information replaces the nominal group-count heuristic
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Corrected information measures  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Corrected information measures
 **Reviewer items affected:** R1.4, R2.5.9
 
 ### Decision
@@ -206,10 +206,10 @@ Nominal resolution does not determine how much motif–metabolite information a 
 
 ### Consequences
 
-**Code affected:** Every intervention must calculate actual retained information.  
-**Analyses affected:** Frontiers, semantic estimates, efficiencies, and gaps must be recomputed.  
-**Figures affected:** All information–viability figures change.  
-**Manuscript sections affected:** Intervention Methods, Results, Appendix, captions.  
+**Code affected:** Every intervention must calculate actual retained information.
+**Analyses affected:** Frontiers, semantic estimates, efficiencies, and gaps must be recomputed.
+**Figures affected:** All information–viability figures change.
+**Manuscript sections affected:** Intervention Methods, Results, Appendix, captions.
 **Previously generated outputs invalidated:** Submitted semantic bit values and frontier x-coordinates.
 
 ### Verification required
@@ -224,10 +224,10 @@ None.
 
 ## D04 — Independent evolved population is the primary statistical unit
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Statistical pipeline  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Statistical pipeline
 **Reviewer items affected:** R1.5
 
 ### Decision
@@ -248,10 +248,10 @@ Intervention outcomes derived from the same evolved population share evolutionar
 
 ### Consequences
 
-**Code affected:** Construct one frontier and semantic estimate per evolved replicate.  
-**Analyses affected:** Use replicate-level permutation tests and block bootstrap.  
-**Figures affected:** Display raw independent replicate points and target status.  
-**Manuscript sections affected:** Statistical Methods, Results, figure captions.  
+**Code affected:** Construct one frontier and semantic estimate per evolved replicate.
+**Analyses affected:** Use replicate-level permutation tests and block bootstrap.
+**Figures affected:** Display raw independent replicate points and target status.
+**Manuscript sections affected:** Statistical Methods, Results, figure captions.
 **Previously generated outputs invalidated:** Submitted pooled-point p-values as primary inferential evidence.
 
 ### Verification required
@@ -266,10 +266,10 @@ None.
 
 ## D05 — Primary viability definition is mean future model fitness
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Revision planning  
-**Phase:** Intervention design  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Revision planning
+**Phase:** Intervention design
 **Reviewer items affected:** R1.2, R1.4, R2.1
 
 ### Decision
@@ -297,10 +297,10 @@ Mean future fitness is directly interpretable within the model and avoids making
 
 ### Consequences
 
-**Code affected:** Standardize future-fitness calculation and horizon handling.  
-**Analyses affected:** Recompute primary frontiers and semantic estimates.  
-**Figures affected:** Primary intervention plots will use mean future fitness.  
-**Manuscript sections affected:** Methods, Results, semantic-framework explanation.  
+**Code affected:** Standardize future-fitness calculation and horizon handling.
+**Analyses affected:** Recompute primary frontiers and semantic estimates.
+**Figures affected:** Primary intervention plots will use mean future fitness.
+**Manuscript sections affected:** Methods, Results, semantic-framework explanation.
 **Previously generated outputs invalidated:** Primary status of the excess-over-control analysis.
 
 ### Verification required
@@ -315,10 +315,10 @@ None.
 
 ## D06 — The original inheritance operator remains the principal and only inheritance model
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Author  
-**Phase:** Revision scope  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Author
+**Phase:** Revision scope
 **Reviewer items affected:** R2.2, R2.5.8, R1.7
 
 ### Decision
@@ -348,10 +348,10 @@ The manuscript’s central purpose is to analyze information dynamics under the 
 
 ### Consequences
 
-**Code affected:** No new inheritance model is required.  
-**Analyses affected:** Existing operator remains the basis of all revised analyses.  
-**Figures affected:** Model schematic must depict compositional resampling, not physical fission.  
-**Manuscript sections affected:** Abstract, Model overview, transmission Methods, Discussion limitations, Conclusion.  
+**Code affected:** No new inheritance model is required.
+**Analyses affected:** Existing operator remains the basis of all revised analyses.
+**Figures affected:** Model schematic must depict compositional resampling, not physical fission.
+**Manuscript sections affected:** Abstract, Model overview, transmission Methods, Discussion limitations, Conclusion.
 **Previously generated outputs invalidated:** None solely because of this decision.
 
 ### Required wording
@@ -381,10 +381,10 @@ The earlier revision-plan proposal to require additional inheritance controls.
 
 ## D07 — Metabolite-window states are not literal simultaneous bound molecules
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Model description  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Model description
 **Reviewer items affected:** R2.4, R2.5.2
 
 ### Decision
@@ -405,10 +405,10 @@ The implementation does not model steric exclusion, occupancy, ligand copy numbe
 
 ### Consequences
 
-**Code affected:** None required for the terminology change.  
-**Analyses affected:** Optional window-density robustness remains a separate scope decision.  
-**Figures affected:** Figure 1 must label the variables as transient local-state outcomes.  
-**Manuscript sections affected:** Model overview, sampling Methods, limitations.  
+**Code affected:** None required for the terminology change.
+**Analyses affected:** Optional window-density robustness remains a separate scope decision.
+**Figures affected:** Figure 1 must label the variables as transient local-state outcomes.
+**Manuscript sections affected:** Model overview, sampling Methods, limitations.
 **Previously generated outputs invalidated:** None numerically.
 
 ### Verification required
@@ -423,10 +423,10 @@ None.
 
 ## D08 — “Productive” and “anti-productive” will be replaced
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Terminology and notation  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Terminology and notation
 **Reviewer items affected:** R2.1, R2.5.3, R2.5.7
 
 ### Decision
@@ -453,10 +453,10 @@ The model does not simulate chemical products or reaction inhibition. The revise
 
 ### Consequences
 
-**Code affected:** Variable names may be updated where practical, but numerical behavior need not change.  
-**Analyses affected:** None numerically.  
-**Figures affected:** Pair classification and model schematic labels.  
-**Manuscript sections affected:** Entire manuscript and Appendix.  
+**Code affected:** Variable names may be updated where practical, but numerical behavior need not change.
+**Analyses affected:** None numerically.
+**Figures affected:** Pair classification and model schematic labels.
+**Manuscript sections affected:** Entire manuscript and Appendix.
 **Previously generated outputs invalidated:** None.
 
 ### Verification required
@@ -471,10 +471,10 @@ None.
 
 ## D09 — Prefix grouping will not remain an unexplained privileged sequence intervention
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Intervention audit  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Intervention audit
 **Reviewer items affected:** R1.4, R1.5, R2.5.9
 
 ### Decision
@@ -502,10 +502,10 @@ The first motif position has no privileged role in Model B, and the submitted im
 
 ### Consequences
 
-**Code affected:** Grouping functions and grouping manifest.  
-**Analyses affected:** All revised interventions and frontiers.  
-**Figures affected:** Method-ablation and intervention schematic.  
-**Manuscript sections affected:** Intervention Methods and Appendix.  
+**Code affected:** Grouping functions and grouping manifest.
+**Analyses affected:** All revised interventions and frontiers.
+**Figures affected:** Method-ablation and intervention schematic.
+**Manuscript sections affected:** Intervention Methods and Appendix.
 **Previously generated outputs invalidated:** Submitted prefix-family intervention counts and pooled-point interpretation.
 
 ### Verification required
@@ -520,10 +520,10 @@ None.
 
 ## D10 — Causal specificity controls are required
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Post-core causal controls  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Post-core causal controls
 **Reviewer items affected:** R1.2, R2.3
 
 ### Decision
@@ -550,10 +550,10 @@ A causal path from motif identity to fitness exists by design in the sequence-se
 
 ### Consequences
 
-**Code affected:** Add prespecified disruption modes.  
-**Analyses affected:** Replicate-level value-of-information and semantic-excess comparisons.  
-**Figures affected:** Dedicated specificity-control figure.  
-**Manuscript sections affected:** Methods, Results, Discussion.  
+**Code affected:** Add prespecified disruption modes.
+**Analyses affected:** Replicate-level value-of-information and semantic-excess comparisons.
+**Figures affected:** Dedicated specificity-control figure.
+**Manuscript sections affected:** Methods, Results, Discussion.
 **Previously generated outputs invalidated:** None until the controls are run, but strong evolutionary claims remain blocked.
 
 ### Verification required
@@ -568,10 +568,10 @@ None.
 
 ## D11 — Parameter values will be described as dimensionless defaults unless empirically supported
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Model description and sensitivity  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Model description and sensitivity
 **Reviewer items affected:** R1.6, R2.5.1, R2.5.4–R2.5.7
 
 ### Decision
@@ -600,10 +600,10 @@ The submitted manuscript does not provide experimental calibration for these val
 
 ### Consequences
 
-**Code affected:** Focused sensitivity analyses and parameter reporting.  
-**Analyses affected:** Phase diagram and selected robustness tests.  
-**Figures affected:** Parameter-sensitivity figure or supplement.  
-**Manuscript sections affected:** Parameter table, Methods, Discussion limitations.  
+**Code affected:** Focused sensitivity analyses and parameter reporting.
+**Analyses affected:** Phase diagram and selected robustness tests.
+**Figures affected:** Parameter-sensitivity figure or supplement.
+**Manuscript sections affected:** Parameter table, Methods, Discussion limitations.
 **Previously generated outputs invalidated:** None solely from the wording decision.
 
 ### Verification required
@@ -618,10 +618,10 @@ None.
 
 ## D12 — Baseline trends will be framed as analytical expectations, not the main discovery
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Manuscript architecture  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Manuscript architecture
 **Reviewer items affected:** R2.3, R1.1
 
 ### Decision
@@ -645,10 +645,10 @@ The reviewer is correct that the direction of the baseline effects is largely ex
 
 ### Consequences
 
-**Code affected:** None directly.  
-**Analyses affected:** Reduced-model derivation and comparison.  
-**Figures affected:** Baseline figure may be simplified or moved earlier.  
-**Manuscript sections affected:** Introduction, analytical expectations, Results framing, Discussion.  
+**Code affected:** None directly.
+**Analyses affected:** Reduced-model derivation and comparison.
+**Figures affected:** Baseline figure may be simplified or moved earlier.
+**Manuscript sections affected:** Introduction, analytical expectations, Results framing, Discussion.
 **Previously generated outputs invalidated:** None numerically.
 
 ### Verification required
@@ -663,10 +663,10 @@ None.
 
 ## D13 — Final figures and manuscript prose will be produced only after result freeze
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Revision planning  
-**Phase:** Workflow control  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Revision planning
+**Phase:** Workflow control
 **Reviewer items affected:** All
 
 ### Decision
@@ -687,10 +687,10 @@ Changes to information measurement, statistical unit, grouping maps, or causal c
 
 ### Consequences
 
-**Code affected:** None.  
-**Analyses affected:** Encourages explicit phase gates.  
-**Figures affected:** Final figure generation is deferred.  
-**Manuscript sections affected:** All.  
+**Code affected:** None.
+**Analyses affected:** Encourages explicit phase gates.
+**Figures affected:** Final figure generation is deferred.
+**Manuscript sections affected:** All.
 **Previously generated outputs invalidated:** None.
 
 ### Verification required
@@ -705,10 +705,10 @@ None.
 
 ## D14 — Threshold language requires evidence of sharpness
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Revision planning  
-**Phase:** Sensitivity and interpretation  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Revision planning
+**Phase:** Sensitivity and interpretation
 **Reviewer items affected:** R1.6, R1.7, R2.3
 
 ### Decision
@@ -734,10 +734,10 @@ A nonlinear response in one finite simulation does not by itself establish a cri
 
 ### Consequences
 
-**Code affected:** Potential finite-size and refined-grid analyses.  
-**Analyses affected:** Threshold characterization.  
-**Figures affected:** Phase diagram and transition plots.  
-**Manuscript sections affected:** Title, abstract, Results, Discussion, Conclusion.  
+**Code affected:** Potential finite-size and refined-grid analyses.
+**Analyses affected:** Threshold characterization.
+**Figures affected:** Phase diagram and transition plots.
+**Manuscript sections affected:** Title, abstract, Results, Discussion, Conclusion.
 **Previously generated outputs invalidated:** Any unqualified submitted claim of a critical threshold.
 
 ### Verification required
@@ -752,10 +752,10 @@ None.
 
 ## D15 — Equation and notation redesign precedes manuscript rewrite
 
-**Date:** 2026-07-30  
-**Status:** APPROVED  
-**Requested by:** Reviewer-response planning  
-**Phase:** Methods redesign  
+**Date:** 2026-07-30
+**Status:** APPROVED
+**Requested by:** Reviewer-response planning
+**Phase:** Methods redesign
 **Reviewer items affected:** R2.6.1, R2.6.2
 
 ### Decision
@@ -778,10 +778,10 @@ The submitted notation reuses several symbols for unrelated variables, which mak
 
 ### Consequences
 
-**Code affected:** Optional variable-name cleanup; mathematical outputs may need relabeling.  
-**Analyses affected:** None numerically.  
-**Figures affected:** All mathematical figure labels.  
-**Manuscript sections affected:** Entire Methods and Appendix.  
+**Code affected:** Optional variable-name cleanup; mathematical outputs may need relabeling.
+**Analyses affected:** None numerically.
+**Figures affected:** All mathematical figure labels.
+**Manuscript sections affected:** Entire Methods and Appendix.
 **Previously generated outputs invalidated:** None numerically.
 
 ### Verification required
@@ -800,42 +800,42 @@ These are not yet approved and should not be implemented as confirmatory choices
 
 ## P01 — Final sequence-based grouping family
 
-**Prerequisite:** Phase 1 grouping-map audit.  
+**Prerequisite:** Phase 1 grouping-map audit.
 **Decision needed:** Leading/trailing/internal substrings versus orientation-neutral Hamming-based grouping, or a combination.
 
 ## P02 — Number of continuation seeds per intervention
 
-**Prerequisite:** Runtime benchmark and variance pilot.  
+**Prerequisite:** Runtime benchmark and variance pilot.
 **Decision needed:** Minimum technical repetitions for stable replicate-level viability estimates.
 
 ## P03 — Final intervention horizon
 
-**Prerequisite:** Horizon-sensitivity pilot.  
+**Prerequisite:** Horizon-sensitivity pilot.
 **Decision needed:** Fixed \(\tau_{\mathrm{int}}\) for confirmatory runs.
 
 ## P04 — Semantic target tolerance
 
-**Prerequisite:** Corrected frontier pilot with identity endpoints.  
+**Prerequisite:** Corrected frontier pilot with identity endpoints.
 **Decision needed:** Exact target rule and treatment of Monte Carlo uncertainty.
 
 ## P05 — Primary intervention-family pooling rule
 
-**Prerequisite:** Actual retained-information pilot and method-ablation results.  
+**Prerequisite:** Actual retained-information pilot and method-ablation results.
 **Decision needed:** Whether the primary frontier pools prespecified families or reports family-specific frontiers.
 
 ## P06 — Role of affinity-profile clustering
 
-**Prerequisite:** Actual retained-information analysis.  
+**Prerequisite:** Actual retained-information analysis.
 **Decision needed:** Primary family, diagnostic family, or supplementary mechanistic upper bound.
 
 ## P07 — Exact structural-sensitivity subset
 
-**Prerequisite:** Core corrected result.  
+**Prerequisite:** Core corrected result.
 **Decision needed:** Which among metabolite-class number, segment count, window stride, fitness normalization, and parameter ratios enter confirmatory robustness analysis.
 
 ## P08 — Final title and use of “semantic-stabilization”
 
-**Prerequisite:** Result freeze and threshold assessment.  
+**Prerequisite:** Result freeze and threshold assessment.
 **Decision needed:** Whether semantic-stabilization remains scientifically justified in the title.
 
 ---
@@ -844,26 +844,26 @@ These are not yet approved and should not be implemented as confirmatory choices
 
 ## X01 — Add a new physical inheritance model during this revision
 
-**Date:** 2026-07-30  
-**Status:** REJECTED  
+**Date:** 2026-07-30
+**Status:** REJECTED
 **Reason:** The revision will retain the original abstract compositional-resampling operator and narrow the claims rather than redesigning the model. Mechanistic mass-conserving growth–fission and copy-number models remain future work.
 
 ## X02 — Defend arbitrary defaults as empirically calibrated chemistry
 
-**Date:** 2026-07-30  
-**Status:** REJECTED  
+**Date:** 2026-07-30
+**Status:** REJECTED
 **Reason:** The current defaults were not estimated from a specific prebiotic system. They will be treated transparently as model-design choices and tested through focused sensitivity analysis.
 
 ## X03 — Preserve submitted semantic bit values for continuity
 
-**Date:** 2026-07-30  
-**Status:** REJECTED  
+**Date:** 2026-07-30
+**Status:** REJECTED
 **Reason:** The retained-information heuristic must be replaced. Revised bit values will be reported even if they differ substantially from the submitted manuscript.
 
 ## X04 — Use pooled intervention points as the main inferential sample
 
-**Date:** 2026-07-30  
-**Status:** REJECTED  
+**Date:** 2026-07-30
+**Status:** REJECTED
 **Reason:** Intervention points are nested within evolved populations. The evolved replicate is the primary independent unit.
 
 ---
@@ -911,10 +911,10 @@ As of 2026-07-30, the following are locked:
 
 ## D16 — P01 final sequence-based grouping family
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 4 pre-production freeze  
-**Phase:** Corrected core production  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 4 pre-production freeze
+**Phase:** Corrected core production
 **Reviewer items affected:** R1.4, R1.5, R2.5.9
 
 ### Decision
@@ -933,10 +933,10 @@ This family removes the unexplained privilege of the leading motif edge while re
 
 ### Consequences
 
-**Code affected:** Phase 4 map-panel construction.  
-**Analyses affected:** Corrected core intervention frontiers.  
-**Figures affected:** None in Phase 4.  
-**Manuscript sections affected:** Future intervention Methods and Appendix.  
+**Code affected:** Phase 4 map-panel construction.
+**Analyses affected:** Corrected core intervention frontiers.
+**Figures affected:** None in Phase 4.
+**Manuscript sections affected:** Future intervention Methods and Appendix.
 **Previously generated outputs invalidated:** Submitted prefix-family intervention results remain non-confirmatory.
 
 ### Verification required
@@ -951,10 +951,10 @@ Resolves P01 and implements D09.
 
 ## D17 — P02 two continuation seeds per intervention
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 4 pre-production freeze  
-**Phase:** Corrected core production  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 4 pre-production freeze
+**Phase:** Corrected core production
 **Reviewer items affected:** R1.5, R1.8
 
 ### Decision
@@ -972,10 +972,10 @@ In the prespecified eight-seed pilot, one seed already met the numerical stabili
 
 ### Consequences
 
-**Code affected:** Phase 4 production settings only.  
-**Analyses affected:** Map-level viability is the mean of two nested technical continuations.  
-**Figures affected:** None in Phase 4.  
-**Manuscript sections affected:** Future Statistical Methods and captions.  
+**Code affected:** Phase 4 production settings only.
+**Analyses affected:** Map-level viability is the mean of two nested technical continuations.
+**Figures affected:** None in Phase 4.
+**Manuscript sections affected:** Future Statistical Methods and captions.
 **Previously generated outputs invalidated:** None; pilot outputs are diagnostic only.
 
 ### Verification required
@@ -990,10 +990,10 @@ Resolves P02.
 
 ## D18 — P03 36-generation intervention horizon
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 4 pre-production freeze  
-**Phase:** Corrected core production  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 4 pre-production freeze
+**Phase:** Corrected core production
 **Reviewer items affected:** R1.2, R1.4, R1.6
 
 ### Decision
@@ -1011,10 +1011,10 @@ Against the prespecified 36-generation reference, the 12-generation horizon fail
 
 ### Consequences
 
-**Code affected:** Phase 4 production settings only.  
-**Analyses affected:** Primary mean-future-fitness viability is averaged over 36 generations.  
-**Figures affected:** None in Phase 4.  
-**Manuscript sections affected:** Future intervention Methods.  
+**Code affected:** Phase 4 production settings only.
+**Analyses affected:** Primary mean-future-fitness viability is averaged over 36 generations.
+**Figures affected:** None in Phase 4.
+**Manuscript sections affected:** Future intervention Methods.
 **Previously generated outputs invalidated:** Submitted 24-generation intervention estimates remain non-confirmatory.
 
 ### Verification required
@@ -1029,10 +1029,10 @@ Resolves P03.
 
 ## D19 — P04 strict one-percent recovery target
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 4 pre-production freeze  
-**Phase:** Corrected core production  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 4 pre-production freeze
+**Phase:** Corrected core production
 **Reviewer items affected:** R1.4, R1.5
 
 ### Decision
@@ -1060,10 +1060,10 @@ The one-percent target preserves the submitted strict recovery standard rather t
 
 ### Consequences
 
-**Code affected:** Phase 4 target rule.  
-**Analyses affected:** Replicate-specific target detection and censoring.  
-**Figures affected:** None in Phase 4.  
-**Manuscript sections affected:** Future intervention and statistical Methods.  
+**Code affected:** Phase 4 target rule.
+**Analyses affected:** Replicate-specific target detection and censoring.
+**Figures affected:** None in Phase 4.
+**Manuscript sections affected:** Future intervention and statistical Methods.
 **Previously generated outputs invalidated:** Submitted interpolated and ordinary lower-bound estimates.
 
 ### Verification required
@@ -1078,10 +1078,10 @@ Resolves P04.
 
 ## D20 — P05 conservative pooled primary frontier
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 4 pre-production freeze  
-**Phase:** Corrected core production  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 4 pre-production freeze
+**Phase:** Corrected core production
 **Reviewer items affected:** R1.4, R1.5, R2.5.9
 
 ### Decision
@@ -1108,10 +1108,10 @@ The pooled neutral/conservative family samples multiple forms of information los
 
 ### Consequences
 
-**Code affected:** Phase 4 map panel and frontier input.  
-**Analyses affected:** All Gate 4 semantic estimates.  
-**Figures affected:** None in Phase 4.  
-**Manuscript sections affected:** Future intervention Methods and method-ablation supplement.  
+**Code affected:** Phase 4 map panel and frontier input.
+**Analyses affected:** All Gate 4 semantic estimates.
+**Figures affected:** None in Phase 4.
+**Manuscript sections affected:** Future intervention Methods and method-ablation supplement.
 **Previously generated outputs invalidated:** Submitted binned, smoothed, interpolated, and k-means-sensitive primary frontiers.
 
 ### Verification required
@@ -1126,10 +1126,10 @@ Resolves P05. P06 remains deferred because affinity-profile clustering is not ru
 
 ## D21 — Phase 5 is restricted to the primary Gate 4 fidelity and archived core reference
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 5 pre-production freeze  
-**Phase:** Causal specificity  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 5 pre-production freeze
+**Phase:** Causal specificity
 **Reviewer items affected:** R1.2, R1.5, R2.3
 
 ### Decision
@@ -1142,9 +1142,9 @@ Gate 4 designated `p = 1.0` as the primary confirmatory fidelity. Phase 5 asks w
 
 ### Consequences
 
-**Code affected:** New Phase 5 control module only.  
-**Analyses affected:** Focused causal controls and Gate 5.  
-**Figures affected:** No final figures.  
+**Code affected:** New Phase 5 control module only.
+**Analyses affected:** Focused causal controls and Gate 5.
+**Figures affected:** No final figures.
 **Previously generated outputs invalidated:** None.
 
 ### Verification required
@@ -1159,10 +1159,10 @@ None.
 
 ## D22 — Neutral and reduced selection use an explicit mixture law
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 5 pre-production freeze  
-**Phase:** Causal specificity  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 5 pre-production freeze
+**Phase:** Causal specificity
 **Reviewer items affected:** R1.2
 
 ### Decision
@@ -1185,10 +1185,10 @@ None.
 
 ## D23 — Mapping disruptions use two nested complete realizations per archived baseline
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 5 pre-production freeze  
-**Phase:** Causal specificity  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 5 pre-production freeze
+**Phase:** Causal specificity
 **Reviewer items affected:** R1.2
 
 ### Decision
@@ -1211,10 +1211,10 @@ None.
 
 ## D24 — Alternative and unstable topology controls use a matched topology universe
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 5 pre-production freeze  
-**Phase:** Causal specificity  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 5 pre-production freeze
+**Phase:** Causal specificity
 **Reviewer items affected:** R1.2, R2.3
 
 ### Decision
@@ -1237,10 +1237,10 @@ None.
 
 ## D25 — Gate 5 uses six paired value-of-information contrasts
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 5 pre-production freeze  
-**Phase:** Causal specificity  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 5 pre-production freeze
+**Phase:** Causal specificity
 **Reviewer items affected:** R1.2, R1.5
 
 ### Decision
@@ -1263,10 +1263,10 @@ None.
 
 ## D26 — Staged non-factorial robustness design
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Author opening prompt and Phase 6 pre-production freeze  
-**Phase:** Focused robustness and generality  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Author opening prompt and Phase 6 pre-production freeze
+**Phase:** Focused robustness and generality
 **Reviewer items affected:** R1.6, R2.5.1–R2.5.7
 
 ### Decision
@@ -1283,9 +1283,9 @@ Resolves P07 for this revision.
 
 ## D27 — Fixed regime thresholds
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 6 pre-production freeze  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 6 pre-production freeze
 **Phase:** Focused robustness and generality
 
 ### Decision
@@ -1296,9 +1296,9 @@ Every classification must be reproducible from archived replicate rows and boots
 
 ## D28 — Structural variants preserve estimator and intervention logic
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 6 pre-production freeze  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 6 pre-production freeze
 **Phase:** Focused robustness and generality
 
 ### Decision
@@ -1309,9 +1309,9 @@ Constant and identity endpoints must recover exactly in every structural univers
 
 ## D29 — Deterministic Stage D selection and archived default reference
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 6 pre-production freeze  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 6 pre-production freeze
 **Phase:** Focused robustness and generality
 
 ### Decision
@@ -1322,9 +1322,9 @@ Archive the candidate table, depth/boundary scores, selected IDs, and Phase 4 so
 
 ## D30 — Prespecified broad, narrow, or no-generality decision
 
-**Date:** 2026-07-31  
-**Status:** APPROVED  
-**Requested by:** Phase 6 pre-production freeze  
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 6 pre-production freeze
 **Phase:** Focused robustness and generality
 
 ### Decision
@@ -1332,3 +1332,45 @@ Apply the Gate 7 rules in `PHASE_06_PLAN.md` before result freeze. Report design
 
 ### Verification required
 The Gate file must evaluate every criterion separately and cannot be overridden by visual inspection.
+
+---
+
+## D31 — Gate 7 broad generality decision
+
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 6 prespecified Gate evaluation
+**Phase:** Focused robustness and generality
+**Reviewer items affected:** R1.6, R2.5.1–R2.5.7
+
+### Decision
+
+Gate 7 passes with **broad generality supported within the prespecified Model B design domain**.
+
+The decision follows the D30 rules without visual override:
+
+- Stage A R2/R3 fraction: `0.71875`;
+- Stage B1 R2/R3 fraction: `0.375`;
+- structural-family support: `4/4`;
+- archived default plus two nondefault Stage D representatives confirmed;
+- exact identity recovery and intact Phase 4/5 archives.
+
+### Rationale
+
+The viability-relevant effect persists across a substantial part of the focused mechanistic map, a global space-filling sample, and multiple window, positional, metabolite-state, and fitness-scale variants. The design also retains null, syntactic-only, boundary, viability-relevant, and strong-adaptation regions, showing that the classifier does not label all parameter settings positive.
+
+### Consequences
+
+**Code affected:** No further model, estimator, grouping, or causal-control change is authorized by this decision.
+**Analyses affected:** Phase 6 is closed; the next analytical action is result freeze.
+**Figures affected:** Final figures remain blocked until Gate 8.
+**Manuscript sections affected:** Later Results and Discussion may state broad support only within the tested model domain and must report the fraction-normalized and boundary limitations.
+**Previously generated outputs invalidated:** None.
+
+### Verification required
+
+Gate 7 must recompute from `results/phase6_generality/`, all Phase 4/5 manifest hashes must match, and the Phase 6 validator must pass.
+
+### Supersedes
+
+None.

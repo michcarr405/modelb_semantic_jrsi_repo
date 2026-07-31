@@ -1,0 +1,9 @@
+{
+  "confirm_id": "D1",
+  "design_id": "B2_reward3",
+  "replicate": 7,
+  "baseline_replicate": "D1_r07",
+  "corrected_information": 0.2623608471976651,
+  "spec_json": "{\"b_ratio\": 1.6666666666666667, \"bias\": 2.0, \"fitness_mode\": \"count\", \"floor\": 0.1, \"jitter\": 0, \"motif_length\": 5, \"mutation_rate\": 0.001, \"n_cells\": 80, \"n_gens\": 150, \"n_metabolites\": 4, \"n_segments\": 4, \"n_seqs\": 8, \"p\": 1.0, \"penalty\": 0.75, \"penalty_ratio\": 0.25, \"reward\": 3, \"segment_order\": \"native\", \"seq_len\": 60, \"sigma\": 1.0, \"sigma_ratio\": 0.8333333333333334, \"stride\": 1, \"temperature\": 1.2}",
+  "state_hash": "53c1b7d3a4bd6040d25d3969254f6b513bb1ee98b449214feb8ff02b27570ccf"
+}

@@ -1,0 +1,8 @@
+{
+  "screen_perms": 60,
+  "confirm_perms": 120,
+  "continuations": 2,
+  "horizon": 36,
+  "bootstrap": 2000,
+  "root_seed": 2026073106
+}

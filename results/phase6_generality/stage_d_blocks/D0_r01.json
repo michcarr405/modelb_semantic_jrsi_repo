@@ -1,0 +1,9 @@
+{
+  "confirm_id": "D0",
+  "design_id": "A_high_2",
+  "replicate": 1,
+  "baseline_replicate": "D0_r01",
+  "corrected_information": 0.06281255471717895,
+  "spec_json": "{\"b_ratio\": 2.5, \"bias\": 3.0, \"fitness_mode\": \"count\", \"floor\": 0.1, \"jitter\": 0, \"motif_length\": 5, \"mutation_rate\": 0.001, \"n_cells\": 80, \"n_gens\": 150, \"n_metabolites\": 4, \"n_segments\": 4, \"n_seqs\": 8, \"p\": 0.49988902632934684, \"penalty\": 0.5, \"penalty_ratio\": 0.25, \"reward\": 2.0, \"segment_order\": \"native\", \"seq_len\": 60, \"sigma\": 0.6583592655299071, \"sigma_ratio\": 0.5486327212749226, \"stride\": 1, \"temperature\": 1.2}",
+  "state_hash": "0d442c707fb77a5106e7d9ee472e53d64b32c78efb7027839c98501cb24de8b8"
+}

@@ -29,6 +29,7 @@ This matrix is subordinate to `REVISION_SPEC_v2.md`. If a proposed action confli
 | Gate 3 — statistical-pipeline validity | `PASSED` | `STATISTICAL_PIPELINE_VALIDATION.md`; `PHASE_03_HANDOFF.md` |
 | Gate 4 — core-result survival | `PASSED` | `CORE_RESULT_SURVIVAL.md`; `VALIDATION_PHASE4.md`; `PHASE_04_HANDOFF.md` |
 | Gate 5 — causal specificity | `PASSED` | `CAUSAL_SPECIFICITY.md`; `VALIDATION_PHASE5.md`; `PHASE_05_HANDOFF.md` |
+| Gate 7 — generality | `PASSED` | `GENERALITY_ANALYSIS.md`; `VALIDATION_PHASE6.md`; `PHASE_06_HANDOFF.md` |
 
 ## Revision-order rule
 
@@ -117,9 +118,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Use a staged sensitivity design after the corrected core result is established. |
 | **Required action** | Construct a focused phase diagram over inheritance and effective affinity/noise ratios; then use a space-filling screen over major structural parameters. Apply the full semantic pipeline only to representative regions. |
 | **Dependency** | Core corrected analysis and causal controls must be frozen. |
-| **Evidence** | Phase map distinguishing null, syntactic-only, viability-relevant, and strong-adaptation regimes; sensitivity summary with uncertainty. |
+| **Evidence** | Phase 6 distinguishes R0, R1, R2, R3, and boundary regions. Stage A has 23/32 R2/R3 points, Stage B1 has 6/16, all four structural families retain R2/R3 support, and two nondefault full semantic confirmations pass. See `GENERALITY_ANALYSIS.md`. |
 | **Manuscript location** | Methods; Results; Discussion; supplement. |
-| **Status** | `PLANNED` |
+| **Status** | `VERIFIED` |
 
 ## R1.7 — Claims exceed what the model establishes
 
@@ -215,9 +216,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | State that four is a tractable, nontrivial default topology, not an empirical chemical classification. |
 | **Required action** | Add rationale and parameter-table entry. Include metabolite-class number in staged structural sensitivity analysis with matched topology density and effect scale. |
 | **Dependency** | Sensitivity phase. |
-| **Evidence** | Results for alternative class counts or a clearly prespecified subset; normalized information diagnostic. |
+| **Evidence** | Matched 3- and 6-state structural controls both remain R3. Final parameter-table wording remains pending. |
 | **Manuscript location** | Model overview; parameter table; sensitivity Methods and Results. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R2.5.2 — Why does every overlapping motif sample a metabolite?
 
@@ -227,9 +228,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Reinterpret the variable accurately as a transient probabilistic local chemical-state assignment, not literal simultaneous ligand occupancy. |
 | **Required action** | Rewrite all binding language. Add a model-figure note and a limitations statement. Include motif-window density or non-overlap in focused structural robustness if retained in the final scope. |
 | **Dependency** | Model-structure sensitivity decision. |
-| **Evidence** | Terminology audit; optional stride/non-overlap robustness results. |
+| **Evidence** | Strides 2 and 5 remain R3 and stride 7 remains R2. Terminology and limitations prose remain pending. |
 | **Manuscript location** | Model overview; sampling Methods; Figure 1; Discussion limitations. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R2.5.3 — Status of `(0,2)` and `(2,0)`
 
@@ -251,9 +252,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Describe them as four equal positional bins over motif-window start locations, not literal RNA domains. |
 | **Required action** | Specify positions 1–14, 15–28, 29–42, and 43–56 and favored-state order `2,0,3,1`. Explain that four is a balanced default. Include segment architecture in sensitivity analysis. |
 | **Dependency** | Implementation audit and sensitivity phase. |
-| **Evidence** | Exact boundary test; segment-count/order robustness where included. |
+| **Evidence** | Two- and eight-segment variants, reversed order, and non-heritable boundary jitter all remain R3. Final prose remains pending. |
 | **Manuscript location** | Sampling Methods; Figure 1; parameter table. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R2.5.5 — Meaning of the logit equation and choice of `b=2.0`
 
@@ -263,9 +264,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Rewrite the equation in clear indexed and piecewise form. Describe `b=2.0` as a dimensionless moderate default, not a weak empirical effect. |
 | **Required action** | Quantify its consequence at the default temperature; vary `b/Theta` in the focused phase diagram. |
 | **Dependency** | Notation audit and sensitivity phase. |
-| **Evidence** | Probability calculation and parameter sweep. |
+| **Evidence** | Stage A varies `b/Theta` without a full factorial cube and maps null, boundary, R2, and R3 behavior. Equation rewrite remains pending. |
 | **Manuscript location** | Sampling Methods; parameter table; sensitivity Results. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R2.5.6 — Why is the softmax temperature `1.2`?
 
@@ -275,9 +276,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Call it a dimensionless softmax temperature or sampling-noise scale. |
 | **Required action** | Explain limiting behavior and analyze effective ratios `sigma_a/Theta` and `b/Theta`. Include temperature in sensitivity analysis. |
 | **Dependency** | Sensitivity phase. |
-| **Evidence** | Phase diagram or focused temperature sweep. |
+| **Evidence** | Stage A maps `sigma_a/Theta` and `b/Theta`; Stage B1 independently varies the sampling-noise scale. Final explanatory prose remains pending. |
 | **Manuscript location** | Sampling Methods; parameter table; sensitivity Results. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R2.5.7 — Why `F_min=0.1`, `r=2.0`, and `q=0.5`?
 
@@ -287,9 +288,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Treat the floor as a numerical safeguard and the reward/penalty asymmetry as phenomenological. |
 | **Required action** | Clarify that adjacency totals are mean counts per oligomer, not fractions. Report floor-hit frequency. Test floor and reward/penalty sensitivity and consider a fraction-normalized robustness formulation. |
 | **Dependency** | Implementation audit and sensitivity phase. |
-| **Evidence** | Floor-hit table; selected parameter robustness results. |
+| **Evidence** | Reward, penalty, and floor controls remain R3; fraction-normalized fitness is R1. Floor-hit reporting and final prose remain pending. |
 | **Manuscript location** | Fitness Methods; parameter table; sensitivity Results. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R2.5.8 — Population amplification, random environmental oligomers, and inheritance
 
@@ -353,7 +354,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | Replicate-frontier statistical pipeline | R1.5 | `VERIFIED` |
 | Corrected core production dataset and Gate 4 test | R1.3–R1.5, R1.8, R2.5.9 | `VERIFIED` |
 | Causal disruption controls | R1.2 | `VERIFIED` |
-| Focused sensitivity design | R1.6, R2.5.1, R2.5.4–R2.5.7 | `IN PROGRESS` |
+| Focused sensitivity design and Gate 7 | R1.6, R2.5.1, R2.5.4–R2.5.7 | `VERIFIED` |
 
 ## B. Manuscript deliverables
 

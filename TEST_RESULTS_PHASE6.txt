@@ -1,0 +1,28 @@
+Phase 6 regression and new-test record
+Date: 2026-07-31
+Environment: package environment inherited from the versioned Phase 5 release
+
+Tests were split into bounded invocations because the execution shell has a short wall-clock limit.
+
+PYTHONPATH=src pytest -q tests/test_information.py
+16 passed in 0.16s
+
+PYTHONPATH=src pytest -q tests/test_rng_and_integration.py
+11 passed in 2.15s
+
+PYTHONPATH=src pytest -q tests/test_statistical_pipeline.py -k 'one_frontier or continuations_are or independent_n or identity_endpoint or paired_endpoint or selective_target or control_target or target_not_reached or missing_identity or identity_viability or identity_information or duplicate_map_alias or conflicting_duplicate or monotone_frontier'
+14 passed, 13 deselected in 1.73s
+
+PYTHONPATH=src pytest -q tests/test_statistical_pipeline.py -k 'target_detection or target_reach_table or continuation_variance or block_bootstrap_reproducible or block_bootstrap_preserves_condition or bootstrap_semantic or replicate_level_permutation or permutation_rejects or permutation_refuses or permutation_can or paired_replicate or target_rule or block_bootstrap_preserves_censored'
+13 passed, 14 deselected in 32.40s
+
+PYTHONPATH=src pytest -q tests/test_phase4.py
+3 passed in 2.62s
+
+PYTHONPATH=src pytest -q tests/test_phase5.py
+6 passed in 3.40s
+
+PYTHONPATH=src pytest -q tests/test_phase6.py
+3 passed in 3.05s
+
+Total: 66 passed; 0 failed; 0 skipped.

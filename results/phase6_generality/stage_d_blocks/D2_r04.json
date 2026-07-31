@@ -1,0 +1,9 @@
+{
+  "confirm_id": "D2",
+  "design_id": "A_low_3",
+  "replicate": 4,
+  "baseline_replicate": "D2_r04",
+  "corrected_information": 0.10627566514248107,
+  "spec_json": "{\"b_ratio\": 0.5, \"bias\": 0.6, \"fitness_mode\": \"count\", \"floor\": 0.1, \"jitter\": 0, \"motif_length\": 5, \"mutation_rate\": 0.001, \"n_cells\": 80, \"n_gens\": 150, \"n_metabolites\": 4, \"n_segments\": 4, \"n_seqs\": 8, \"p\": 0.8843116249339884, \"penalty\": 0.5, \"penalty_ratio\": 0.25, \"reward\": 2.0, \"segment_order\": \"native\", \"seq_len\": 60, \"sigma\": 0.5823415369841755, \"sigma_ratio\": 0.48528461415347957, \"stride\": 1, \"temperature\": 1.2}",
+  "state_hash": "4d37f4b21bff45151f4eb5c3a4753ebdce6387d1305e4edf3ceaf629d5de8a6d"
+}
