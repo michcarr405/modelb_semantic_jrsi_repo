@@ -714,12 +714,18 @@ def run_control_baselines(
             pending.append(job)
     rows = list(existing_records.values())
     if pending:
-        with ProcessPoolExecutor(max_workers=settings.workers) as executor:
-            futures = [executor.submit(_baseline_job, job) for job in pending]
-            for index, future in enumerate(as_completed(futures), start=1):
-                rows.append(future.result())
-                if index % 10 == 0 or index == len(futures):
+        if settings.workers == 1:
+            for index, job in enumerate(pending, start=1):
+                rows.append(_baseline_job(job))
+                if index % 10 == 0 or index == len(pending):
                     print(f"Phase 5 baseline controls: {index}/{len(pending)} pending", flush=True)
+        else:
+            with ProcessPoolExecutor(max_workers=settings.workers) as executor:
+                futures = [executor.submit(_baseline_job, job) for job in pending]
+                for index, future in enumerate(as_completed(futures), start=1):
+                    rows.append(future.result())
+                    if index % 10 == 0 or index == len(futures):
+                        print(f"Phase 5 baseline controls: {index}/{len(pending)} pending", flush=True)
     frame = pd.DataFrame(rows).sort_values(["mode", "replicate"])
     frame.to_csv(path, index=False)
     return frame
@@ -1032,12 +1038,18 @@ def run_control_evaluations(
         )
     paths = list(existing_paths)
     if jobs:
-        with ProcessPoolExecutor(max_workers=settings.workers) as executor:
-            futures = [executor.submit(_evaluation_job, job) for job in jobs]
-            for index, future in enumerate(as_completed(futures), start=1):
-                paths.append(future.result())
-                if index % 10 == 0 or index == len(futures):
-                    print(f"Phase 5 control evaluations: {index}/{len(futures)} pending", flush=True)
+        if settings.workers == 1:
+            for index, job in enumerate(jobs, start=1):
+                paths.append(_evaluation_job(job))
+                if index % 10 == 0 or index == len(jobs):
+                    print(f"Phase 5 control evaluations: {index}/{len(jobs)} pending", flush=True)
+        else:
+            with ProcessPoolExecutor(max_workers=settings.workers) as executor:
+                futures = [executor.submit(_evaluation_job, job) for job in jobs]
+                for index, future in enumerate(as_completed(futures), start=1):
+                    paths.append(future.result())
+                    if index % 10 == 0 or index == len(futures):
+                        print(f"Phase 5 control evaluations: {index}/{len(futures)} pending", flush=True)
     expected = len(specs)
     if len(paths) != expected:
         raise RuntimeError(f"expected {expected} evaluation blocks, found {len(paths)}")
