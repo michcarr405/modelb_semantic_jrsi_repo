@@ -1,0 +1,16 @@
+preserved_info_bin,frontier_viability,support,method,frontier_viability_smooth
+0.0,0.0,12,affinity_rank_group,0.0
+0.02650321966586457,0.0,12,affinity_rank_group,0.75
+0.042006609318770836,0.75,12,kmeans_profile,1.0
+0.05300643933172914,1.0,12,kmeans_profile,1.0
+0.06850982898463541,1.0,12,kmeans_profile,1.0
+0.07950965899759371,1.0,12,kmeans_profile,1.0
+0.09501304865049998,1.0,12,kmeans_profile,1.0
+0.10601287866345828,1.0,12,kmeans_profile,1.0
+0.12151626831636454,1.0,12,kmeans_profile,1.0
+0.13251609832932285,1.0,12,kmeans_profile,1.0
+0.14869644888304218,1.0,10,kmeans_profile,1.0
+0.15901931799518743,1.0,12,kmeans_profile,1.0
+0.17617733600432406,1.0,10,kmeans_profile,1.0
+0.18595274602537354,1.0,11,kmeans_profile,1.0
+0.21299544820770677,1.0,20,prefix_group,1.0

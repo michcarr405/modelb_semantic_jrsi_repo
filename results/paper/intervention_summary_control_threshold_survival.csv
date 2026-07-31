@@ -1,0 +1,11 @@
+condition,viability_def,inherit_prob,analysis_set,methods,syntactic_info_mean,semantic_info_mean,semantic_efficiency_mean,value_of_information_mean,actual_viability_mean,frontier_max_viability,frontier_reaches_target,n_intervention_points
+control,threshold_survival,0.1,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.06344756586075374,0.0,0.0,0.0,0.0,0.0,True,504
+control,threshold_survival,0.2,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.06480087167841646,0.0,0.0,0.0,0.0,0.0,True,504
+control,threshold_survival,0.3,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.06616814537039688,0.0,0.0,0.0,0.0,0.0,True,504
+control,threshold_survival,0.4,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.06992169667337546,0.0,0.0,0.0,0.0,0.0,True,504
+control,threshold_survival,0.5,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.07551889401156793,0.0,0.0,0.0,0.0,0.0,True,504
+control,threshold_survival,0.6,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.0828860389613726,0.0,0.0,0.0,0.0,0.0,True,504
+control,threshold_survival,0.7,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.09761453736397303,0.0,0.0,0.0,0.0,0.0,True,504
+control,threshold_survival,0.8,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.12912157820748044,0.0,0.0,0.0,0.0,0.0,True,504
+control,threshold_survival,0.9,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.21330526974757677,0.0,0.0,0.0,0.0,0.0,True,504
+control,threshold_survival,1.0,primary_no_kmeans,balanced_random_group|affinity_rank_group|prefix_group,0.47962283913265136,0.0,0.0,0.0,0.0,0.0,True,504

@@ -1,0 +1,21 @@
+condition,inherit_prob,h,p_value,test,p_fdr_bh
+selective,0.1,83.00000000000006,8.565786366898037e-16,Kruskal-Wallis across viability definitions using threshold/smoothing grid,9.517540407664486e-16
+selective,0.2,83.00000000000006,8.565786366898037e-16,Kruskal-Wallis across viability definitions using threshold/smoothing grid,9.517540407664486e-16
+selective,0.3,83.00000000000006,8.565786366898037e-16,Kruskal-Wallis across viability definitions using threshold/smoothing grid,9.517540407664486e-16
+selective,0.4,83.00000000000006,8.565786366898037e-16,Kruskal-Wallis across viability definitions using threshold/smoothing grid,9.517540407664486e-16
+selective,0.5,83.00000000000006,8.565786366898037e-16,Kruskal-Wallis across viability definitions using threshold/smoothing grid,9.517540407664486e-16
+selective,0.6,83.00000000000006,8.565786366898037e-16,Kruskal-Wallis across viability definitions using threshold/smoothing grid,9.517540407664486e-16
+selective,0.7,83.00000000000006,8.565786366898037e-16,Kruskal-Wallis across viability definitions using threshold/smoothing grid,9.517540407664486e-16
+selective,0.8,83.00000000000006,8.565786366898037e-16,Kruskal-Wallis across viability definitions using threshold/smoothing grid,9.517540407664486e-16
+selective,0.9,83.00000000000006,8.565786366898037e-16,Kruskal-Wallis across viability definitions using threshold/smoothing grid,9.517540407664486e-16
+selective,1.0,81.62319843761593,1.6502873666263298e-15,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.65028736662633e-15
+control,0.1,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0
+control,0.2,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0
+control,0.3,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0
+control,0.4,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0
+control,0.5,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0
+control,0.6,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0
+control,0.7,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0
+control,0.8,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0
+control,0.9,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0
+control,1.0,0.0,1.0,Kruskal-Wallis across viability definitions using threshold/smoothing grid,1.0

@@ -1,0 +1,11 @@
+condition,viability_def,inherit_prob,analysis_set,methods,syntactic_info_mean,semantic_info_mean,semantic_efficiency_mean,value_of_information_mean,actual_viability_mean,frontier_max_viability,frontier_reaches_target,n_intervention_points
+selective,negative_protocell_compositional_entropy,0.1,kmeans_profile_only_mechanistic,kmeans_profile,0.258360131787919,0.0,0.0,0.07876499343283072,-7.590026953528047,-7.488306052407113,True,168
+selective,negative_protocell_compositional_entropy,0.2,kmeans_profile_only_mechanistic,kmeans_profile,0.2598110360032116,0.0,0.0,0.09255742867734273,-7.62349731869979,-7.512322649343515,True,168
+selective,negative_protocell_compositional_entropy,0.3,kmeans_profile_only_mechanistic,kmeans_profile,0.26267171224536273,0.0,0.0,0.10842067083733298,-7.701124553282234,-7.5682518556355,True,168
+selective,negative_protocell_compositional_entropy,0.4,kmeans_profile_only_mechanistic,kmeans_profile,0.26381993784522756,0.0,0.0,0.1223037838516392,-7.8187129896741725,-7.673202926638233,True,168
+selective,negative_protocell_compositional_entropy,0.5,kmeans_profile_only_mechanistic,kmeans_profile,0.2662139335681853,0.0,0.0,0.12069813505467675,-7.974220040980597,-7.811485760364979,True,168
+selective,negative_protocell_compositional_entropy,0.6,kmeans_profile_only_mechanistic,kmeans_profile,0.2748300017137411,0.0,0.0,0.1233315115660556,-8.192055820149696,-8.020081975758995,True,168
+selective,negative_protocell_compositional_entropy,0.7,kmeans_profile_only_mechanistic,kmeans_profile,0.2843097549720318,0.0,0.0,0.25835388198271936,-8.417098891087848,-8.245437564718536,True,168
+selective,negative_protocell_compositional_entropy,0.8,kmeans_profile_only_mechanistic,kmeans_profile,0.31097844574695727,0.0,0.0,0.22674943410613047,-8.76043365086226,-8.487245111715946,True,168
+selective,negative_protocell_compositional_entropy,0.9,kmeans_profile_only_mechanistic,kmeans_profile,0.379206875444079,0.0,0.0,0.4267947416132376,-9.032171562263715,-8.50504746551323,True,168
+selective,negative_protocell_compositional_entropy,1.0,kmeans_profile_only_mechanistic,kmeans_profile,0.5214150241149633,0.0,0.0,0.8169539160730626,-5.982949385463919,-5.191556043034313,True,168
