@@ -1,0 +1,12 @@
+{
+  "n_baseline_replicates": 20,
+  "continuation_count": 2,
+  "intervention_horizon": 36,
+  "target_tolerance": 0.01,
+  "n_information_permutations": 200,
+  "n_bootstrap": 2000,
+  "n_inference_permutations": 9999,
+  "root_seed": 2026073105,
+  "phase4_root_seed": 2026073104,
+  "workers": 1
+}

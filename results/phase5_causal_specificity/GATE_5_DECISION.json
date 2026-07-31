@@ -1,0 +1,14 @@
+{
+  "gate": "Gate 5 - causal specificity",
+  "status": "PASSED",
+  "primary_fidelity": 1.0,
+  "n_independent_seed_blocks": 20,
+  "n_prespecified_contrasts": 6,
+  "n_contrasts_passed": 6,
+  "all_six_contrasts_passed": true,
+  "all_identity_endpoints_recovered": true,
+  "phase4_archive_unchanged": true,
+  "censoring_retained": true,
+  "primary_metric": "value_of_information",
+  "multiple_testing": "Benjamini-Hochberg across six prespecified paired contrasts"
+}

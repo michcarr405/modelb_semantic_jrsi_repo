@@ -28,6 +28,7 @@ This matrix is subordinate to `REVISION_SPEC_v2.md`. If a proposed action confli
 | Gate 2 — information-measure validity | `PASSED` | `INFORMATION_MEASURE_VALIDATION.md`; `PHASE_02_HANDOFF.md` |
 | Gate 3 — statistical-pipeline validity | `PASSED` | `STATISTICAL_PIPELINE_VALIDATION.md`; `PHASE_03_HANDOFF.md` |
 | Gate 4 — core-result survival | `PASSED` | `CORE_RESULT_SURVIVAL.md`; `VALIDATION_PHASE4.md`; `PHASE_04_HANDOFF.md` |
+| Gate 5 — causal specificity | `PASSED` | `CAUSAL_SPECIFICITY.md`; `VALIDATION_PHASE5.md`; `PHASE_05_HANDOFF.md` |
 
 ## Revision-order rule
 
@@ -68,9 +69,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Treat the existence of a causal channel as built into the architecture; test whether evolution produces mapping-specific enrichment beyond that baseline. |
 | **Required action** | Add selection-strength controls, complete affinity-profile reassignment, post-evolution fitness-map mismatch, alternative stable topologies, and a temporally unstable map null. |
 | **Dependency** | Corrected information estimator and replicate-specific frontier pipeline. |
-| **Evidence** | Replicate-level reductions in semantic excess or value of information under mapping disruption and no/weak selection. |
+| **Evidence** | Phase 5 used 20 matched independently evolved seed blocks and the archived Phase 4 native/full-selection result. All six prespecified paired value-of-information contrasts were positive and survived BH correction (`q=0.0001` each): full minus neutral `6.0161`, full minus reduced `3.5161`, native minus affinity-reassigned `5.2156`, native minus topology-mismatch `1.8230`, alternative-native minus cross-evaluated `2.7761`, and stable minus temporally unstable `1.3347`. All 220 identity endpoints recovered exactly; the Phase 4 archive remained unchanged. |
 | **Manuscript location** | Methods: controls; Results: causal specificity; Discussion: built-in channel versus evolved alignment. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R1.3 — Positional segment bias confounds total motif–metabolite MI
 
@@ -190,9 +191,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Concede the qualitative direction of the baseline result and add analytical expectations. Reframe the baseline sweep as validation, not the main novelty. |
 | **Required action** | Derive the reduced transition logic and explain which outcomes are expected by construction versus which require simulation: threshold sharpness, finite-population behavior, semantic frontier, mapping specificity, and parameter dependence. |
 | **Dependency** | Corrected measures and final core results. |
-| **Evidence** | Analytical expectation subsection and comparison of predictions with simulation. |
+| **Evidence** | Phase 5 separates expected architectural sensitivity from evolved mapping specificity: positive value of information persisted in disruption controls, but full selection exceeded neutral and reduced selection, native mappings exceeded profile reassignment and topology mismatch, two alternative stable topologies showed native-over-cross excess, and a stable topology exceeded the changing-topology null. The analytical expectation subsection and manuscript comparison remain to be written after result freeze. |
 | **Manuscript location** | End of Introduction or start of Methods; Results framing; Discussion. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R2.4 — Add one or two visual model “life-cycle” figures
 
@@ -351,7 +352,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | Retained-information endpoint tests | R1.4 | `VERIFIED` |
 | Replicate-frontier statistical pipeline | R1.5 | `VERIFIED` |
 | Corrected core production dataset and Gate 4 test | R1.3–R1.5, R1.8, R2.5.9 | `VERIFIED` |
-| Causal disruption controls | R1.2 | `PLANNED` |
+| Causal disruption controls | R1.2 | `VERIFIED` |
 | Focused sensitivity design | R1.6, R2.5.1, R2.5.4–R2.5.7 | `PLANNED` |
 
 ## B. Manuscript deliverables
@@ -401,8 +402,8 @@ A suggestion that is not adopted must state:
 
 # Immediate next actions
 
-1. Freeze the pre-production choices required for P01–P05 without using confirmatory results to tune them.
-2. Begin Phase 4 with deterministic corrected core baseline and intervention production runs.
-3. Save evolved baseline states, grouping assignments and hashes, complete seed ledgers, continuation-level outputs, and replicate-level frontier summaries.
-4. Do not begin causal controls, final figures, or manuscript rewriting until the corrected core result has passed Gate 4.
+1. Preserve D16–D25 and the archived Phase 4 and Phase 5 states.
+2. Prespecify the staged, non-factorial model-structure and parameter-sensitivity design before production.
+3. Use independently evolved baseline populations as the inferential unit and retain explicit censoring.
+4. Do not create final figures or rewrite the manuscript until generality and result-freeze gates are decided.
 5. Continue updating this matrix at every phase gate.

@@ -1,0 +1,6 @@
+mode,same_state_hash,same_trajectory_hash
+selection_neutral,True,True
+selection_reduced,True,True
+alternative_a,True,True
+alternative_b,True,True
+temporally_unstable,True,True

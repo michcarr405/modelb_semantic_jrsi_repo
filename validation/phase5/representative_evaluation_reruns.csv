@@ -1,0 +1,6 @@
+condition,baseline_replicate,exact_table_match
+selection_neutral,selection_neutral_p1.0_r00,True
+affinity_reassigned,affinity_reassigned_p1.0_r00_q0,True
+topology_mismatch,topology_mismatch_p1.0_r00_q0,True
+alternative_a_native,alternative_a_native_p1.0_r00,True
+temporally_unstable,temporally_unstable_p1.0_r00,True

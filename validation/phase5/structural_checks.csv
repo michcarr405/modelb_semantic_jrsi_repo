@@ -1,0 +1,20 @@
+check,passed,detail
+phase4_archive_integrity,True,1215/1215 files match
+control_baseline_count,True,100
+evaluation_specification_count,True,220
+continuation_row_count,True,15400
+frontier_realization_count,True,220
+two_continuations_per_map,True,{2: 7700}
+identity_information_recovery,True,220
+identity_viability_recovery,True,220
+six_gate_contrasts,True,6
+all_gate_contrasts_pass,True,6
+matched_topology_universe,True,30
+alternative_topologies_nonnative,True,"A=topology_00, B=topology_11"
+complete_affinity_derangements,True,"n=40, max_fixed=0"
+two_topology_mismatches_per_seed,True,40
+mismatches_exclude_native,True,topology_06
+unstable_schedule_count,True,60
+unstable_schedules_no_immediate_repeat,True,60
+representative_baseline_reruns,True,"[{'mode': 'selection_neutral', 'same_state_hash': True, 'same_trajectory_hash': True}, {'mode': 'selection_reduced', 'same_state_hash': True, 'same_trajectory_hash': True}, {'mode': 'alternative_a', 'same_state_hash': True, 'same_trajectory_hash': True}, {'mode': 'alternative_b', 'same_state_hash': True, 'same_trajectory_hash': True}, {'mode': 'temporally_unstable', 'same_state_hash': True, 'same_trajectory_hash': True}]"
+representative_evaluation_reruns,True,"[{'condition': 'selection_neutral', 'baseline_replicate': 'selection_neutral_p1.0_r00', 'exact_table_match': True}, {'condition': 'affinity_reassigned', 'baseline_replicate': 'affinity_reassigned_p1.0_r00_q0', 'exact_table_match': True}, {'condition': 'topology_mismatch', 'baseline_replicate': 'topology_mismatch_p1.0_r00_q0', 'exact_table_match': True}, {'condition': 'alternative_a_native', 'baseline_replicate': 'alternative_a_native_p1.0_r00', 'exact_table_match': True}, {'condition': 'temporally_unstable', 'baseline_replicate': 'temporally_unstable_p1.0_r00', 'exact_table_match': True}]"

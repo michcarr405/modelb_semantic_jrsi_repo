@@ -1,6 +1,30 @@
+# JRSI major-revision Phase 5 branch
+
+**Current gate:** Gate 5 causal specificity passed.
+
+Phase 5 started from the versioned Phase 4 package, preserved D16–D20 and the archived core states, and implemented the prespecified causal controls without rerunning or retuning the corrected core analysis. The controlling Phase 5 records are:
+
+- `PHASE_05_PLAN.md`;
+- `revision/DECISIONS_LOG.md` entries D21–D25;
+- `CAUSAL_SPECIFICITY.md`;
+- `VALIDATION_PHASE5.md`;
+- `PHASE_05_HANDOFF.md`.
+
+Validated Phase 5 commands:
+
+```bash
+PYTHONPATH=src python scripts/run_phase5_production.py --workers 1
+PYTHONPATH=src python scripts/validate_phase5.py
+PYTHONPATH=src pytest -q
+```
+
+Gate 5 passed because all six prespecified replicate-level value-of-information contrasts were positive after BH correction, all identity endpoints recovered exactly, explicit censoring was retained, and the Phase 4 archive hashes remained unchanged. Broad sensitivity analysis, final figures, and manuscript rewriting remain blocked.
+
+---
+
 # JRSI major-revision Phase 4 branch
 
-**Current gate:** Gate 4 core-result survival passed.
+**Archived gate:** Gate 4 core-result survival passed.
 
 The corrected production pipeline is `scripts/run_phase4_production.py`. Its frozen settings, results, and validation are documented in:
 
@@ -19,7 +43,7 @@ PYTHONPATH=src python scripts/validate_phase4.py
 PYTHONPATH=src python -m pytest -q
 ```
 
-The submitted paper-mode outputs and legacy `run_pipeline.py` workflow below remain only for provenance and must not be used for revised scientific claims. No causal controls, final figures, or manuscript rewriting have yet been completed.
+The submitted paper-mode outputs and legacy `run_pipeline.py` workflow below remain only for provenance and must not be used for revised scientific claims. Phase 5 causal controls are now complete; final figures and manuscript rewriting have not begun.
 
 ---
 

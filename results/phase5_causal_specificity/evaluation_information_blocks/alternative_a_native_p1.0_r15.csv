@@ -1,0 +1,2 @@
+condition,control_family,realization,seed_block,baseline_replicate,source_baseline_id,affinity_mode,fixed_topology_id,selection_strength,conditional_information,corrected_conditional_information,profile_permutation_hash,n_profile_fixed_points
+alternative_a_native,alternative_a_native,0,15,alternative_a_native_p1.0_r15,alternative_a_p1.0_r15,native,topology_00,1.0,0.303914919376519,,,
