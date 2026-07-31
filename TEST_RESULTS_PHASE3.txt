@@ -1,0 +1,23 @@
+Phase 3 test record
+Date: 2026-07-31
+Scope: synthetic statistical validation and tiny identity-endpoint model diagnostic only
+Production simulations run: No
+Manuscript rewritten: No
+
+$ python -m pytest -q
+.....................................................                    [100%]
+53 passed
+
+$ python scripts/validate_statistical_pipeline.py
+- 12 independent synthetic baseline replicates
+- 12 replicate-specific frontiers
+- 288 continuation rows nested into 72 map-level rows
+- identity information recovered in all baseline blocks
+- paired identity viability recovered exactly in all baseline blocks
+- target-not-reached diagnostic returned right censoring and a 0.75 lower bound
+- complete-block bootstrap retained censoring without imputation
+- exact replicate-level permutation used 924 block assignments
+- tiny actual/identity model continuations had zero trajectory difference
+
+$ hidden global RNG scan over src/
+No matches.

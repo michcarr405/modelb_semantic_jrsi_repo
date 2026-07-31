@@ -26,7 +26,7 @@ This matrix is subordinate to `REVISION_SPEC_v2.md`. If a proposed action confli
 |---|---|---|
 | Gate 1 — code validity | `PASSED` | `PHASE_01_HANDOFF.md` |
 | Gate 2 — information-measure validity | `PASSED` | `INFORMATION_MEASURE_VALIDATION.md`; `PHASE_02_HANDOFF.md` |
-| Gate 3 — statistical-pipeline validity | `NOT STARTED` | Replicate-frontier and block-bootstrap validation pending |
+| Gate 3 — statistical-pipeline validity | `PASSED` | `STATISTICAL_PIPELINE_VALIDATION.md`; `PHASE_03_HANDOFF.md` |
 
 ## Revision-order rule
 
@@ -103,9 +103,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | The independently evolved baseline population is the primary inferential unit. |
 | **Required action** | Build one frontier and semantic estimate per baseline replicate; use replicate-level permutation tests and block bootstrap; treat continuation seeds as technical replicates. |
 | **Dependency** | Corrected intervention pipeline. |
-| **Evidence** | Raw replicate-level points, independent `n`, block-bootstrap intervals, target-reached fractions, and censored-case handling. |
+| **Evidence** | Phase 3: one frontier per independent baseline replicate, nested continuation aggregation, exact identity recovery, explicit right censoring, complete-block bootstrap, target-reach counts, and replicate-level permutation tests are validated on synthetic/tiny diagnostic data. Corrected production evidence remains pending. |
 | **Manuscript location** | Statistical Methods; Results; every relevant figure caption. |
-| **Status** | `PLANNED` |
+| **Status** | `PILOT PASSED` |
 
 ## R1.6 — Insufficient parameter sensitivity and generality
 
@@ -348,7 +348,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | Grouping-map inventory | R1.4, R1.5, R2.5.9 | `VERIFIED` |
 | Conditional-MI validation suite | R1.3 | `VERIFIED` |
 | Retained-information endpoint tests | R1.4 | `VERIFIED` |
-| Replicate-frontier statistical pipeline | R1.5 | `NOT STARTED` |
+| Replicate-frontier statistical pipeline | R1.5 | `VERIFIED` |
 | Causal disruption controls | R1.2 | `PLANNED` |
 | Focused sensitivity design | R1.6, R2.5.1, R2.5.4–R2.5.7 | `PLANNED` |
 
@@ -399,8 +399,8 @@ A suggestion that is not adopted must state:
 
 # Immediate next actions
 
-1. Confirm that all reviewer comments are represented in this matrix.
-2. Enter the exact journal comment text into a separate response-letter working file.
-3. Begin Phase 1 with the RNG, implementation, and grouping-map audit.
-4. Update this matrix at every phase gate.
-5. Do not mark manuscript-only wording changes complete until the supporting code or analysis has been verified.
+1. Freeze the pre-production choices required for P01–P05 without using confirmatory results to tune them.
+2. Begin Phase 4 with deterministic corrected core baseline and intervention production runs.
+3. Save evolved baseline states, grouping assignments and hashes, complete seed ledgers, continuation-level outputs, and replicate-level frontier summaries.
+4. Do not begin causal controls, final figures, or manuscript rewriting until the corrected core result has passed Gate 4.
+5. Continue updating this matrix at every phase gate.

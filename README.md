@@ -1,3 +1,20 @@
+# JRSI major-revision validation branch
+
+**Current gate:** Phase 3 statistical-pipeline validity passed.
+
+The submitted paper-mode outputs and the legacy `run_pipeline.py` workflow below are retained only for provenance. They are **not** the corrected revision production pipeline and must not be used to generate revised scientific claims. The corrected production rerun remains blocked until the pre-production choices in `PHASE_03_HANDOFF.md` are frozen.
+
+Validated Phase 3 commands:
+
+```bash
+python -m pytest -q
+python scripts/validate_statistical_pipeline.py
+```
+
+These commands use unit tests, synthetic continuation tables, and one tiny identity-endpoint diagnostic only. See `STATISTICAL_PIPELINE_VALIDATION.md`.
+
+---
+
 # Model B Semantic Information: JSRI-ready standalone analysis repo
 
 This repository reruns the **full original Model B implementation** and adds an end-to-end intervention-based semantic-information analysis designed for a manuscript targeting **J. R. Soc. Interface**.
