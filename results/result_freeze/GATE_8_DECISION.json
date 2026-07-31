@@ -1,0 +1,16 @@
+{
+  "gate": "Gate 8 - Result freeze",
+  "status": "PASSED",
+  "starting_commit": "f9a3030",
+  "preserved_decisions": "D16-D31",
+  "archive_integrity": true,
+  "figure_source_verification": true,
+  "inferential_record_verification": true,
+  "n_inventory_rows": 2107,
+  "n_figure_source_tables": 11,
+  "n_inferential_checks": 28,
+  "n_inferential_checks_passed": 28,
+  "final_publication_figures_created": false,
+  "manuscript_rewritten": false,
+  "scientific_outputs_changed": false
+}

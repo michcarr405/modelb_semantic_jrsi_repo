@@ -1,0 +1,10 @@
+control_family,n_frontier_realizations,n_seed_blocks,n_target_reached,n_right_censored,target_reached_fraction
+affinity_reassigned,40,20,40,0,1.0
+alternative_a_cross_b,20,20,20,0,1.0
+alternative_a_native,20,20,20,0,1.0
+alternative_b_cross_a,20,20,20,0,1.0
+alternative_b_native,20,20,20,0,1.0
+selection_neutral,20,20,20,0,1.0
+selection_reduced,20,20,20,0,1.0
+temporally_unstable,20,20,20,0,1.0
+topology_mismatch,40,20,40,0,1.0

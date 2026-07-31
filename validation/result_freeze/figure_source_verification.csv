@@ -1,0 +1,12 @@
+table_name,check,passed
+causal_specificity_contrasts.csv,exact_copy,True
+causal_specificity_seed_blocks.csv,wide_long_roundtrip,True
+core_frontier_points.csv,exact_copy,True
+core_inference_records.csv,component_row_counts,True
+core_information_replicates.csv,exact_selected_columns,True
+core_semantic_replicates.csv,exact_copy,True
+generality_confirmatory_replicates.csv,exact_copy,True
+generality_confirmatory_summary.csv,exact_copy,True
+generality_protocol_summary.csv,exact_copy,True
+generality_screen_replicates.csv,expected_rows,True
+generality_screen_summary.csv,exact_copy,True

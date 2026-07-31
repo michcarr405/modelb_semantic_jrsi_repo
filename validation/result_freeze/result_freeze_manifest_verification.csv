@@ -1,0 +1,16 @@
+relative_path,exists,size_matches,hash_matches
+FIGURE_SOURCE_CATALOG.csv,True,True,True
+GATE_8_DECISION.json,True,True,True
+INFERENTIAL_RECORD_AUDIT.csv,True,True,True
+RESULT_INVENTORY.csv,True,True,True
+figure_sources/causal_specificity_contrasts.csv,True,True,True
+figure_sources/causal_specificity_seed_blocks.csv,True,True,True
+figure_sources/core_frontier_points.csv,True,True,True
+figure_sources/core_inference_records.csv,True,True,True
+figure_sources/core_information_replicates.csv,True,True,True
+figure_sources/core_semantic_replicates.csv,True,True,True
+figure_sources/generality_confirmatory_replicates.csv,True,True,True
+figure_sources/generality_confirmatory_summary.csv,True,True,True
+figure_sources/generality_protocol_summary.csv,True,True,True
+figure_sources/generality_screen_replicates.csv,True,True,True
+figure_sources/generality_screen_summary.csv,True,True,True

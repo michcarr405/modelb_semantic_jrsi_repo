@@ -29,7 +29,9 @@ This matrix is subordinate to `REVISION_SPEC_v2.md`. If a proposed action confli
 | Gate 3 — statistical-pipeline validity | `PASSED` | `STATISTICAL_PIPELINE_VALIDATION.md`; `PHASE_03_HANDOFF.md` |
 | Gate 4 — core-result survival | `PASSED` | `CORE_RESULT_SURVIVAL.md`; `VALIDATION_PHASE4.md`; `PHASE_04_HANDOFF.md` |
 | Gate 5 — causal specificity | `PASSED` | `CAUSAL_SPECIFICITY.md`; `VALIDATION_PHASE5.md`; `PHASE_05_HANDOFF.md` |
+| Gate 6 — inheritance-scope and wording audit | `PENDING` | Manuscript-stage audit required after result freeze |
 | Gate 7 — generality | `PASSED` | `GENERALITY_ANALYSIS.md`; `VALIDATION_PHASE6.md`; `PHASE_06_HANDOFF.md` |
+| Gate 8 — result freeze | `PASSED` | `RESULT_FREEZE.md`; `VALIDATION_RESULT_FREEZE.md`; `PHASE_07_HANDOFF.md` |
 
 ## Revision-order rule
 
@@ -70,7 +72,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Treat the existence of a causal channel as built into the architecture; test whether evolution produces mapping-specific enrichment beyond that baseline. |
 | **Required action** | Add selection-strength controls, complete affinity-profile reassignment, post-evolution fitness-map mismatch, alternative stable topologies, and a temporally unstable map null. |
 | **Dependency** | Corrected information estimator and replicate-specific frontier pipeline. |
-| **Evidence** | Phase 5 used 20 matched independently evolved seed blocks and the archived Phase 4 native/full-selection result. All six prespecified paired value-of-information contrasts were positive and survived BH correction (`q=0.0001` each): full minus neutral `6.0161`, full minus reduced `3.5161`, native minus affinity-reassigned `5.2156`, native minus topology-mismatch `1.8230`, alternative-native minus cross-evaluated `2.7761`, and stable minus temporally unstable `1.3347`. All 220 identity endpoints recovered exactly; the Phase 4 archive remained unchanged. |
+| **Evidence** | Phase 5 used 20 matched independently evolved seed blocks and the archived Phase 4 native/full-selection result. All six prespecified paired value-of-information contrasts were positive and survived BH correction (`q=0.0001` each): full minus neutral `6.0161`, full minus reduced `3.5161`, native minus affinity-reassigned `5.2156`, native minus topology-mismatch `1.8230`, alternative-native minus cross-evaluated `2.7761`, and stable minus temporally unstable `1.3347`. All 220 identity endpoints recovered exactly; the Phase 4 archive remained unchanged. Gate 8 independently recomputed the seed-block aggregation, six paired tests, and 12,000 bootstrap draws from the archived tables. |
 | **Manuscript location** | Methods: controls; Results: causal specificity; Discussion: built-in channel versus evolved alignment. |
 | **Status** | `IN PROGRESS` |
 
@@ -82,7 +84,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Replace raw MI as the primary sequence-specific measure with position-conditioned MI. |
 | **Required action** | Calculate `I(M;Z|S)`, permutation-correct it within segment, and report `I(M;S)`. Consider exact-position conditioning as a robustness check. |
 | **Dependency** | Code validation and MI unit tests. |
-| **Evidence** | Phase 4 production: 400 independent evolved baselines were analyzed with 200 within-segment permutations each. At fidelity 1.0, corrected conditional information differed by 0.25342 bits (selective minus agnostic; replicate-level permutation p=0.0001); the agnostic mean was -0.00023 bits. |
+| **Evidence** | Phase 4 production: 400 independent evolved baselines were analyzed with 200 within-segment permutations each. At fidelity 1.0, corrected conditional information differed by 0.25342 bits (selective minus agnostic; replicate-level permutation p=0.0001); the agnostic mean was -0.00023 bits. Gate 8 recomputed all 30 Phase 4 replicate-level permutation records and all 80 block-bootstrap intervals exactly within numerical tolerance. |
 | **Manuscript location** | Analytical expectations; Methods; Results; revised baseline figure. |
 | **Status** | `IN PROGRESS` |
 
@@ -94,7 +96,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Replace the heuristic with directly measured retained information. |
 | **Required action** | Compute `I(g(M);Z|S)` for every intervention. Add constant and identity endpoints. Compare empirical and expected-channel estimates where useful. |
 | **Dependency** | Corrected conditional-MI implementation and finalized grouping-map inventory. |
-| **Evidence** | Phase 4 production: actual retained information was computed for every one of 34 unique maps in every baseline block; all 400 identity endpoints recovered baseline information and paired viability exactly. The strict target was reached in all blocks without imputation. |
+| **Evidence** | Phase 4 production: actual retained information was computed for every one of 34 unique maps in every baseline block; all 400 identity endpoints recovered baseline information and paired viability exactly. The strict target was reached in all blocks without imputation. Gate 8 verified every endpoint, target, censoring, and frontier-source record from the frozen archive. |
 | **Manuscript location** | Methods; Appendix; all intervention figures and tables. |
 | **Status** | `IN PROGRESS` |
 
@@ -106,7 +108,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | The independently evolved baseline population is the primary inferential unit. |
 | **Required action** | Build one frontier and semantic estimate per baseline replicate; use replicate-level permutation tests and block bootstrap; treat continuation seeds as technical replicates. |
 | **Dependency** | Corrected intervention pipeline. |
-| **Evidence** | Phase 4 production: one frontier was constructed for each of 400 independent evolved baselines. Two continuation seeds were nested within map and baseline. Inference used 2,000 complete-block bootstrap draws per fidelity and replicate-level permutation tests; no intervention point or continuation seed was counted as independent. |
+| **Evidence** | Phase 4 production: one frontier was constructed for each of 400 independent evolved baselines. Two continuation seeds were nested within map and baseline. Inference used 2,000 complete-block bootstrap draws per fidelity and replicate-level permutation tests; no intervention point or continuation seed was counted as independent. Gate 8 verified 70 continuation rows per baseline block and reconstructed the replicate-level inferential records. |
 | **Manuscript location** | Statistical Methods; Results; every relevant figure caption. |
 | **Status** | `IN PROGRESS` |
 
@@ -130,9 +132,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Narrow the claims to model-defined viability-relevant information in an abstract protocell-like compositional-resampling model. |
 | **Required action** | Complete a manuscript-wide terminology audit; separate demonstration, theoretical implication, and speculation. Rewrite title and abstract last. |
 | **Dependency** | Final supported result and inheritance-scope wording must be frozen. |
-| **Evidence** | Consistent terminology in title, abstract, text, captions, and response letter. |
+| **Evidence** | The result-level claim and mandatory caveats are frozen in `FROZEN_CLAIMS_AND_LIMITATIONS.md`. Manuscript-wide implementation and Gate 6 wording verification remain pending. |
 | **Manuscript location** | Entire manuscript, especially title, abstract, Introduction, Discussion, and Conclusion. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R1.8 — Reproducibility and validation of AI-assisted code
 
@@ -142,7 +144,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Treat reproducibility as a formal phase gate before new production runs. |
 | **Required action** | Audit all RNG use; add deterministic tests, analytical checks, seed ledger, locked environment, exact commands, archived raw data, release tag, DOI, license, and clean-room rerun. |
 | **Dependency** | None; this is an initial prerequisite. |
-| **Evidence** | Phase 4: 57 tests pass; all states, assignments, hashes, trajectories, and seed ledgers are archived; a clean deterministic rerun reproduced one full baseline and its complete intervention block exactly. Release tag, DOI, license review, and external clean-room execution remain later release tasks. |
+| **Evidence** | Phase 4: deterministic baseline and intervention reruns passed. Gate 8 inventories 2,107 archived Phase 4–6 files, verifies all 2,104 manifest entries, recomputes the primary inferential records, and freezes a versioned source-table set. DOI, license review, and external clean-room execution remain final-release tasks. |
 | **Manuscript location** | Software and reproducibility subsection; Data accessibility; AI-use statement. |
 | **Status** | `IN PROGRESS` |
 
@@ -154,9 +156,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Rebuild figures after result freeze and perform a full production audit. |
 | **Required action** | Show raw independent replicates, define uncertainty and statistical unit, report target status, correct panel references, page numbering, placeholders, and author statements. |
 | **Dependency** | Final frozen datasets and statistical outputs. |
-| **Evidence** | Figure-source tables; caption checklist; final PDF audit record. |
+| **Evidence** | Gate 8 created and verified 11 traceable figure-source tables with raw independent replicates, frontiers, intervals, target status, causal contrasts, and generality records. Final visual construction, caption checklist, and PDF audit remain pending. |
 | **Manuscript location** | Figures, captions, supplementary figures, front and end matter. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 # Referee 2
 
@@ -180,9 +182,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | **Decision** | Retain the original operator as the principal and only inheritance model, but classify it accurately. No new inheritance simulations will be added. |
 | **Required action** | Describe Model B as a Wright–Fisher-like compositional-resampling model of abstract protocell-like units. Remove claims of literal physical partitioning or fission. Add a dedicated limitations paragraph. |
 | **Dependency** | Implementation audit. |
-| **Evidence** | Exact algorithmic description matched to code; wording audit across manuscript and figures. |
+| **Evidence** | The implementation audit confirms with-replacement compositional resampling, and `FROZEN_CLAIMS_AND_LIMITATIONS.md` freezes the required non-fission scope language. Gate 6 manuscript and figure wording audit remains pending. |
 | **Manuscript location** | Abstract; Model overview; transmission Methods; Discussion limitations; Figure 1. |
-| **Status** | `PLANNED` |
+| **Status** | `IN PROGRESS` |
 
 ## R2.3 — Some results appear deductively expected; model may be unnecessarily complicated
 
@@ -355,6 +357,9 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | Corrected core production dataset and Gate 4 test | R1.3–R1.5, R1.8, R2.5.9 | `VERIFIED` |
 | Causal disruption controls | R1.2 | `VERIFIED` |
 | Focused sensitivity design and Gate 7 | R1.6, R2.5.1, R2.5.4–R2.5.7 | `VERIFIED` |
+| Complete Phase 4–6 result inventory and archive audit | R1.8, R1.9 | `VERIFIED` |
+| Frozen inferential records and Gate 8 | R1.2–R1.6, R1.8 | `VERIFIED` |
+| Traceable figure-source tables | R1.5, R1.9, R2.4 | `VERIFIED` |
 
 ## B. Manuscript deliverables
 
@@ -369,7 +374,7 @@ No manuscript claim should be marked `VERIFIED` until its supporting analysis ha
 | Novelty comparison table | R1.1 | `PLANNED` |
 | Dedicated model-limitations subsection | R1.7, R2.2, R2.5.2, R2.5.8 | `PLANNED` |
 | Numbered equations and cross-references | R2.6.1 | `PLANNED` |
-| Revised abstract/title/conclusion | R1.1, R1.7, R2.2 | `BLOCKED` until result freeze |
+| Revised abstract/title/conclusion | R1.1, R1.7, R2.2 | `PLANNED` — Gate 8 passed; write last |
 
 # Reviewer-response template
 

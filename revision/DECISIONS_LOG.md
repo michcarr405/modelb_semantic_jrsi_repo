@@ -1424,3 +1424,50 @@ All Gate 8 criteria in `PHASE_07_PLAN.md` must pass, and the Phase 4–6 manifes
 ### Supersedes
 
 None.
+
+## D33 — Gate 8 passes and the result-level claim boundary is frozen
+
+**Date:** 2026-07-31
+**Status:** APPROVED
+**Requested by:** Phase 7 result-freeze audit
+**Phase:** Result freeze
+**Reviewer items affected:** R1.1–R1.9, R2.1–R2.6.2
+
+### Decision
+
+Gate 8 passes.
+
+The Phase 4–6 scientific result archive, the D16–D31 analysis design, the machine-readable inferential records, the figure-source tables, and the result-level claim boundary in `FROZEN_CLAIMS_AND_LIMITATIONS.md` are frozen for manuscript production.
+
+The maximum-strength supported conclusion is a model-specific statement that, within the tested sequence-explicit Wright–Fisher-like compositional-resampling domain, inherited sequence-dependent motif–local-state information can become causally relevant to future mean model fitness; full selection under a stable native mapping produces an additional mapping-specific viability contribution beyond built-in architectural sensitivity; and the effect persists across multiple tested parameter and structural alternatives.
+
+The release does not authorize claims of universality, biochemical realism, a historical origin-of-life transition, physical protocell fission, semantic compression, a universal critical threshold, or invariance to every fitness formulation.
+
+### Rationale
+
+The result-freeze audit verified all 2,104 Phase 4–6 manifest entries, accounted for 2,107 archive files including three self-manifests, recomputed all 28 primary inferential and structural checks, and verified 11 traceable figure-source tables. No production simulation, archived result, final figure, or manuscript section changed during the phase.
+
+### Alternatives considered
+
+- Block Gate 8 pending final figure construction.
+- Treat the frozen claim as universal across model formulations.
+- Reopen Phase 4–6 analyses during manuscript production.
+
+### Consequences
+
+**Code affected:** Only result-inventory, source-table, and verification utilities.
+**Analyses affected:** Phase 4–6 analyses are immutable unless a new versioned release is opened.
+**Figures affected:** Final figures must use the frozen source tables; visual design remains a later task.
+**Manuscript sections affected:** All later sections must remain within the frozen claim and limitation boundary.
+**Previously generated outputs invalidated:** None.
+
+### Verification required
+
+- `results/result_freeze/GATE_8_DECISION.json` must remain `PASSED`.
+- `validation/result_freeze/validation_summary.json` must report all checks passed.
+- The result-freeze release must be tagged and packaged with its full Git commit hash.
+- Gate 6 must still be completed during manuscript production.
+
+### Supersedes
+
+None.

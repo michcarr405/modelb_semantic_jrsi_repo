@@ -1,0 +1,81 @@
+inherit_prob,condition,metric,estimate,confidence_level,lower,upper,n_independent_replicates,n_bootstrap,note
+0.1,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.1,control,median_semantic_information_among_reached,0.0,0.95,0.0,0.0,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.1,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.1,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+0.1,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.1,selective,median_semantic_information_among_reached,0.5036152853168294,0.95,0.5015471469611852,0.5071521416439092,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.1,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.1,selective,mean_value_of_information,5.717515733506947,0.95,5.687267849392363,5.747255995008683,20,2000,Defined for every independent replicate.
+0.2,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.2,control,median_semantic_information_among_reached,0.0,0.95,0.0,4.0042831297686464e-17,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.2,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.2,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+0.2,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.2,selective,median_semantic_information_among_reached,0.5044284556735559,0.95,0.5033286514086934,0.5063066446757444,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.2,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.2,selective,mean_value_of_information,5.7350298394097265,0.95,5.7081592068142415,5.761360568576391,20,2000,Defined for every independent replicate.
+0.3,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.3,control,median_semantic_information_among_reached,0.0,0.95,0.0,0.0,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.3,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.3,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+0.3,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.3,selective,median_semantic_information_among_reached,0.501900331887007,0.95,0.4998351512438421,0.5047935484903818,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.3,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.3,selective,mean_value_of_information,5.732299262152779,0.95,5.707974867078994,5.756751817491322,20,2000,Defined for every independent replicate.
+0.4,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.4,control,median_semantic_information_among_reached,0.0,0.95,0.0,0.0,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.4,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.4,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+0.4,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.4,selective,median_semantic_information_among_reached,0.5016394057095234,0.95,0.5000363408910189,0.5038207989911692,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.4,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.4,selective,mean_value_of_information,5.748680555555555,0.95,5.717093112521701,5.776279201931423,20,2000,Defined for every independent replicate.
+0.5,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.5,control,median_semantic_information_among_reached,0.0,0.95,0.0,0.0,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.5,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.5,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+0.5,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.5,selective,median_semantic_information_among_reached,0.5043521363027665,0.95,0.5031032764272133,0.5061297178451424,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.5,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.5,selective,mean_value_of_information,5.759677191840278,0.95,5.729540011935764,5.788928276909722,20,2000,Defined for every independent replicate.
+0.6,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.6,control,median_semantic_information_among_reached,0.0,0.95,0.0,8.008566259537292e-17,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.6,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.6,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+0.6,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.6,selective,median_semantic_information_among_reached,0.49885293117097995,0.95,0.4964278193395658,0.5032736325903872,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.6,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.6,selective,mean_value_of_information,5.761606987847222,0.95,5.727412489149307,5.797684516059029,20,2000,Defined for every independent replicate.
+0.7,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.7,control,median_semantic_information_among_reached,0.0,0.95,0.0,0.0,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.7,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.7,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+0.7,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.7,selective,median_semantic_information_among_reached,0.4966163145929766,0.95,0.4925023403094055,0.4980835046879323,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.7,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.7,selective,mean_value_of_information,5.815589735243055,0.95,5.79417823621962,5.8375693901909695,20,2000,Defined for every independent replicate.
+0.8,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.8,control,median_semantic_information_among_reached,0.0,0.95,0.0,8.008566259537293e-17,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.8,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.8,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+0.8,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.8,selective,median_semantic_information_among_reached,0.48619785106088514,0.95,0.4826336036554482,0.4898770127426511,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.8,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.8,selective,mean_value_of_information,5.939152560763888,0.95,5.9029430881076355,5.97617241753472,20,2000,Defined for every independent replicate.
+0.9,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.9,control,median_semantic_information_among_reached,0.0,0.95,0.0,8.008566259537292e-17,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.9,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.9,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+0.9,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+0.9,selective,median_semantic_information_among_reached,0.45289105538251506,0.95,0.450266708037631,0.4571951040872097,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+0.9,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+0.9,selective,mean_value_of_information,6.484306640625,0.95,6.403073323567707,6.567858194986978,20,2000,Defined for every independent replicate.
+1.0,control,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+1.0,control,median_semantic_information_among_reached,0.0,0.95,0.0,4.0042831297686464e-17,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+1.0,control,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+1.0,control,mean_value_of_information,0.0,0.95,0.0,0.0,20,2000,Defined for every independent replicate.
+1.0,selective,reach_fraction,1.0,0.95,1.0,1.0,20,2000,All independent replicates; censoring retained as target_reached=False.
+1.0,selective,median_semantic_information_among_reached,0.2829643937271562,0.95,0.2758739946051161,0.2928747077546359,20,2000,Conditional on target-reached replicates; censored values are not imputed.
+1.0,selective,median_censored_lower_bound,,0.95,,,20,2000,Conditional on right-censored replicates; reports their tested lower bounds.
+1.0,selective,mean_value_of_information,11.907186414930555,0.95,11.331888712565103,12.436805162217878,20,2000,Defined for every independent replicate.

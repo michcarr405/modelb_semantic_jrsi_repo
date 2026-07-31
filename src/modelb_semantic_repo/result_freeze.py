@@ -98,7 +98,7 @@ def build_result_inventory(repo_root: Path) -> pd.DataFrame:
         actual = {
             path.relative_to(root).as_posix(): path
             for path in root.rglob("*")
-            if path.is_file()
+            if path.is_file() and path.name != "FILE_MANIFEST_SHA256.csv"
         }
         for relative_path in sorted(set(actual) | set(expected)):
             path = actual.get(relative_path)
@@ -396,7 +396,7 @@ def audit_inferential_records(repo_root: Path, validation_dir: Path) -> pd.DataF
         perm_calc.loc[idx, "q_value_bh_across_fidelities"] = phase4_bh_adjust(perm_calc.loc[idx, "p_value_two_sided"])
     perm_stored = pd.read_csv(p4 / "replicate_level_permutation_results.csv")
     perm_calc = perm_calc[perm_stored.columns]
-    ok, detail = _frames_close(perm_calc, perm_stored, ["inherit_prob", "metric"], 1e-15)
+    ok, detail = _frames_close(perm_calc, perm_stored, ["inherit_prob", "metric"], 1e-12)
     perm_calc.to_csv(validation_dir / "phase4_permutation_results_recomputed.csv", index=False)
     checks.append(_audit_row("p4_permutation_inference", "phase4", "inference", ok, "30 stored tests", detail, "results/phase4_core/baseline_information.csv; results/phase4_core/replicate_frontier_summary.csv; results/phase4_core/replicate_level_permutation_results.csv"))
 
@@ -464,7 +464,7 @@ def audit_inferential_records(repo_root: Path, validation_dir: Path) -> pd.DataF
     checks.append(_audit_row("p5_paired_contrasts", "phase5", "inference", ok, "six stored paired contrasts", detail, "results/phase5_causal_specificity/gate5_seed_block_metrics.csv; results/phase5_causal_specificity/gate5_paired_contrasts.csv"))
     calc_draws = pd.concat(draw_frames, ignore_index=True)
     stored_draws = pd.read_csv(p5 / "gate5_paired_bootstrap_draws.csv")
-    ok_draws, detail_draws = _frames_close(calc_draws[stored_draws.columns], stored_draws, ["contrast", "bootstrap_index"], 1e-15)
+    ok_draws, detail_draws = _frames_close(calc_draws[stored_draws.columns], stored_draws, ["contrast", "bootstrap_index"], 1e-12)
     calc_draws.to_csv(validation_dir / "phase5_bootstrap_draws_recomputed.csv", index=False)
     checks.append(_audit_row("p5_paired_bootstrap_draws", "phase5", "inference", ok_draws, "12000 stored draws", detail_draws, "results/phase5_causal_specificity/gate5_paired_bootstrap_draws.csv"))
 

@@ -1,0 +1,6 @@
+check,passed,detail
+result_inventory_recomputes,True,"{""current"": 2107, ""stored"": 2107}"
+result_freeze_manifest_integrity,True,"{""matches"": 15, ""n"": 15}"
+figure_source_tables_verified,True,"{""n"": 11, ""passed"": 11}"
+inferential_audit_recomputes,True,"{""equal"": true, ""n"": 28, ""passed"": 28}"
+gate8_record,True,"{""archive_integrity"": true, ""figure_source_verification"": true, ""final_publication_figures_created"": false, ""gate"": ""Gate 8 - Result freeze"", ""inferential_record_verification"": true, ""manuscript_rewritten"": false, ""n_figure_source_tables"": 11, ""n_inferential_checks"": 28, ""n_inferential_checks_passed"": 28, ""n_inventory_rows"": 2107, ""preserved_decisions"": ""D16-D31"", ""scientific_outputs_changed"": false, ""starting_commit"": ""f9a3030"", ""status"": ""PASSED""}"

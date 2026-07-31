@@ -21,7 +21,7 @@ def main() -> None:
 
     stored_inventory = pd.read_csv(out / "RESULT_INVENTORY.csv")
     current_inventory = build_result_inventory(root)
-    inventory_equal = stored_inventory.fillna("<NA>").astype(str).equals(current_inventory.fillna("<NA>").astype(str))
+    inventory_equal = stored_inventory.fillna("").astype(str).equals(current_inventory.fillna("").astype(str))
     check("result_inventory_recomputes", inventory_equal, {"stored": len(stored_inventory), "current": len(current_inventory)})
 
     manifest = pd.read_csv(out / "FILE_MANIFEST_SHA256.csv")
