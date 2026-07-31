@@ -1374,3 +1374,53 @@ Gate 7 must recompute from `results/phase6_generality/`, all Phase 4/5 manifest 
 ### Supersedes
 
 None.
+
+# Phase 7 approved result-freeze decision
+
+## D32 — Gate 8 freezes the archived Phase 4–6 analysis and result-level claim boundary
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Result-freeze opening instruction  
+**Phase:** Result freeze  
+**Reviewer items affected:** R1.1–R1.9, R2.1–R2.6.2
+
+### Decision
+
+Gate 8 will be decided from an audit of the versioned Phase 6 package without rerunning or retuning production simulations. D16–D31 and every archived Phase 4–6 result file remain immutable.
+
+The result-freeze release must include:
+
+- a complete file-level result inventory and archive-integrity audit;
+- deterministic verification of the primary Phase 4, Phase 5, and Phase 6 inferential records;
+- traceable machine-readable figure-source tables, but no final figures;
+- a frozen hierarchy of supported claims, limitations, and prohibited interpretations;
+- a Gate 8 decision and versioned handoff.
+
+After Gate 8 passes, any change to the model, estimator, intervention family, target rule, continuation count, horizon, inferential method, regime thresholds, archived result values, or result-level interpretation requires a new decision entry and versioned analysis release.
+
+### Rationale
+
+The corrected core result, causal-specificity controls, and staged generality analysis have passed their respective gates. Manuscript production now requires a stable evidentiary base whose numerical sources and interpretive boundaries can be audited independently of final graphical or prose choices.
+
+### Alternatives considered
+
+- Begin final figures and manuscript rewriting directly from the Phase 6 package.
+- Rerun the complete analysis as part of result freeze.
+- Freeze only summary claims while leaving source tables mutable.
+
+### Consequences
+
+**Code affected:** Result-freeze inventory and validation utilities only.  
+**Analyses affected:** No scientific analysis is changed; archived inferences are verified.  
+**Figures affected:** Figure-source data may be frozen; final visual design remains prohibited.  
+**Manuscript sections affected:** None during Phase 7; all later prose must use the frozen claim boundary.  
+**Previously generated outputs invalidated:** None.
+
+### Verification required
+
+All Gate 8 criteria in `PHASE_07_PLAN.md` must pass, and the Phase 4–6 manifests must remain hash-identical before and after the phase.
+
+### Supersedes
+
+None.
