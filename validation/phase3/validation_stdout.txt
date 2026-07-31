@@ -1,0 +1,70 @@
+{
+  "scope": "synthetic and tiny diagnostic data only",
+  "production_simulations_run": false,
+  "manuscript_rewritten": false,
+  "n_independent_replicates": 12,
+  "n_raw_continuation_rows": 288,
+  "n_map_level_rows": 72,
+  "one_frontier_per_replicate": true,
+  "identity_information_recovered_all": true,
+  "identity_viability_recovered_all": true,
+  "paired_identity_max_abs_difference": 0.0,
+  "selective_semantic_information_values": [
+    0.5
+  ],
+  "control_semantic_information_values": [
+    1.0
+  ],
+  "censoring_test": {
+    "target_reached": false,
+    "censoring": "right_censored",
+    "semantic_information_is_nan": true,
+    "semantic_lower_bound": 0.75,
+    "bootstrap_reach_fraction_estimate": 0.8333333333333334,
+    "bootstrap_censored_lower_bound_estimate": 0.75
+  },
+  "block_bootstrap_replicates": 80,
+  "permutation_results": [
+    {
+      "metric": "semantic_information",
+      "statistic": "mean_difference",
+      "observed_difference": -0.5,
+      "p_value_two_sided": 0.0021645021645021645,
+      "group_a": "selective",
+      "group_b": "control",
+      "n_group_a": 6,
+      "n_group_b": 6,
+      "n_permutations": 924,
+      "exact": true,
+      "paired": false,
+      "analysis_unit": "independently evolved baseline replicate"
+    },
+    {
+      "metric": "value_of_information",
+      "statistic": "mean_difference",
+      "observed_difference": 2.9999999999999996,
+      "p_value_two_sided": 0.0021645021645021645,
+      "group_a": "selective",
+      "group_b": "control",
+      "n_group_a": 6,
+      "n_group_b": 6,
+      "n_permutations": 924,
+      "exact": true,
+      "paired": false,
+      "analysis_unit": "independently evolved baseline replicate"
+    }
+  ],
+  "tiny_identity_model_diagnostic": {
+    "mean_fitness_equal": true,
+    "final_population_equal": true,
+    "max_abs_mean_fitness_difference": 0.0,
+    "horizon": 4,
+    "n_cells": 5,
+    "n_seqs": 2,
+    "seq_len": 12,
+    "production_run": false
+  },
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3"
+}

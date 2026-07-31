@@ -7,6 +7,14 @@ from tqdm import tqdm
 
 from .original_model.simulation import observe_population, reproduce_with_partitioning
 from .original_model.mi import compute_mutual_information
+from .rng import ContinuationStream
+from .information import (
+    conditional_mutual_information,
+    retained_information,
+    constant_grouping,
+    identity_grouping,
+    grouping_hash,
+)
 
 
 # Ordered for the JSRI strategy: main biological, canonical physics, permissive
@@ -27,6 +35,24 @@ ENTROPY_VIABILITY_DEFS = [
 # Backward-compatible alias used by pipeline/statistics.
 VIABILITY_DEFS = BIOLOGICAL_VIABILITY_DEFS + ENTROPY_VIABILITY_DEFS
 
+
+
+
+def segment_indices_for_observations(params):
+    """Return positional-segment labels in the exact observation flattening order."""
+    chain_len = int(params['seq_len']) - 4
+    n_segments = len(params['segment_favored_met'])
+    seg_len = chain_len // n_segments
+    per_chain = np.minimum(np.arange(chain_len) // seg_len, n_segments - 1)
+    return np.tile(per_chain, int(params['n_cells']) * int(params['n_seqs']))
+
+
+def constant_endpoint(n_items=4**5):
+    return constant_grouping(n_items)
+
+
+def identity_endpoint(n_items=4**5):
+    return identity_grouping(n_items)
 
 def _normalize_labels(labels):
     mapping = {}
@@ -141,6 +167,40 @@ def _group_affinity_matrix(original_aff, labels):
     return out
 
 
+def simulate_horizon_with_stream(population, motif_affinity_matrix, params, inherit_prob, horizon, stream):
+    """Run one continuation from purpose-separated paired RNG streams.
+
+    Reusing the same ``ContinuationStream`` specification for actual and an
+    intervention implements common random numbers.  Actual and identity are
+    therefore exactly recoverable when their model inputs are identical.
+    """
+    if not isinstance(stream, ContinuationStream):
+        raise TypeError('stream must be a ContinuationStream')
+    observation_rng = stream.observation_generator()
+    propagation_rng = stream.propagation_generator()
+    pop = np.array(population, copy=True)
+    future_means = []
+    cell_fitnesses = []
+    metabolite_observations = []
+    populations = []
+    for _ in range(int(horizon)):
+        populations.append(np.array(pop, copy=True))
+        fitnesses, motifs, mets = observe_population(pop, motif_affinity_matrix, params, observation_rng)
+        future_means.append(float(np.mean(fitnesses)))
+        cell_fitnesses.append(np.asarray(fitnesses, dtype=float))
+        metabolite_observations.append(np.asarray(mets, dtype=np.int64))
+        pop = reproduce_with_partitioning(
+            pop, fitnesses, params['mutation_rate'], inherit_prob, propagation_rng
+        )
+    return {
+        'mean_fitness': np.asarray(future_means, dtype=float),
+        'cell_fitnesses': np.asarray(cell_fitnesses, dtype=float),
+        'metabolite_observations': metabolite_observations,
+        'populations': populations,
+        'final_population': np.asarray(pop),
+    }
+
+
 def _simulate_horizon(population, motif_affinity_matrix, params, inherit_prob, horizon, rng):
     """Rerun a final population for a short horizon after an intervention.
 
@@ -157,7 +217,7 @@ def _simulate_horizon(population, motif_affinity_matrix, params, inherit_prob, h
     populations = []
     for _ in range(horizon):
         populations.append(np.array(pop, copy=True))
-        fitnesses, motifs, mets = observe_population(pop, motif_affinity_matrix, params)
+        fitnesses, motifs, mets = observe_population(pop, motif_affinity_matrix, params, rng)
         future_means.append(float(np.mean(fitnesses)))
         cell_fitnesses.append(np.asarray(fitnesses, dtype=float))
         metabolite_observations.append(np.asarray(mets, dtype=np.int64))
@@ -456,8 +516,9 @@ def analyze_condition(final_states, matched_control_states, motif_affinity_matri
 
             actual_future = _simulate_horizon(pop, motif_affinity_matrix, params, inh, params['intervention_horizon'], rng)
             control_future = _simulate_horizon(control_pop, params['motif_affinity_matrix_no_aff'], params, inh, params['intervention_horizon'], np.random.default_rng(seed + 1))
-            fitnesses, motifs, mets = observe_population(pop, motif_affinity_matrix, params)
-            total_syntactic = compute_mutual_information(mets, motifs, params['n_metabolites'])
+            fitnesses, motifs, mets = observe_population(pop, motif_affinity_matrix, params, rng)
+            segments = segment_indices_for_observations(params)
+            total_syntactic = conditional_mutual_information(motifs, mets, segments)
             actual_viability = compute_viability(actual_future, control_future, viability_kind, threshold, params)
             syn_vals.append(total_syntactic)
             actual_vals.append(actual_viability)
@@ -467,8 +528,7 @@ def analyze_condition(final_states, matched_control_states, motif_affinity_matri
                     labels, meta = _labels_for_method(method, profiles, motif_strings, k, rng, params)
                     grouped_aff = _group_affinity_matrix(motif_affinity_matrix, labels)
                     preserved_groups = max(1, int(len(np.unique(labels))))
-                    preserved_ratio = np.log2(preserved_groups) / np.log2(4**5)
-                    preserved_info = float(total_syntactic * preserved_ratio)
+                    preserved_info = float(retained_information(motifs, mets, segments, labels))
                     future = _simulate_horizon(pop, grouped_aff, params, inh, params['intervention_horizon'], np.random.default_rng(seed + 33 + k))
                     viability = compute_viability(future, control_future, viability_kind, threshold, params)
                     rows.append({

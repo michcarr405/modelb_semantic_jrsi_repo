@@ -1,0 +1,9 @@
+condition,metric,estimate,confidence_level,lower,upper,n_independent_replicates,n_bootstrap,note
+control,reach_fraction,0.8333333333333334,0.95,0.5,1.0,6,80,All independent replicates; censoring retained as target_reached=False.
+control,median_semantic_information_among_reached,1.0,0.95,1.0,1.0,6,80,Conditional on target-reached replicates; censored values are not imputed.
+control,median_censored_lower_bound,0.75,0.95,0.75,0.75,6,80,Conditional on right-censored replicates; reports their tested lower bounds.
+control,mean_value_of_information,1.0,0.95,1.0,1.0,6,80,Defined for every independent replicate.
+selective,reach_fraction,1.0,0.95,1.0,1.0,6,80,All independent replicates; censoring retained as target_reached=False.
+selective,median_semantic_information_among_reached,0.5,0.95,0.5,0.5,6,80,Conditional on target-reached replicates; censored values are not imputed.
+selective,median_censored_lower_bound,,0.95,,,6,80,Conditional on right-censored replicates; reports their tested lower bounds.
+selective,mean_value_of_information,3.9999999999999996,0.95,3.9999999999999987,4.0,6,80,Defined for every independent replicate.

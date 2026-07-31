@@ -1,0 +1,3 @@
+condition,n_independent_replicates,n_target_reached,n_right_censored,target_reached_fraction
+control,6,6,0,1.0
+selective,6,6,0,1.0

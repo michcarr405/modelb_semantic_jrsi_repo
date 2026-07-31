@@ -1,0 +1,13 @@
+condition,baseline_replicate,target_tolerance,actual_viability,constant_viability,identity_viability,value_of_information,target_viability,target_reached,censoring,semantic_information,semantic_lower_bound,max_retained_information,baseline_information,identity_information,identity_information_recovered,identity_viability_recovered,n_unique_maps,n_continuation_rows,min_continuations_per_map,max_continuations_per_map
+control,control_r0,0.1,10.0,9.0,,1.0,9.9,False,right_censored,,0.75,0.75,1.0,,False,False,4,20,4,4
+control,control_r1,0.1,10.099999999999998,9.099999999999998,10.099999999999998,1.0,9.999999999999998,True,none,1.0,,1.0,1.0,1.0,True,True,5,24,4,4
+control,control_r2,0.1,10.2,9.2,10.2,1.0,10.1,True,none,1.0,,1.0,1.0,1.0,True,True,5,24,4,4
+control,control_r3,0.1,10.3,9.3,10.3,1.0,10.200000000000001,True,none,1.0,,1.0,1.0,1.0,True,True,5,24,4,4
+control,control_r4,0.1,10.4,9.4,10.4,1.0,10.3,True,none,1.0,,1.0,1.0,1.0,True,True,5,24,4,4
+control,control_r5,0.1,10.5,9.5,10.5,1.0,10.4,True,none,1.0,,1.0,1.0,1.0,True,True,5,24,4,4
+selective,selective_r0,0.1,10.0,6.0,10.0,4.0,9.6,True,none,0.5,,1.0,1.0,1.0,True,True,5,24,4,4
+selective,selective_r1,0.1,10.099999999999998,6.1,10.099999999999998,3.9999999999999982,9.699999999999998,True,none,0.5,,1.0,1.0,1.0,True,True,5,24,4,4
+selective,selective_r2,0.1,10.2,6.2,10.2,3.999999999999999,9.799999999999999,True,none,0.5,,1.0,1.0,1.0,True,True,5,24,4,4
+selective,selective_r3,0.1,10.3,6.3,10.3,4.000000000000001,9.9,True,none,0.5,,1.0,1.0,1.0,True,True,5,24,4,4
+selective,selective_r4,0.1,10.4,6.4,10.4,4.0,10.0,True,none,0.5,,1.0,1.0,1.0,True,True,5,24,4,4
+selective,selective_r5,0.1,10.5,6.5,10.5,4.0,10.1,True,none,0.5,,1.0,1.0,1.0,True,True,5,24,4,4

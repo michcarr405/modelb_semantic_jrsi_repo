@@ -1,0 +1,10 @@
+{
+  "mean_fitness_equal": true,
+  "final_population_equal": true,
+  "max_abs_mean_fitness_difference": 0.0,
+  "horizon": 4,
+  "n_cells": 5,
+  "n_seqs": 2,
+  "seq_len": 12,
+  "production_run": false
+}

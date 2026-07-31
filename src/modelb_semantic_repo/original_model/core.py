@@ -1,6 +1,7 @@
 import numpy as np
 from numba import njit
 
+
 @njit
 def compute_fitnesses_and_observations(
     population,
@@ -12,13 +13,21 @@ def compute_fitnesses_and_observations(
     reward_strength,
     penalty_strength,
     temperature,
+    local_state_uniforms,
 ):
+    """Compute fitness and observations from caller-supplied random uniforms.
+
+    Supplying all stochastic draws from the caller removes the historical hidden
+    NumPy global RNG inside the compiled core.
+    """
     n_cells, n_seqs, seq_len = population.shape
     n_met = motif_affinity_matrix.shape[1]
     chain_len = seq_len - 4
     n_segments = segment_favored_met.shape[0]
     seg_len = chain_len // n_segments
     total_windows = n_cells * n_seqs * chain_len
+    if local_state_uniforms.size != total_windows:
+        raise ValueError("local_state_uniforms has incorrect length")
     motif_obs = np.empty(total_windows, dtype=np.int64)
     met_obs = np.empty(total_windows, dtype=np.int64)
     fitnesses = np.empty(n_cells, dtype=np.float64)
@@ -49,9 +58,9 @@ def compute_fitnesses_and_observations(
                     val = np.exp((logits[m] - maxval) / temperature)
                     logits[m] = val
                     sumexp += val
-                r = np.random.random()
+                r = local_state_uniforms[obs_idx]
                 cdf = 0.0
-                chosen = 0
+                chosen = n_met - 1
                 for m in range(n_met):
                     cdf += logits[m] / sumexp
                     if r <= cdf:

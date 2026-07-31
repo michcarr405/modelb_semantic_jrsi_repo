@@ -1,0 +1,13 @@
+condition,baseline_replicate,endpoint_a,endpoint_b,paired,same_continuation_indices,max_abs_viability_difference,endpoint_recovered,reason
+control,control_r0,actual,identity,True,True,0.0,True,ok
+control,control_r1,actual,identity,True,True,0.0,True,ok
+control,control_r2,actual,identity,True,True,0.0,True,ok
+control,control_r3,actual,identity,True,True,0.0,True,ok
+control,control_r4,actual,identity,True,True,0.0,True,ok
+control,control_r5,actual,identity,True,True,0.0,True,ok
+selective,selective_r0,actual,identity,True,True,0.0,True,ok
+selective,selective_r1,actual,identity,True,True,0.0,True,ok
+selective,selective_r2,actual,identity,True,True,0.0,True,ok
+selective,selective_r3,actual,identity,True,True,0.0,True,ok
+selective,selective_r4,actual,identity,True,True,0.0,True,ok
+selective,selective_r5,actual,identity,True,True,0.0,True,ok
