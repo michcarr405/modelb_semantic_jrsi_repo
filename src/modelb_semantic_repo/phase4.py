@@ -263,6 +263,66 @@ def _run_pilot_baseline(job: tuple[str, float, int, Path]) -> dict[str, Any]:
     }
 
 
+
+def _pilot_continuation_job(job: dict[str, Any]) -> tuple[list[dict[str, Any]], list[float]]:
+    base = job["base"]
+    selected_items = job["selected_items"]
+    params = default_parameters()
+    population = np.load(base["state_path"])["population"]
+    matrix = (
+        params["motif_affinity_matrix"]
+        if base["condition"] == "selective"
+        else params["motif_affinity_matrix_no_aff"]
+    )
+    rows: list[dict[str, Any]] = []
+    identity_differences: list[float] = []
+    for continuation_index in range(8):
+        stream = ContinuationStream(PILOT_ROOT_SEED, base["baseline_replicate"], continuation_index)
+        actual = simulate_horizon_with_stream(
+            population, matrix, params, float(base["inherit_prob"]), 36, stream
+        )
+        actual_curve = np.asarray(actual["mean_fitness"], dtype=float)
+        for horizon in (12, 24, 36):
+            rows.append(
+                {
+                    "condition": base["condition"],
+                    "inherit_prob": float(base["inherit_prob"]),
+                    "baseline_replicate": base["baseline_replicate"],
+                    "map_id": "actual",
+                    "map_hash": "actual",
+                    "method": "unintervened",
+                    "endpoint_type": "actual",
+                    "continuation_index": continuation_index,
+                    "horizon": horizon,
+                    "viability": float(actual_curve[:horizon].mean()),
+                }
+            )
+        for item in selected_items:
+            labels = np.asarray(item["labels"], dtype=np.int64)
+            grouped = _group_affinity_matrix(matrix, labels)
+            result = simulate_horizon_with_stream(
+                population, grouped, params, float(base["inherit_prob"]), 36, stream
+            )
+            curve = np.asarray(result["mean_fitness"], dtype=float)
+            if item["endpoint_type"] == "identity":
+                identity_differences.append(float(np.max(np.abs(curve - actual_curve))))
+            for horizon in (12, 24, 36):
+                rows.append(
+                    {
+                        "condition": base["condition"],
+                        "inherit_prob": float(base["inherit_prob"]),
+                        "baseline_replicate": base["baseline_replicate"],
+                        "map_id": item["map_id"],
+                        "map_hash": item["map_hash"],
+                        "method": item["method"],
+                        "endpoint_type": item["endpoint_type"],
+                        "continuation_index": continuation_index,
+                        "horizon": horizon,
+                        "viability": float(curve[:horizon].mean()),
+                    }
+                )
+    return rows, identity_differences
+
 def run_phase4_pilots(outdir: str | Path, *, workers: int = 4) -> dict[str, Any]:
     """Run the prespecified small pilot and return P01--P05 evidence."""
     outdir = Path(outdir)
@@ -304,52 +364,21 @@ def run_phase4_pilots(outdir: str | Path, *, workers: int = 4) -> dict[str, Any]
     for wanted in ({"start_zero_based": 0, "length": 2}, {"start_zero_based": 3, "length": 2}, {"start_zero_based": 1, "length": 3}):
         selected_items.append(next(x for x in substring_candidates if x["parameters"] == wanted))
 
-    params = default_parameters()
     continuation_rows: list[dict[str, Any]] = []
-    identity_differences = []
-    for base in baselines.itertuples(index=False):
-        population = np.load(base.state_path)["population"]
-        matrix = params["motif_affinity_matrix"] if base.condition == "selective" else params["motif_affinity_matrix_no_aff"]
-        for continuation_index in range(8):
-            stream = ContinuationStream(PILOT_ROOT_SEED, base.baseline_replicate, continuation_index)
-            actual = simulate_horizon_with_stream(population, matrix, params, base.inherit_prob, 36, stream)
-            actual_curve = np.asarray(actual["mean_fitness"], dtype=float)
-            for horizon in (12, 24, 36):
-                continuation_rows.append(
-                    {
-                        "condition": base.condition,
-                        "inherit_prob": base.inherit_prob,
-                        "baseline_replicate": base.baseline_replicate,
-                        "map_id": "actual",
-                        "map_hash": "actual",
-                        "method": "unintervened",
-                        "endpoint_type": "actual",
-                        "continuation_index": continuation_index,
-                        "horizon": horizon,
-                        "viability": float(actual_curve[:horizon].mean()),
-                    }
-                )
-            for item in selected_items:
-                grouped = _group_affinity_matrix(matrix, item["labels"])
-                result = simulate_horizon_with_stream(population, grouped, params, base.inherit_prob, 36, stream)
-                curve = np.asarray(result["mean_fitness"], dtype=float)
-                if item["endpoint_type"] == "identity":
-                    identity_differences.append(float(np.max(np.abs(curve - actual_curve))))
-                for horizon in (12, 24, 36):
-                    continuation_rows.append(
-                        {
-                            "condition": base.condition,
-                            "inherit_prob": base.inherit_prob,
-                            "baseline_replicate": base.baseline_replicate,
-                            "map_id": item["map_id"],
-                            "map_hash": item["map_hash"],
-                            "method": item["method"],
-                            "endpoint_type": item["endpoint_type"],
-                            "continuation_index": continuation_index,
-                            "horizon": horizon,
-                            "viability": float(curve[:horizon].mean()),
-                        }
-                    )
+    identity_differences: list[float] = []
+    continuation_jobs = [
+        {
+            "base": row._asdict(),
+            "selected_items": selected_items,
+        }
+        for row in baselines.itertuples(index=False)
+    ]
+    with ProcessPoolExecutor(max_workers=min(workers, len(continuation_jobs))) as executor:
+        futures = [executor.submit(_pilot_continuation_job, job) for job in continuation_jobs]
+        for future in as_completed(futures):
+            part_rows, part_differences = future.result()
+            continuation_rows.extend(part_rows)
+            identity_differences.extend(part_differences)
     continuation = pd.DataFrame(continuation_rows)
     continuation.to_csv(outdir / "pilot_continuations.csv", index=False)
 

@@ -1,0 +1,25 @@
+{
+  "pilot_only": true,
+  "production_seeds_used": false,
+  "p01": {
+    "approved": true,
+    "sequence_family": "all contiguous substring maps of lengths 1-4 at every valid start position",
+    "n_contiguous_substring_maps": 14
+  },
+  "p02": {
+    "approved_continuation_count": 1
+  },
+  "p03": {
+    "approved_intervention_horizon": 36
+  },
+  "p04": {
+    "approved_target_tolerance": 0.01,
+    "paired_identity_max_abs_difference": 0.0,
+    "approved": true
+  },
+  "p05": {
+    "approved": true,
+    "pooling_rule": "unique balanced-random, affinity-rank, contiguous-substring, constant, and identity maps; no k-means",
+    "n_unique_primary_maps": 34
+  }
+}

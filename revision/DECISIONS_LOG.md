@@ -906,3 +906,218 @@ As of 2026-07-30, the following are locked:
 - threshold language conditional on evidence;
 - notation redesign and equation numbering required.
 
+
+# Phase 4 approved pre-production decisions
+
+## D16 — P01 final sequence-based grouping family
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 4 pre-production freeze  
+**Phase:** Corrected core production  
+**Reviewer items affected:** R1.4, R1.5, R2.5.9
+
+### Decision
+
+The Phase 4 primary sequence-based intervention family consists of every contiguous substring partition of a five-symbol motif for substring lengths 1–4 and every valid start position. This gives 14 deterministic maps spanning leading, trailing, and internal motif positions. The length-five partition is represented only by the explicit identity endpoint.
+
+### Rationale
+
+This family removes the unexplained privilege of the leading motif edge while retaining a transparent sequence-based coarse-graining. It introduces no distance metric or clustering hyperparameter. The prespecified pilot generated 14 unique canonical assignment hashes and retained separate constant and identity endpoints.
+
+### Alternatives considered
+
+- Leading-prefix maps only.
+- A Hamming-distance clustering family.
+- Leading, trailing, and one hand-selected internal map.
+
+### Consequences
+
+**Code affected:** Phase 4 map-panel construction.  
+**Analyses affected:** Corrected core intervention frontiers.  
+**Figures affected:** None in Phase 4.  
+**Manuscript sections affected:** Future intervention Methods and Appendix.  
+**Previously generated outputs invalidated:** Submitted prefix-family intervention results remain non-confirmatory.
+
+### Verification required
+
+Save every assignment, canonical hash, substring start, substring length, and actual group count. Collapse exact aliases before frontier construction.
+
+### Supersedes
+
+Resolves P01 and implements D09.
+
+---
+
+## D17 — P02 two continuation seeds per intervention
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 4 pre-production freeze  
+**Phase:** Corrected core production  
+**Reviewer items affected:** R1.5, R1.8
+
+### Decision
+
+Use two paired continuation seeds per actual trajectory and intervention map.
+
+### Rationale
+
+In the prespecified eight-seed pilot, one seed already met the numerical stability thresholds (RMSE 0.08898 and 95th-percentile absolute error 0.12372 model-fitness units relative to the eight-seed mean). Two seeds improved these values to RMSE 0.06029 and 95th-percentile absolute error 0.10857. Two is selected rather than one because the controlling specification calls for nested continuation seeds where feasible and because at least two seeds preserve an estimable within-map technical variance.
+
+### Alternatives considered
+
+- One seed, the smallest candidate satisfying the numerical pilot thresholds.
+- Four, six, or eight seeds.
+
+### Consequences
+
+**Code affected:** Phase 4 production settings only.  
+**Analyses affected:** Map-level viability is the mean of two nested technical continuations.  
+**Figures affected:** None in Phase 4.  
+**Manuscript sections affected:** Future Statistical Methods and captions.  
+**Previously generated outputs invalidated:** None; pilot outputs are diagnostic only.
+
+### Verification required
+
+Continuation indices must remain nested within map and evolved baseline. They must never be counted as independent replicates. Common-random-number stream keys must exclude map identity.
+
+### Supersedes
+
+Resolves P02.
+
+---
+
+## D18 — P03 36-generation intervention horizon
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 4 pre-production freeze  
+**Phase:** Corrected core production  
+**Reviewer items affected:** R1.2, R1.4, R1.6
+
+### Decision
+
+Use a fixed intervention horizon of 36 generations for the corrected core analysis.
+
+### Rationale
+
+Against the prespecified 36-generation reference, the 12-generation horizon failed the rank-stability rule (Spearman 0.9041), and the 24-generation horizon also failed the prespecified rank threshold (Spearman 0.9666 < 0.98), despite small absolute differences. Therefore the longest prespecified horizon is required.
+
+### Alternatives considered
+
+- 12 generations.
+- 24 generations.
+
+### Consequences
+
+**Code affected:** Phase 4 production settings only.  
+**Analyses affected:** Primary mean-future-fitness viability is averaged over 36 generations.  
+**Figures affected:** None in Phase 4.  
+**Manuscript sections affected:** Future intervention Methods.  
+**Previously generated outputs invalidated:** Submitted 24-generation intervention estimates remain non-confirmatory.
+
+### Verification required
+
+Every continuation row must record the 36-point mean-fitness trajectory and the fixed horizon.
+
+### Supersedes
+
+Resolves P03.
+
+---
+
+## D19 — P04 strict one-percent recovery target
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 4 pre-production freeze  
+**Phase:** Corrected core production  
+**Reviewer items affected:** R1.4, R1.5
+
+### Decision
+
+Use
+
+\[
+V_{\mathrm{target},r}
+=
+V_{\mathrm{actual},r}
+-0.01\left(V_{\mathrm{actual},r}-V_{\mathrm{constant},r}\right).
+\]
+
+No interpolation is permitted. The semantic estimate is the smallest tested retained-information coordinate whose discrete monotone frontier reaches the target. Target failures remain right-censored lower bounds.
+
+### Rationale
+
+The one-percent target preserves the submitted strict recovery standard rather than loosening it after observing corrected outcomes. In the prespecified pilot, paired actual and identity continuations recovered exactly, with maximum absolute trajectory difference zero, so Monte Carlo endpoint noise does not require a relaxed tolerance.
+
+### Alternatives considered
+
+- 2.5% recovery tolerance.
+- 5% recovery tolerance.
+- A tolerance selected from favorable production frontiers.
+
+### Consequences
+
+**Code affected:** Phase 4 target rule.  
+**Analyses affected:** Replicate-specific target detection and censoring.  
+**Figures affected:** None in Phase 4.  
+**Manuscript sections affected:** Future intervention and statistical Methods.  
+**Previously generated outputs invalidated:** Submitted interpolated and ordinary lower-bound estimates.
+
+### Verification required
+
+Identity recovery must pass for every production block. Censored values must remain missing point estimates with explicit lower bounds.
+
+### Supersedes
+
+Resolves P04.
+
+---
+
+## D20 — P05 conservative pooled primary frontier
+
+**Date:** 2026-07-31  
+**Status:** APPROVED  
+**Requested by:** Phase 4 pre-production freeze  
+**Phase:** Corrected core production  
+**Reviewer items affected:** R1.4, R1.5, R2.5.9
+
+### Decision
+
+For each independently evolved baseline replicate, construct one primary discrete monotone upper frontier pooling unique maps from:
+
+- balanced-random grouping;
+- affinity-rank grouping;
+- the D16 contiguous-substring family;
+- the constant endpoint;
+- the identity endpoint.
+
+Collapse exact duplicate assignments by canonical hash. Do not bin, smooth, or interpolate. Affinity-profile k-means is excluded from Phase 4 production and from the primary frontier.
+
+### Rationale
+
+The pooled neutral/conservative family samples multiple forms of information loss without allowing the function-preserving k-means diagnostic to dominate the upper envelope. The prespecified map panel contains 34 unique maps with complete constant-to-identity coverage.
+
+### Alternatives considered
+
+- Family-specific primary frontiers only.
+- All methods including affinity-profile k-means.
+- A prefix-only frontier.
+
+### Consequences
+
+**Code affected:** Phase 4 map panel and frontier input.  
+**Analyses affected:** All Gate 4 semantic estimates.  
+**Figures affected:** None in Phase 4.  
+**Manuscript sections affected:** Future intervention Methods and method-ablation supplement.  
+**Previously generated outputs invalidated:** Submitted binned, smoothed, interpolated, and k-means-sensitive primary frontiers.
+
+### Verification required
+
+Save the fixed panel before production, require unique hashes, and record method membership for every map-level point.
+
+### Supersedes
+
+Resolves P05. P06 remains deferred because affinity-profile clustering is not run in Phase 4.

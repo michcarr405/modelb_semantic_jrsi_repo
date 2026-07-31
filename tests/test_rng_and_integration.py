@@ -113,3 +113,17 @@ def test_public_paired_horizon_runner_recovers_identity():
     identity = simulate_horizon_with_stream(pop, params["motif_affinity_matrix"].copy(), params, 0.8, 3, stream)
     assert np.array_equal(actual["mean_fitness"], identity["mean_fitness"])
     assert np.array_equal(actual["final_population"], identity["final_population"])
+
+
+def test_vectorized_reproduction_extreme_parent_and_environment_cases():
+    from modelb_semantic_repo.original_model.simulation import reproduce_with_partitioning
+    pop = np.zeros((3, 2, 6), dtype=np.int8)
+    pop[0, 0] = 1
+    pop[0, 1] = 2
+    pop[1] = 3
+    fitness = np.array([1.0, 0.0, 0.0])
+    inherited = reproduce_with_partitioning(pop, fitness, 0.0, 1.0, np.random.default_rng(44))
+    assert set(np.unique(inherited)).issubset({1, 2})
+    environmental = reproduce_with_partitioning(pop, fitness, 0.0, 0.0, np.random.default_rng(44))
+    assert environmental.shape == pop.shape
+    assert environmental.min() >= 0 and environmental.max() <= 3
