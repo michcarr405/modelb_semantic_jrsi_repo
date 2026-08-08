@@ -10,7 +10,7 @@ The scientific results were frozen at commit:
 
 The Gate 8 closure tag is `phase7-gate8-passed-v1` at commit `36246a86320037506beed83d0f7366c33d2c59c5`.
 
-The later public-release packaging commit changes documentation, citation/release metadata, environment locking, and publication-figure reproducibility assets only. It does not alter frozen scientific results.
+The RC2 public-release packaging layer changes documentation, citation/release metadata, environment locking, publication-figure reproducibility assets, and release-archive hygiene only. It does not alter frozen scientific results.
 
 ## Publication-figure reproducibility
 

@@ -27,6 +27,11 @@ The public reproducibility release may add only documentation/packaging items su
 
 These additions must not alter any frozen scientific result, estimator, intervention map, target rule, statistical method, or Phase 4–6 archive content.
 
+
+## Release candidate RC2 packaging commit
+
+`d01ee56` and its immediate packaging-only predecessors add the safer public-release workflow, a Git-tracked archive builder, and transient-file exclusions. The RC2 tag is `jrsi-reproducibility-v1.0.0-rc2`. These changes are packaging/documentation only and do not alter the frozen scientific commit or Gate 8 results.
+
 ## Recommended final public tag
 
 After the author selects a license, inserts the DOI, archives Figures 1/2 masters/exports, and closes clean-room validation, create a final public tag such as:
