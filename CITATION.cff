@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "Model B semantic-information analysis: JRSI frozen reproducibility release"
+message: "If you use this software or frozen analysis archive, please cite the associated JRSI manuscript and this software release."
+type: software
+authors:
+  - family-names: Carr
+    given-names: Michael J
+version: "1.0.0-rc1"
+date-released: 2026-08-08
+repository-code: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
+url: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
+keywords:
+  - semantic information
+  - compositional heredity
+  - counterfactual intervention
+  - origins of life
+  - protocell model
+license: "TO-BE-SELECTED"
+notes: >-
+  Frozen scientific results originate from commit
+  2c7d78694579755402c0a1896e109b29dec4d6a0. Add the permanent archive DOI
+  and replace the temporary license value before the final public release.
+preferred-citation:
+  type: article
+  title: "Counterfactual interventions reveal causal relevance of inherited sequence distinctions in a compositional-resampling model"
+  authors:
+    - family-names: Carr
+      given-names: Michael J
+  journal: "Journal of the Royal Society Interface"
+  notes: "Manuscript rsif-2026-0516; update with final bibliographic metadata after publication."

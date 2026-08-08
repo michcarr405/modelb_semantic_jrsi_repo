@@ -1,212 +1,102 @@
-# JRSI major-revision Phase 6 branch
+# Model B semantic-information analysis — JRSI frozen reproducibility release
 
-**Current gate:** Gate 7 generality passed; broad generality is supported within the prespecified Model B design domain.
+This repository is the reproducibility release for manuscript **rsif-2026-0516**, *Counterfactual interventions reveal causal relevance of inherited sequence distinctions in a compositional-resampling model*.
 
-Phase 6 started from the checksum-verified Phase 5 release, preserved D16–D25 and all archived Phase 4/5 states, and executed the staged non-factorial sensitivity design frozen in D26–D30. Controlling and evidentiary records are:
+## Frozen scientific provenance
 
-- `PHASE_06_PLAN.md`;
-- `revision/DECISIONS_LOG.md` entries D26–D31;
-- `GENERALITY_ANALYSIS.md`;
-- `VALIDATION_PHASE6.md`;
-- `PHASE_06_HANDOFF.md`.
+The scientific results were frozen at Git commit:
 
-Validated Phase 6 commands:
+`2c7d78694579755402c0a1896e109b29dec4d6a0`
 
-```bash
-PYTHONPATH=src python scripts/run_phase6_batch.py A --batch 8 --outdir results/phase6_generality
-PYTHONPATH=src python scripts/run_phase6_batch.py B1 --batch 8 --outdir results/phase6_generality
-PYTHONPATH=src python scripts/run_phase6_batch.py B2 --batch 8 --outdir results/phase6_generality
-PYTHONPATH=src python scripts/run_phase6_batch.py select-c --outdir results/phase6_generality
-PYTHONPATH=src python scripts/run_phase6_batch.py C --batch 8 --outdir results/phase6_generality
-PYTHONPATH=src python scripts/run_phase6_batch.py select-d --outdir results/phase6_generality
-PYTHONPATH=src python scripts/run_phase6_batch.py D --batch 2 --outdir results/phase6_generality
-PYTHONPATH=src python scripts/run_phase6_batch.py finalize --outdir results/phase6_generality
-PYTHONPATH=src python scripts/validate_phase6.py
-```
+The Gate 8 documentation/tag closure is:
 
-Gate 7 passed because 71.875% of Stage A and 37.5% of Stage B1 points were definitively viability-relevant or strong-adaptation, all four structural families retained positive support, the archived default plus two nondefault Stage D representatives confirmed, and all endpoint/archive checks passed. Final publication figures and manuscript rewriting remain blocked until result freeze.
+`phase7-gate8-passed-v1` at commit `36246a86320037506beed83d0f7366c33d2c59c5`.
 
----
+Files added after Gate 8 for public release, citation metadata, environment locking, and publication-figure reproducibility are **packaging/documentation only**. They do not alter the frozen simulations, estimators, intervention panel, inferential procedures, source tables, or numerical results.
 
-# JRSI major-revision Phase 5 branch
+## Model scope
 
-**Archived gate:** Gate 5 causal specificity passed.
+Model B is a sequence-explicit, fitness-weighted, Wright–Fisher-like compositional-resampling model of abstract protocell-like population units. The parameter `p` is parental-composition coupling/compositional-transmission fidelity; it is not literal molecular retention. Local-state labels are transient probabilistic assignments rather than inherited molecular inventories.
 
-Phase 5 records are `PHASE_05_PLAN.md`, `CAUSAL_SPECIFICITY.md`, `VALIDATION_PHASE5.md`, and `PHASE_05_HANDOFF.md`. The archived results remain under `results/phase5_causal_specificity/` and were hash-verified after Phase 6.
+## What is in this release
 
----
+- `src/` — versioned scientific implementation.
+- `scripts/` — production, validation, result-freeze, and release-verification commands.
+- `tests/` — unit/integration tests.
+- `results/phase4_core/` — frozen corrected core outputs and evolved states.
+- `results/phase5_causal_specificity/` — frozen causal-specificity controls.
+- `results/phase6_generality/` — frozen staged generality/robustness outputs.
+- `results/result_freeze/` — result inventory, inferential audit, and the authoritative frozen figure-source tables.
+- `publication_figures/` — exact scripts, frozen source data, manifests, and final quantitative exports for manuscript Figures 3–8 and Supplementary Figures S1–S7.
+- `artwork/` — provenance for Figures 1 and 2; their authoritative editable vector masters and final submission exports must be archived or permanently referenced before final public release.
+- `reproduction/` — exact reproduction commands and release/clean-room records.
+- `requirements-lock.txt` and `environment-lock.yml` — machine-readable locked software environment.
 
-# JRSI major-revision Phase 4 branch
+Historical submitted/paper-mode analyses retained elsewhere in the repository are provenance only and are **not** the evidence base for the revised manuscript. The revised scientific evidence is the Gate 8 frozen Phase 4–6 archive and its result-freeze source tables.
 
-**Archived gate:** Gate 4 core-result survival passed.
+## Environment
 
-The corrected production pipeline is `scripts/run_phase4_production.py`. Its frozen settings, results, and validation are documented in:
+Validated production/result-freeze environment:
 
-- `PHASE_04_PILOT_PLAN.md`;
-- `revision/DECISIONS_LOG.md` entries D16–D20;
-- `CORE_RESULT_SURVIVAL.md`;
-- `VALIDATION_PHASE4.md`;
-- `PHASE_04_HANDOFF.md`.
+- Linux x86-64
+- Python 3.13.5
+- NumPy 2.3.5
+- pandas 2.2.3
+- SciPy 1.17.0
+- Numba 0.65.1
+- Matplotlib 3.10.8
+- scikit-learn 1.8.0 (Phase 6)
+- Pillow 12.3.0 (publication-figure export)
+- pytest 9.0.2 (validation)
 
-Validated Phase 4 commands:
-
-```bash
-PYTHONPATH=src python scripts/run_phase4_pilots.py --outdir validation/phase4_pilots --workers 5
-PYTHONPATH=src python scripts/run_phase4_production.py --outdir results/phase4_core --continuations 2 --horizon 36 --workers 5
-PYTHONPATH=src python scripts/validate_phase4.py
-PYTHONPATH=src python -m pytest -q
-```
-
-The submitted paper-mode outputs and legacy `run_pipeline.py` workflow below remain only for provenance and must not be used for revised scientific claims. Phase 5 causal controls are now complete; final figures and manuscript rewriting have not begun.
-
----
-
-# Model B Semantic Information: JSRI-ready standalone analysis repo
-
-This repository reruns the **full original Model B implementation** and adds an end-to-end intervention-based semantic-information analysis designed for a manuscript targeting **J. R. Soc. Interface**.
-
-The package contains no placeholder data. Simulations, intervention points, statistics, and figures are generated from the included Model B implementation. The archive also includes the current paper-mode outputs available at package-build time under `results/paper`, `stats/paper`, and `figures/paper`.
-
-## Scientific framing
-
-The analysis follows a three-layer JSRI strategy:
-
-1. **Main biological decomposition**: `excess_over_control` is the primary viability definition. It asks whether preserved motif information supports adaptive viability beyond the matched non-selective/control baseline.
-2. **Biological robustness decomposition**: `mean_future_fitness` and `threshold_survival` test whether the syntactic-semantic separation survives permissive and strict biological viability definitions.
-3. **Physics/entropy diagnostics**: entropy-based viability definitions are kept in a separate figure and stats table rather than pooled into the main biological Figure 4. This avoids treating a generic entropy proxy as equivalent to the Model B fitness mechanism.
-
-## Entropy-based viability definitions
-
-The current revision replaces the single broad `negative_shannon_entropy` display with three explicit entropy diagnostics:
-
-- `negative_local_metabolite_configuration_entropy`  
-  Negative entropy of local metabolite-configuration states, by default adjacent metabolite pairs. This is best aligned with the semantic variable because the model asks whether motifs predict local metabolite configurations.
-
-- `negative_adjacency_state_entropy`  
-  Negative entropy of productive/anti-productive/neutral adjacency classes. This is best aligned with the Model B fitness mechanism because growth depends on productive and anti-productive metabolite adjacencies.
-
-- `negative_protocell_compositional_entropy`  
-  Negative entropy of coarse-grained protocell compositional states based on nucleotide composition across inherited oligomers. This is a broad global-composition null/reference, not the preferred mechanistic physics measure.
-
-A legacy `negative_fitness_distribution_entropy` is retained in the code as an optional diagnostic of the binned future-fitness distribution, but it is not plotted in the revised main Figure 4.
-
-## Important method choice: kmeans_profile is not pooled into the primary frontier
-
-The primary pooled frontier uses only conservative/neutral coarse-graining interventions:
-
-- `balanced_random_group`
-- `affinity_rank_group`
-- `prefix_group`
-
-`kmeans_profile` is retained, but only as a separate **function-preserving diagnostic / mechanistic analysis**. It groups motifs by affinity-profile similarity, so it can preserve functional equivalence classes and dominate the upper envelope in selective runs. The pipeline therefore writes:
-
-- primary no-kmeans summaries used for main figures
-- all-methods pooled diagnostic summaries
-- kmeans-only mechanistic summaries
-- method-ablation statistical tests
-
-## Main figure order
-
-The figure scripts generate the following main-text sequence:
-
-1. `figure_1_baseline_vs_adaptive_gain.png`  
-   Original Model B baseline: syntactic MI vs adaptive gain.
-2. `figure_2_intervention_schematic.png`  
-   Intervention framework schematic: syntactic information, semantic information, value of information, and frontier logic.
-3. `figure_3_main_decomposition_excess_over_control.png`  
-   Main biological decomposition using `excess_over_control`.
-4. `figure_4_viability_definition_comparison.png` and `figure_4_gap_widening.png`  
-   Biological viability-definition comparison only: `excess_over_control`, `mean_future_fitness`, and `threshold_survival`. Entropy curves are intentionally excluded.
-5. `figure_4b_entropy_state_definitions.png`  
-   New entropy-diagnostic figure comparing local metabolite-configuration entropy, productive/anti-productive adjacency-state entropy, and protocell compositional entropy.
-6. `figure_5_frontiers_and_robustness.png`  
-   Frontier examples and threshold/smoothing robustness.
-
-Supplements include:
-
-- `supplement_threshold_survival.png`
-- `supplement_method_ablation_no_kmeans_sensitivity.png`
-- `supplement_frontiers.png`
-- `supplement_method_diagnostics.png`
-
-## Quick start
+Create an isolated environment using the lock file appropriate to the local package manager. For a pip/venv installation:
 
 ```bash
-python -m venv .venv
+python3.13 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
-pip install -e .
+python -m pip install --upgrade pip
+python -m pip install -r requirements-lock.txt
+python -m pip install -e . --no-build-isolation
 ```
 
-Run a quick validation:
+## Validate the frozen repository
 
 ```bash
-python scripts/run_pipeline.py --mode fast --outdir results/fast
-python scripts/run_stats.py --results-dir results/fast --stats-dir stats/fast
-python scripts/make_figures.py --results-dir results/fast --figures-dir figures/fast
+PYTHONPATH=src pytest -q
+PYTHONPATH=src python scripts/validate_result_freeze.py
+python scripts/verify_publication_figure_release.py
 ```
 
-Run a larger check:
+## Reproduce manuscript-grade quantitative figures
+
+The plotting scripts consume the frozen figure-source CSV files; they do **not** rerun production simulations.
 
 ```bash
-python scripts/run_pipeline.py --mode medium --outdir results/medium
-python scripts/run_stats.py --results-dir results/medium --stats-dir stats/medium
-python scripts/make_figures.py --results-dir results/medium --figures-dir figures/medium
+bash scripts/reproduce_publication_figures.sh
 ```
 
-Run the paper analysis:
+Equivalent individual commands are recorded in `reproduction/EXACT_COMMANDS.md`.
 
-```bash
-python scripts/run_pipeline.py --mode paper --outdir results/paper
-python scripts/run_stats.py --results-dir results/paper --stats-dir stats/paper
-python scripts/make_figures.py --results-dir results/paper --figures-dir figures/paper
-```
+- Main Figures 3–8: `publication_figures/main/produce_publication_figures.py`
+- Supplementary Figures S1–S7: `publication_figures/supplementary/produce_supplementary_figures.py`
+- Frozen source data: `publication_figures/source_tables/`
 
-## Output CSVs
+## Re-run the scientific analyses
 
-For each viability definition and condition, the pipeline writes:
+Full production reruns are computationally heavier and are not needed to verify the frozen manuscript figures. Exact validated Phase 4–7 commands and their provenance are recorded in `reproduction/EXACT_COMMANDS.md` and the phase validation files.
 
-- `intervention_points_<condition>_<viability>.csv`  
-  All intervention points, including `analysis_role = primary` or `diagnostic_function_preserving`.
-- `intervention_summary_<condition>_<viability>.csv`  
-  Primary no-kmeans summary used in main figures.
-- `intervention_summary_<condition>_<viability>_all_methods_diagnostic.csv`  
-  All-methods pooled diagnostic summary.
-- `intervention_summary_<condition>_<viability>_kmeans_profile_mechanistic.csv`  
-  kmeans-only function-preserving diagnostic summary.
-- `threshold_sensitivity_<condition>_<viability>.csv`  
-  Primary no-kmeans threshold/smoothing sensitivity grid.
+## Data integrity
 
-The stats script writes:
+The Gate 8 result freeze verified 2,104 manifested Phase 4–6 files, 28 inferential/structural checks, and 11 frozen figure-source tables. `results/result_freeze/FILE_MANIFEST_SHA256.csv` and the release manifest provide file-level SHA-256 checksums.
 
-- `baseline_permutation_tests.csv`
-- `viability_gap_table.csv`
-- `robustness_table.csv`
-- `intervention_selective_vs_control_tests_primary_no_kmeans.csv`
-- `method_ablation_kmeans_vs_primary_tests.csv`
-- `method_viability_summary.csv`
-- `viability_definition_dependence_tests.csv`
-- `entropy_state_definition_summary.csv`
-- `entropy_state_definition_selective_vs_control_tests.csv`
+## Citation and DOI
 
-## Viability definitions
+Citation metadata are provided in `CITATION.cff`. The permanent archive DOI must be inserted into the citation metadata, Data Accessibility statement, and release notes after the public archival deposit is minted.
 
-Biological definitions:
+## License
 
-- `excess_over_control`: mean future fitness minus matched control mean future fitness.
-- `mean_future_fitness`: mean fitness over the intervention horizon.
-- `threshold_survival`: fraction of future generations whose mean fitness exceeds `mean_fitness_threshold`.
+A repository license must be selected by the author before public release. `LICENSE_PENDING.md` records this unresolved release item; do not publish the candidate as the final release until it has been replaced by the selected `LICENSE` file.
 
-Entropy diagnostics:
+## Figures 1 and 2
 
-- `negative_local_metabolite_configuration_entropy`: negative entropy of local metabolite-configuration states.
-- `negative_adjacency_state_entropy`: negative entropy of productive/anti-productive adjacency-state classes.
-- `negative_protocell_compositional_entropy`: negative entropy of coarse-grained protocell composition.
-- `negative_fitness_distribution_entropy`: optional legacy entropy of the discretized short-horizon cell-fitness distribution.
-
-## Notes
-
-- Fast mode is for smoke testing.
-- Medium mode is for checking qualitative patterns.
-- Paper mode is intended for manuscript-scale outputs.
-- Entropy diagnostics require rerunning `run_pipeline.py` with this revision because they depend on short-horizon state observations that were not stored in earlier output CSVs.
+Figures 1 and 2 are vector schematics rather than analytical plots. Their authoritative editable masters are the author-maintained Google Slides files described in `artwork/EDITABLE_VECTOR_ARTWORK_HANDOFF.md`. The final public release should archive those editable masters or provide stable permanent references, together with the final journal-upload exports.

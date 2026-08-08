@@ -1,0 +1,25 @@
+{
+  "title": "Model B semantic-information analysis: JRSI frozen reproducibility release",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Carr, Michael J"
+    }
+  ],
+  "description": "Frozen code, simulation outputs, validation records, seed ledgers, evolved states, figure-source tables, and publication-figure scripts supporting JRSI manuscript rsif-2026-0516, Counterfactual interventions reveal causal relevance of inherited sequence distinctions in a compositional-resampling model.",
+  "keywords": [
+    "semantic information",
+    "compositional heredity",
+    "counterfactual intervention",
+    "origins of life",
+    "protocell model",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/michcarr405/modelb_semantic_jrsi_repo",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

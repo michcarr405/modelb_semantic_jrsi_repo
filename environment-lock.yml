@@ -1,0 +1,17 @@
+name: modelb-jrsi-reproducibility
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13.5
+  - numpy=2.3.5
+  - pandas=2.2.3
+  - scipy=1.17.0
+  - numba=0.65.1
+  - matplotlib=3.10.8
+  - scikit-learn=1.8.0
+  - pillow=12.3.0
+  - tqdm=4.67.3
+  - pytest=9.0.2
+  - pip
+  - pip:
+      - -e .
