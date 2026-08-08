@@ -18,6 +18,7 @@
 - [x] Citation metadata drafted.
 - [x] Release provenance documented.
 - [x] Quantitative Figures 3–8 and S1–S7 regenerated from frozen source tables in the validated environment; PNG/TIFF hashes match archived publication outputs exactly.
+- [x] Clean Git-tracked release-archive builder added; it excludes local caches and hidden transient files.
 
 ## Must be closed before final public release
 
