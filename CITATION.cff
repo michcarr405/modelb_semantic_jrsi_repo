@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: Carr
     given-names: Michael J
-version: "1.0.0-rc4"
+version: "1.0.0-rc5"
 date-released: 2026-08-08
 repository-code: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
 url: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"

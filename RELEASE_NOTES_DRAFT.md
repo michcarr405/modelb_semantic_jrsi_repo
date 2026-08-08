@@ -10,7 +10,7 @@ The scientific results were frozen at commit:
 
 The Gate 8 closure tag is `phase7-gate8-passed-v1` at commit `36246a86320037506beed83d0f7366c33d2c59c5`.
 
-The RC4 public-release packaging layer changes documentation, citation/release metadata, environment locking, publication-figure reproducibility assets, final schematic-artwork archiving, and release-archive hygiene only. It does not alter frozen scientific results.
+The RC5 public-release packaging layer retains the RC4 artwork closure and adds a clean-room rendering-environment correction after the first external workflow run passed the scientific test suite, result-freeze validation, and archived-asset verification but produced byte-level PNG/TIFF mismatches during figure regeneration. RC5 pins the GitHub runner to Ubuntu 24.04, installs the publication font package used by the archived plots, records the resolved rendering environment, and preserves diagnostic artifacts on failure. These are workflow/documentation changes only and do not alter frozen scientific results.
 
 ## License
 

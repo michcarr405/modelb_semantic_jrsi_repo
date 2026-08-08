@@ -30,7 +30,7 @@ This ordering avoids publishing an immutable archive that lacks its own DOI in t
 
 After the license and artwork closures, and after DOI metadata and the clean-room record are closed:
 
-- update version metadata from `1.0.0-rc4` to `1.0.0`;
+- update version metadata from `1.0.0-rc5` to `1.0.0`;
 - create the final annotated tag `jrsi-reproducibility-v1.0.0`;
 - run `scripts/build_public_release_archive.sh jrsi-reproducibility-v1.0.0`;
 - verify the archive and regenerate the final SHA-256 manifest;

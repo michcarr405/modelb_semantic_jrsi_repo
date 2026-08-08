@@ -8,11 +8,24 @@ on:
 
 jobs:
   clean-room-validation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
       - name: Check out release
         uses: actions/checkout@v4
+
+      - name: Install publication fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-croscore
+          fc-cache -f
+          {
+            echo "Runner: ubuntu-24.04"
+            echo "Arimo match:"
+            fc-match Arimo
+            echo "Installed croscore package:"
+            dpkg-query -W -f='${Package}=${Version}\n' fonts-croscore
+          } | tee reproduction/GITHUB_ACTIONS_RENDERING_ENVIRONMENT.txt
 
       - name: Set up Python 3.13.5
         uses: actions/setup-python@v5
@@ -48,6 +61,7 @@ jobs:
         run: bash scripts/reproduce_publication_figures.sh
 
       - name: Upload clean-room records
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: jrsi-reproducibility-validation-${{ github.ref_name }}
