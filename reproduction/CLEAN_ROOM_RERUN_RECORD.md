@@ -1,24 +1,35 @@
 # Clean-room rerun record
 
-**Status:** OPEN in release candidate.
+**Status:** PRE-RELEASE VALIDATION PASSED (RC5). Final-tag validation remains to be run after the immutable `v1.0.0` tag is created.
 
-The final public release requires a clean-room installation/execution record from the release contents.
+## Successful external clean-room validation
 
-Minimum closure procedure:
+A fresh GitHub-hosted Ubuntu 24.04 runner validated release candidate `jrsi-reproducibility-v1.0.0-rc5` on 2026-08-08 at commit:
 
-1. create a fresh environment from `requirements-lock.txt` or `environment-lock.yml`;
-2. install the package from this repository;
-3. run the frozen unit/integration test suite;
-4. run `scripts/validate_result_freeze.py`;
-5. run `scripts/verify_publication_figure_release.py`;
-6. regenerate Figures 3–8 and S1–S7 from the frozen publication source tables;
-7. record environment versions, commands, exit status, and generated-file hashes;
-8. compare generated quantitative figure outputs/manifest to the archived publication exports, allowing only explicitly documented metadata-level nondeterminism if any.
+`a1537a895e619173d3da24c54ff6efc0b56a9634`
 
-No scientific retuning or replacement of frozen outputs is permitted during clean-room verification.
+The workflow completed successfully after the rendering environment was pinned and the publication font package (`fonts-croscore`, providing Arimo) was installed and recorded. The successful run completed all required steps:
 
-## Release-candidate attempt on 2026-08-08
+1. checked out the tagged release candidate;
+2. installed the publication font environment;
+3. set up Python 3.13.5;
+4. installed the locked dependencies;
+5. recorded the clean-room environment;
+6. ran the repository test suite;
+7. validated the frozen result inventory;
+8. verified the archived publication assets;
+9. regenerated manuscript Figures 3–8 and Supplementary Figures S1–S7 from frozen source tables;
+10. verified the regenerated quantitative PNG/TIFF outputs against the archived publication exports;
+11. uploaded the clean-room validation records.
 
-A fresh local virtual environment was created and an install from `requirements-lock.txt` was attempted. The execution environment used for this packaging session had no package-index access, so pip could not retrieve even the pinned NumPy wheel and the isolated installation could not proceed. This was an infrastructure limitation rather than a package/test failure.
+GitHub Actions workflow: **Reproducibility validation #2**
 
-A GitHub Actions workflow is included at `.github/workflows/reproducibility.yml` specifically to perform the required fresh-environment installation, tests, result-freeze validation, and publication-figure regeneration after the final public tag is pushed.
+Artifact:
+
+`jrsi-reproducibility-validation-jrsi-reproducibility-v1.0.0-rc5`
+
+The prior RC4 workflow failure is retained in the repository history as provenance. It occurred only at byte-level quantitative-figure rendering verification because the external runner did not reproduce the archived publication font environment. RC5 corrected the runner/font environment without changing frozen scientific outputs, source tables, plotting logic, estimators, intervention maps, target rules, or statistical results.
+
+## Final-tag closure
+
+After the final annotated tag `jrsi-reproducibility-v1.0.0` is pushed, the same GitHub Actions workflow must pass on that tag. The final run should be retained on GitHub together with its validation artifact. No scientific retuning or replacement of frozen outputs is permitted.

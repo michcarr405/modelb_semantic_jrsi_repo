@@ -8,7 +8,7 @@ Before the final tag:
 
 - repository license: CLOSED — MIT License recorded in `LICENSE`, `CITATION.cff`, `.zenodo.json`, and README;
 - Figures 1 and 2 artwork: CLOSED — author-supplied editable SVG masters and final PDF/EPS/600 dpi grayscale PNG/TIFF exports are archived under `artwork/`;
-- complete a release-candidate clean-room validation run.
+- release-candidate clean-room validation: CLOSED — RC5 passed on GitHub Actions.
 
 Note: when both `.zenodo.json` and `CITATION.cff` are present, Zenodo's GitHub integration uses `.zenodo.json` for the Zenodo record metadata. Keep both files consistent.
 
@@ -38,7 +38,7 @@ Then inspect the new branch on GitHub. Once verified, use GitHub repository sett
 
 Record the public branch/commit in `RELEASE_PROVENANCE.md` and the release notes.
 
-## 3. Run clean-room validation on an RC tag
+## 3. Run clean-room validation on an RC tag — COMPLETED
 
 Create a release-candidate tag before the final DOI-bearing tag:
 
@@ -47,27 +47,11 @@ git tag -a jrsi-reproducibility-v1.0.0-rc5 -m "JRSI reproducibility release cand
 git push origin jrsi-reproducibility-v1.0.0-rc5
 ```
 
-The tag push triggers `.github/workflows/reproducibility.yml` on a fresh GitHub-hosted runner. After the workflow passes:
+The tag push triggers `.github/workflows/reproducibility.yml` on a fresh GitHub-hosted runner. RC5 passed the corrected external clean-room workflow on 2026-08-08 at commit `a1537a895e619173d3da24c54ff6efc0b56a9634`. The validation artifact is `jrsi-reproducibility-validation-jrsi-reproducibility-v1.0.0-rc5`, and `reproduction/CLEAN_ROOM_RERUN_RECORD.md` records the closure. The final tag must still trigger and pass the same workflow.
 
-- save the workflow URL/run identifier;
-- download the validation artifact;
-- update `reproduction/CLEAN_ROOM_RERUN_RECORD.md` from OPEN to PASSED with the run identifier and date.
+## 4. Reserve the permanent DOI before the final immutable archive — COMPLETED
 
-If the workflow reveals a scientific reproducibility defect, do not silently repair the release; reopen change control as required.
-
-## 4. Reserve the permanent DOI before the final immutable archive
-
-Recommended workflow: create a **Zenodo draft** and reserve its DOI before publishing the final software record. Insert the reserved DOI into:
-
-- `CITATION.cff`;
-- root `README.md`;
-- `RELEASE_NOTES_DRAFT.md` (renamed/finalized as appropriate);
-- the manuscript Data Accessibility statement;
-- the response-to-reviewers reproducibility response.
-
-Then update version metadata from `1.0.0-rc5` to `1.0.0` and commit these packaging-only changes.
-
-This ordering allows the DOI to be embedded in the exact final archived files before the Zenodo record becomes immutable.
+Zenodo DOI `10.5281/zenodo.21852680` was reserved on 2026-08-08 and is now embedded in the final citation/documentation metadata. Version metadata is prepared as `1.0.0`. The Zenodo draft remains unpublished until the final tag and final clean-room validation pass.
 
 ## 5. Create the final tag and validate it
 
@@ -91,9 +75,9 @@ Upload the resulting ZIP to the reserved Zenodo draft (or use another permanent 
 
 ## 7. Final metadata and Gate 6 closure
 
-After the DOI resolves publicly:
+After the Zenodo record is published and the DOI resolves publicly:
 
-- confirm the DOI in `CITATION.cff`, README, release notes, manuscript Data Accessibility statement, and reviewer response;
+- confirm DOI `10.5281/zenodo.21852680` in `CITATION.cff`, README, release notes, manuscript Data Accessibility statement, and reviewer response;
 - generate the final release manifest/checksums;
 - verify the final standalone Figure 1/2 exports;
 - run the short Gate 6 closure audit.

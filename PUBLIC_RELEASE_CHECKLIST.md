@@ -26,9 +26,10 @@
 - [x] `CITATION.cff` and `.zenodo.json` license metadata updated to `MIT`.
 - [x] Author-supplied final editable SVG masters for Figures 1 and 2 archived in `artwork/masters/`.
 - [x] Final standalone PDF/EPS and 600 dpi grayscale PNG/TIFF exports for Figures 1 and 2 archived and visually checked against the controlling revised manuscript.
-- [ ] Clean-room rerun completed and `reproduction/CLEAN_ROOM_RERUN_RECORD.md` closed.
-- [ ] Public repository made browsable (not a single nested ZIP only).
+- [x] Release-candidate clean-room rerun completed on RC5 and `reproduction/CLEAN_ROOM_RERUN_RECORD.md` closed for pre-release validation.
+- [x] Release-candidate repository tree published and browsable on GitHub (RC4/RC5 branches); final default/current branch activation remains pending.
 - [ ] Final public Git tag/release created.
-- [ ] Permanent archive DOI minted.
-- [ ] DOI added to `CITATION.cff`, README, release notes, and manuscript Data Accessibility text.
+- [x] Permanent archive DOI reserved: `10.5281/zenodo.21852680`.
+- [ ] Zenodo record published so the reserved DOI is registered/resolvable.
+- [x] Reserved DOI added to `CITATION.cff`, README, release notes, and prepared Data Accessibility text.
 - [ ] Final release manifest generated after all above changes.

@@ -22,5 +22,7 @@
       "relation": "isSupplementTo",
       "resource_type": "software"
     }
-  ]
+  ],
+  "version": "1.0.0",
+  "access_right": "open"
 }

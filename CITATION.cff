@@ -5,10 +5,11 @@ type: software
 authors:
   - family-names: Carr
     given-names: Michael J
-version: "1.0.0-rc5"
+version: "1.0.0"
 date-released: 2026-08-08
 repository-code: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
-url: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
+doi: "10.5281/zenodo.21852680"
+url: "https://doi.org/10.5281/zenodo.21852680"
 keywords:
   - semantic information
   - compositional heredity
@@ -18,8 +19,9 @@ keywords:
 license: "MIT"
 notes: >-
   Frozen scientific results originate from commit
-  2c7d78694579755402c0a1896e109b29dec4d6a0. Add the permanent archive DOI
-  before the final public release.
+  2c7d78694579755402c0a1896e109b29dec4d6a0. The permanent archive DOI is
+  10.5281/zenodo.21852680; it was reserved before final publication so the DOI could be embedded
+  in the release metadata and archived files.
 preferred-citation:
   type: article
   title: "Counterfactual interventions reveal causal relevance of inherited sequence distinctions in a compositional-resampling model"

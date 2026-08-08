@@ -32,13 +32,17 @@ These additions must not alter any frozen scientific result, estimator, interven
 
 `105b62e` and its immediate packaging-only predecessors add the safer public-release workflow, a Git-tracked archive builder, and transient-file exclusions. The RC2 tag is `jrsi-reproducibility-v1.0.0-rc2`. These changes are packaging/documentation only and do not alter the frozen scientific commit or Gate 8 results.
 
-## Recommended final public tag
+## Permanent archive DOI
 
-After the author inserts the DOI, archives Figures 1/2 masters/exports, and closes clean-room validation, create a final public tag such as:
+Zenodo DOI `10.5281/zenodo.21852680` was reserved on 2026-08-08 before final archive publication so that the DOI could be embedded in the release metadata and files. The DOI becomes publicly registered/resolvable when the Zenodo record is published.
+
+## Final public tag
+
+The final public tag is to be:
 
 `jrsi-reproducibility-v1.0.0`
 
-The public release notes should state both the frozen scientific commit and the later packaging/tag commit.
+The public release notes state both the frozen scientific commit and the later packaging/tag commit.
 
 ## Release candidate RC3 packaging commit
 
@@ -51,3 +55,7 @@ RC4 archives the author-supplied final editable SVG masters for Figures 1 and 2,
 ## Release candidate RC5 clean-room rendering closure
 
 The first RC4 GitHub Actions clean-room run reached quantitative-figure regeneration after the repository test suite, result-freeze validation, and archived publication-asset verification had passed. The run then failed because regenerated PNG/TIFF files differed byte-for-byte from the archived publication exports. The publication scripts prefer Arimo, and the archived vector outputs record Arimo as the resolved text face. RC5 therefore pins the runner to Ubuntu 24.04, installs Ubuntu's `fonts-croscore` package before rendering, records the resolved font/package environment, and uploads clean-room diagnostic records even if a later step fails. This is a reproducibility-workflow correction only; no frozen scientific output, source table, plotting logic, estimator, intervention map, target rule, or statistical result is changed.
+
+## RC5 external clean-room validation
+
+Release candidate `jrsi-reproducibility-v1.0.0-rc5` at commit `a1537a895e619173d3da24c54ff6efc0b56a9634` passed the GitHub Actions clean-room validation on 2026-08-08. The successful run installed the locked Python dependencies and publication font environment on Ubuntu 24.04, ran the full test suite, validated the result freeze, verified archived publication assets, regenerated Figures 3–8 and S1–S7 from frozen source tables, and verified exact publication-output hashes. The uploaded validation artifact is `jrsi-reproducibility-validation-jrsi-reproducibility-v1.0.0-rc5`.

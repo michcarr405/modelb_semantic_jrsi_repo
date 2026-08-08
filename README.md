@@ -91,7 +91,11 @@ The Gate 8 result freeze verified 2,104 manifested Phase 4–6 files, 28 inferen
 
 ## Citation and DOI
 
-Citation metadata are provided in `CITATION.cff`. The permanent archive DOI must be inserted into the citation metadata, Data Accessibility statement, and release notes after the public archival deposit is minted.
+Citation metadata are provided in `CITATION.cff`. The permanent archive DOI for the final software record is **10.5281/zenodo.21852680**. The DOI was reserved before final publication so it could be embedded in the release metadata and archived files; it becomes publicly resolvable when the Zenodo record is published.
+
+Repository: `https://github.com/michcarr405/modelb_semantic_jrsi_repo`
+
+Permanent archive: `https://doi.org/10.5281/zenodo.21852680`
 
 ## License
 
