@@ -1,14 +1,23 @@
-# Figures 1 and 2 — editable artwork requirement
+# Figures 1 and 2 — archived editable vector artwork
 
-Figures 1 and 2 are vector schematics, not quantitative outputs generated from the frozen result tables.
+Figures 1 and 2 are vector schematics, not quantitative outputs generated from frozen result tables.
 
-The authoritative editable masters are the author-maintained Google Slides described in `EDITABLE_VECTOR_ARTWORK_HANDOFF.md`.
+## Archived author-supplied masters
 
-Before the final public release, this directory must contain either:
+The final author-supplied editable vector files are archived as:
 
-1. archived copies of the authoritative editable masters in a suitable editable format, **or**
-2. stable permanent references to those masters in the archival record,
+- `masters/Figure_1.svg`
+- `masters/Figure_2.svg`
 
-and it must also contain the final journal-upload exports (at minimum PDF plus the required raster/vector submission format).
+These files are the reproducibility-release artwork sources for the current manuscript figures. The earlier Google Slides master-artwork provenance, scientific-content lock, and export requirements remain documented in `EDITABLE_VECTOR_ARTWORK_HANDOFF.md`.
 
-Do not substitute newly redrawn approximations for the authoritative masters.
+## Final derivative exports
+
+`exports/` contains, for each figure:
+
+- vector PDF;
+- vector EPS;
+- 600 dpi grayscale PNG;
+- 600 dpi grayscale TIFF.
+
+The SVG masters were not redrawn or scientifically modified during export. `ARTWORK_VALIDATION.md` records the proof checks, and `ARTWORK_MANIFEST_SHA256.csv` records file-level checksums.

@@ -73,3 +73,39 @@ PYTHONPATH=src pytest -q tests/test_result_freeze.py
 ```
 
 No production simulation should be rerun merely to regenerate manuscript figures.
+
+## Figures 1 and 2 derivative export commands
+
+Figures 1 and 2 are author-edited vector schematics, not quantitative plots generated from simulation data. Their archived SVG masters are converted to submission/proof formats without changing scientific content.
+
+```bash
+mkdir -p artwork/exports
+for n in 1 2; do
+  inkscape artwork/masters/Figure_${n}.svg \
+    --export-type=pdf \
+    --export-filename=artwork/exports/Figure_${n}.pdf
+
+  inkscape artwork/masters/Figure_${n}.svg \
+    --export-type=eps \
+    --export-filename=artwork/exports/Figure_${n}.eps
+
+  inkscape artwork/masters/Figure_${n}.svg \
+    --export-type=png \
+    --export-dpi=600 \
+    --export-filename=artwork/exports/Figure_${n}_600dpi_tmp.png
+
+  magick artwork/exports/Figure_${n}_600dpi_tmp.png \
+    -alpha off -colorspace Gray -units PixelsPerInch -density 600 \
+    -define png:color-type=0 \
+    artwork/exports/Figure_${n}_600dpi_grayscale.png
+
+  magick artwork/exports/Figure_${n}_600dpi_tmp.png \
+    -alpha off -colorspace Gray -units PixelsPerInch -density 600 \
+    -compress LZW \
+    artwork/exports/Figure_${n}_600dpi_grayscale.tiff
+
+  rm artwork/exports/Figure_${n}_600dpi_tmp.png
+done
+```
+
+The final vector/raster files must be visually proofed against the archived SVG masters and the controlling manuscript; conversion alone is not the acceptance test. See `artwork/ARTWORK_VALIDATION.md`.

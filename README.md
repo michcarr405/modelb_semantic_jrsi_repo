@@ -28,7 +28,7 @@ Model B is a sequence-explicit, fitness-weighted, Wright–Fisher-like compositi
 - `results/phase6_generality/` — frozen staged generality/robustness outputs.
 - `results/result_freeze/` — result inventory, inferential audit, and the authoritative frozen figure-source tables.
 - `publication_figures/` — exact scripts, frozen source data, manifests, and final quantitative exports for manuscript Figures 3–8 and Supplementary Figures S1–S7.
-- `artwork/` — provenance for Figures 1 and 2; their authoritative editable vector masters and final submission exports must be archived or permanently referenced before final public release.
+- `artwork/` — author-supplied editable SVG masters for Figures 1 and 2, final PDF/EPS/600 dpi grayscale PNG/TIFF exports, artwork validation, and checksums.
 - `reproduction/` — exact reproduction commands and release/clean-room records.
 - `requirements-lock.txt` and `environment-lock.yml` — machine-readable locked software environment.
 
@@ -99,4 +99,4 @@ This repository is released under the MIT License. See `LICENSE` for the full li
 
 ## Figures 1 and 2
 
-Figures 1 and 2 are vector schematics rather than analytical plots. Their authoritative editable masters are the author-maintained Google Slides files described in `artwork/EDITABLE_VECTOR_ARTWORK_HANDOFF.md`. The final public release should archive those editable masters or provide stable permanent references, together with the final journal-upload exports.
+Figures 1 and 2 are vector schematics rather than analytical plots. The release archives the author-supplied final editable vector masters as `artwork/masters/Figure_1.svg` and `artwork/masters/Figure_2.svg`, together with PDF, EPS, and 600 dpi grayscale PNG/TIFF derivatives in `artwork/exports/`. `artwork/ARTWORK_VALIDATION.md` records the final scientific-content and export proof against the controlling revised manuscript; `artwork/EDITABLE_VECTOR_ARTWORK_HANDOFF.md` retains the earlier master-artwork provenance and content lock.

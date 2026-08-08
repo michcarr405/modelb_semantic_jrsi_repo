@@ -6,9 +6,9 @@ The scientific analysis is frozen. The items below are release/rights/publicatio
 
 The author selected the MIT License on 2026-08-08. The standard MIT text is present as root `LICENSE`, `CITATION.cff` records the SPDX identifier `MIT`, `.zenodo.json` records the same license, the README has been updated, and `LICENSE_PENDING.md` has been removed. No further license-selection action is required for this release candidate.
 
-## 2. Archive Figures 1 and 2 source artwork
+## 2. Figures 1 and 2 source artwork — CLOSED
 
-Add the authoritative editable masters for Figures 1 and 2 to `artwork/`, or provide permanent archival references to them. Also add the final standalone journal-upload exports and verify them against the controlling rendered manuscript.
+The author supplied final editable vector masters as `artwork/masters/Figure_1.svg` and `artwork/masters/Figure_2.svg` on 2026-08-08. PDF, EPS, and 600 dpi grayscale PNG/TIFF derivatives are archived in `artwork/exports/`. The vector exports were re-rendered and visually checked against the supplied masters and the controlling revised manuscript. `artwork/ARTWORK_VALIDATION.md` and `artwork/ARTWORK_MANIFEST_SHA256.csv` record the proof and checksums. No further Figure 1/2 artwork action is required unless the author later replaces these files with newer approved masters.
 
 ## 3. Publish the repository tree to GitHub
 
@@ -28,9 +28,9 @@ This ordering avoids publishing an immutable archive that lacks its own DOI in t
 
 ## 6. Create final tag and archive
 
-After the license, artwork, DOI metadata, and clean-room record are closed:
+After the license and artwork closures, and after DOI metadata and the clean-room record are closed:
 
-- update version metadata from `1.0.0-rc3` to `1.0.0`;
+- update version metadata from `1.0.0-rc4` to `1.0.0`;
 - create the final annotated tag `jrsi-reproducibility-v1.0.0`;
 - run `scripts/build_public_release_archive.sh jrsi-reproducibility-v1.0.0`;
 - verify the archive and regenerate the final SHA-256 manifest;

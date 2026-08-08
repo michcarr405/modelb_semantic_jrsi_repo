@@ -24,8 +24,8 @@
 
 - [x] Author selected MIT License and root `LICENSE` is present.
 - [x] `CITATION.cff` and `.zenodo.json` license metadata updated to `MIT`.
-- [ ] Authoritative editable masters for Figures 1 and 2 archived or permanently referenced.
-- [ ] Final standalone journal-upload exports for Figures 1 and 2 archived and checked.
+- [x] Author-supplied final editable SVG masters for Figures 1 and 2 archived in `artwork/masters/`.
+- [x] Final standalone PDF/EPS and 600 dpi grayscale PNG/TIFF exports for Figures 1 and 2 archived and visually checked against the controlling revised manuscript.
 - [ ] Clean-room rerun completed and `reproduction/CLEAN_ROOM_RERUN_RECORD.md` closed.
 - [ ] Public repository made browsable (not a single nested ZIP only).
 - [ ] Final public Git tag/release created.

@@ -7,8 +7,7 @@ The public GitHub repository currently exposes only a nested ZIP. The final rele
 Before the final tag:
 
 - repository license: CLOSED — MIT License recorded in `LICENSE`, `CITATION.cff`, `.zenodo.json`, and README;
-- archive or permanently reference the authoritative editable masters for Figures 1 and 2;
-- add final standalone journal-upload exports for Figures 1 and 2 to `artwork/`;
+- Figures 1 and 2 artwork: CLOSED — author-supplied editable SVG masters and final PDF/EPS/600 dpi grayscale PNG/TIFF exports are archived under `artwork/`;
 - complete a release-candidate clean-room validation run.
 
 Note: when both `.zenodo.json` and `CITATION.cff` are present, Zenodo's GitHub integration uses `.zenodo.json` for the Zenodo record metadata. Keep both files consistent.
@@ -24,7 +23,7 @@ Recommended workflow using the supplied Git bundle:
 git clone https://github.com/michcarr405/modelb_semantic_jrsi_repo.git public-repo-backup
 
 # Clone the supplied frozen-history bundle.
-git clone modelb_semantic_jrsi_reproducibility_release_rc3.bundle jrsi-release
+git clone modelb_semantic_jrsi_reproducibility_release_rc4.bundle jrsi-release
 cd jrsi-release
 
 # Add the existing GitHub repository as the publication remote.
@@ -32,7 +31,7 @@ git remote rename origin bundle-origin
 git remote add origin https://github.com/michcarr405/modelb_semantic_jrsi_repo.git
 
 # Publish to a new branch first; this is non-destructive.
-git push -u origin public-reproducibility-release-candidate-v3:jrsi-reproducibility-release
+git push -u origin public-reproducibility-release-candidate-v4:jrsi-reproducibility-release
 ```
 
 Then inspect the new branch on GitHub. Once verified, use GitHub repository settings to make `jrsi-reproducibility-release` the default branch (or rename it to `main` through the normal branch-management workflow). Keep the original one-commit branch as a historical submitted-code snapshot until final release verification is complete. Avoid a force-push unless there is an explicit backup and a deliberate decision to replace the old branch history.
@@ -44,8 +43,8 @@ Record the public branch/commit in `RELEASE_PROVENANCE.md` and the release notes
 Create a release-candidate tag before the final DOI-bearing tag:
 
 ```bash
-git tag -a jrsi-reproducibility-v1.0.0-rc3 -m "JRSI reproducibility release candidate rc3"
-git push origin jrsi-reproducibility-v1.0.0-rc3
+git tag -a jrsi-reproducibility-v1.0.0-rc4 -m "JRSI reproducibility release candidate rc4"
+git push origin jrsi-reproducibility-v1.0.0-rc4
 ```
 
 The tag push triggers `.github/workflows/reproducibility.yml` on a fresh GitHub-hosted runner. After the workflow passes:
@@ -66,7 +65,7 @@ Recommended workflow: create a **Zenodo draft** and reserve its DOI before publi
 - the manuscript Data Accessibility statement;
 - the response-to-reviewers reproducibility response.
 
-Then update version metadata from `1.0.0-rc3` to `1.0.0` and commit these packaging-only changes.
+Then update version metadata from `1.0.0-rc4` to `1.0.0` and commit these packaging-only changes.
 
 This ordering allows the DOI to be embedded in the exact final archived files before the Zenodo record becomes immutable.
 

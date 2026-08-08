@@ -43,3 +43,7 @@ The public release notes should state both the frozen scientific commit and the 
 ## Release candidate RC3 packaging commit
 
 RC3 records the author's MIT License selection and synchronizes the root `LICENSE`, `CITATION.cff`, `.zenodo.json`, README, checklist, release notes, and publication instructions. These are rights/metadata/package changes only. No frozen scientific result, estimator, intervention map, target rule, statistical method, figure-source table, or Phase 4–6 archive content is altered.
+
+## Release candidate RC4 artwork closure
+
+RC4 archives the author-supplied final editable SVG masters for Figures 1 and 2, adds PDF/EPS and 600 dpi grayscale PNG/TIFF derivative exports, records an artwork-specific SHA-256 manifest, and adds a final scientific-content/export validation record. It also advances release-candidate metadata from `1.0.0-rc3` to `1.0.0-rc4`. These are artwork-preservation, documentation, and packaging changes only. No frozen scientific result, estimator, intervention map, target rule, statistical method, quantitative figure-source table, or Phase 4–6 archive content is altered.
