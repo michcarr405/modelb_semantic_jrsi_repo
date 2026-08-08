@@ -1,6 +1,7 @@
 {
   "title": "Model B semantic-information analysis: JRSI frozen reproducibility release",
   "upload_type": "software",
+  "license": "MIT",
   "creators": [
     {
       "name": "Carr, Michael J"

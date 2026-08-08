@@ -2,17 +2,9 @@
 
 The scientific analysis is frozen. The items below are release/rights/publication actions only and do not require any scientific rerun or retuning.
 
-## 1. Select the repository license
+## 1. Repository license — CLOSED
 
-A root `LICENSE` file is required before this release is represented as open-source software. Because the manuscript discloses conceptually related provisional patent applications, the license choice should be made deliberately and, if patent rights are important to preserve, with patent/legal counsel.
-
-After a license is selected:
-
-- add the standard license text as root `LICENSE`;
-- replace `license: "TO-BE-SELECTED"` in `CITATION.cff` with the SPDX identifier;
-- add the same license to `.zenodo.json` metadata;
-- update the README License section;
-- delete `LICENSE_PENDING.md`.
+The author selected the MIT License on 2026-08-08. The standard MIT text is present as root `LICENSE`, `CITATION.cff` records the SPDX identifier `MIT`, `.zenodo.json` records the same license, the README has been updated, and `LICENSE_PENDING.md` has been removed. No further license-selection action is required for this release candidate.
 
 ## 2. Archive Figures 1 and 2 source artwork
 
@@ -38,7 +30,7 @@ This ordering avoids publishing an immutable archive that lacks its own DOI in t
 
 After the license, artwork, DOI metadata, and clean-room record are closed:
 
-- update version metadata from `1.0.0-rc1` to `1.0.0`;
+- update version metadata from `1.0.0-rc3` to `1.0.0`;
 - create the final annotated tag `jrsi-reproducibility-v1.0.0`;
 - run `scripts/build_public_release_archive.sh jrsi-reproducibility-v1.0.0`;
 - verify the archive and regenerate the final SHA-256 manifest;

@@ -10,7 +10,11 @@ The scientific results were frozen at commit:
 
 The Gate 8 closure tag is `phase7-gate8-passed-v1` at commit `36246a86320037506beed83d0f7366c33d2c59c5`.
 
-The RC2 public-release packaging layer changes documentation, citation/release metadata, environment locking, publication-figure reproducibility assets, and release-archive hygiene only. It does not alter frozen scientific results.
+The RC3 public-release packaging layer changes documentation, citation/release metadata, environment locking, publication-figure reproducibility assets, and release-archive hygiene only. It does not alter frozen scientific results.
+
+## License
+
+This release is distributed under the MIT License. See `LICENSE`.
 
 ## Publication-figure reproducibility
 
@@ -29,7 +33,6 @@ Figures 1 and 2 are vector schematics; their authoritative editable masters and 
 
 Replace the remaining release-candidate placeholders:
 
-- selected repository license;
 - final public tag/packaging commit;
 - permanent archive DOI;
 - Figure 1/2 editable-master references and standalone exports;

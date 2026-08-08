@@ -34,8 +34,12 @@ These additions must not alter any frozen scientific result, estimator, interven
 
 ## Recommended final public tag
 
-After the author selects a license, inserts the DOI, archives Figures 1/2 masters/exports, and closes clean-room validation, create a final public tag such as:
+After the author inserts the DOI, archives Figures 1/2 masters/exports, and closes clean-room validation, create a final public tag such as:
 
 `jrsi-reproducibility-v1.0.0`
 
 The public release notes should state both the frozen scientific commit and the later packaging/tag commit.
+
+## Release candidate RC3 packaging commit
+
+RC3 records the author's MIT License selection and synchronizes the root `LICENSE`, `CITATION.cff`, `.zenodo.json`, README, checklist, release notes, and publication instructions. These are rights/metadata/package changes only. No frozen scientific result, estimator, intervention map, target rule, statistical method, figure-source table, or Phase 4–6 archive content is altered.

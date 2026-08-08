@@ -95,7 +95,7 @@ Citation metadata are provided in `CITATION.cff`. The permanent archive DOI must
 
 ## License
 
-A repository license must be selected by the author before public release. `LICENSE_PENDING.md` records this unresolved release item; do not publish the candidate as the final release until it has been replaced by the selected `LICENSE` file.
+This repository is released under the MIT License. See `LICENSE` for the full license text.
 
 ## Figures 1 and 2
 

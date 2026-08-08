@@ -22,8 +22,8 @@
 
 ## Must be closed before final public release
 
-- [ ] Author selects repository license and adds root `LICENSE`.
-- [ ] `CITATION.cff` license field updated to the selected license.
+- [x] Author selected MIT License and root `LICENSE` is present.
+- [x] `CITATION.cff` and `.zenodo.json` license metadata updated to `MIT`.
 - [ ] Authoritative editable masters for Figures 1 and 2 archived or permanently referenced.
 - [ ] Final standalone journal-upload exports for Figures 1 and 2 archived and checked.
 - [ ] Clean-room rerun completed and `reproduction/CLEAN_ROOM_RERUN_RECORD.md` closed.

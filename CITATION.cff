@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: Carr
     given-names: Michael J
-version: "1.0.0-rc2"
+version: "1.0.0-rc3"
 date-released: 2026-08-08
 repository-code: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
 url: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
@@ -15,11 +15,11 @@ keywords:
   - counterfactual intervention
   - origins of life
   - protocell model
-license: "TO-BE-SELECTED"
+license: "MIT"
 notes: >-
   Frozen scientific results originate from commit
   2c7d78694579755402c0a1896e109b29dec4d6a0. Add the permanent archive DOI
-  and replace the temporary license value before the final public release.
+  and add the permanent archive DOI before the final public release.
 preferred-citation:
   type: article
   title: "Counterfactual interventions reveal causal relevance of inherited sequence distinctions in a compositional-resampling model"
