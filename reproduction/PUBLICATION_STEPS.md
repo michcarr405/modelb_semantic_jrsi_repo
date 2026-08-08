@@ -15,20 +15,31 @@ Before the final tag:
 
 Note: when both `.zenodo.json` and `CITATION.cff` are present, Zenodo's GitHub integration uses `.zenodo.json` for the Zenodo record metadata. Keep both files consistent.
 
-## 2. Publish the browsable GitHub repository
+## 2. Publish the browsable GitHub repository safely
 
-From a local clone of the existing public repository, back it up first and then publish the release-candidate tree while preserving scientific Git history.
+The existing public GitHub repository has a separate one-commit history containing only the old nested ZIP. Do **not** overwrite `main` first. Publish the frozen repository history to a new branch, inspect it, and only then make it the default/current branch.
+
+Recommended workflow using the supplied Git bundle:
 
 ```bash
-git remote -v
-git status
-# Add/copy the release-candidate repository tree into the public working tree.
-git add -A
-git commit -m "Package frozen JRSI reproducibility release candidate"
-git push origin main
+# Keep a separate backup clone of the current public repository.
+git clone https://github.com/michcarr405/modelb_semantic_jrsi_repo.git public-repo-backup
+
+# Clone the supplied frozen-history bundle.
+git clone modelb_semantic_jrsi_reproducibility_release_rc2.bundle jrsi-release
+cd jrsi-release
+
+# Add the existing GitHub repository as the publication remote.
+git remote rename origin bundle-origin
+git remote add origin https://github.com/michcarr405/modelb_semantic_jrsi_repo.git
+
+# Publish to a new branch first; this is non-destructive.
+git push -u origin public-reproducibility-release-candidate-v2:jrsi-reproducibility-release
 ```
 
-Record the resulting public packaging commit in `RELEASE_PROVENANCE.md` and the release notes.
+Then inspect the new branch on GitHub. Once verified, use GitHub repository settings to make `jrsi-reproducibility-release` the default branch (or rename it to `main` through the normal branch-management workflow). Keep the original one-commit branch as a historical submitted-code snapshot until final release verification is complete. Avoid a force-push unless there is an explicit backup and a deliberate decision to replace the old branch history.
+
+Record the public branch/commit in `RELEASE_PROVENANCE.md` and the release notes.
 
 ## 3. Run clean-room validation on an RC tag
 
