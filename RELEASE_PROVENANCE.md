@@ -30,7 +30,7 @@ These additions must not alter any frozen scientific result, estimator, interven
 
 ## Release candidate RC2 packaging commit
 
-`d01ee56` and its immediate packaging-only predecessors add the safer public-release workflow, a Git-tracked archive builder, and transient-file exclusions. The RC2 tag is `jrsi-reproducibility-v1.0.0-rc2`. These changes are packaging/documentation only and do not alter the frozen scientific commit or Gate 8 results.
+`105b62e` and its immediate packaging-only predecessors add the safer public-release workflow, a Git-tracked archive builder, and transient-file exclusions. The RC2 tag is `jrsi-reproducibility-v1.0.0-rc2`. These changes are packaging/documentation only and do not alter the frozen scientific commit or Gate 8 results.
 
 ## Recommended final public tag
 
