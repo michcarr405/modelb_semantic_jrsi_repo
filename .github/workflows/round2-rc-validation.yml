@@ -1,0 +1,84 @@
+name: Round-2 RC clean-room validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - round2-release-candidate-v2.0.0
+
+jobs:
+  round2-clean-room:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Check out release candidate
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.13.5
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+          cache: 'pip'
+
+      - name: Install locked dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements-lock.txt
+          python -m pip install -e . --no-build-isolation
+
+      - name: Verify exact Round-2 source hashes
+        run: |
+          sha256sum -c round2_mp/provenance/RC1_SOURCE_SHA256.txt | tee round2_mp/provenance/GITHUB_ACTIONS_R2_HASH_VALIDATION.txt
+
+      - name: Validate Round-2 frozen numerical records
+        run: |
+          python round2_mp/validation/validate_round2_tables.py | tee round2_mp/provenance/GITHUB_ACTIONS_R2_TABLE_VALIDATION.txt
+
+      - name: Run repository test suite
+        env:
+          PYTHONPATH: src
+        run: |
+          pytest -q | tee round2_mp/provenance/GITHUB_ACTIONS_R2_TEST_RESULTS.txt
+
+      - name: Validate historical result freeze
+        env:
+          PYTHONPATH: src
+        run: |
+          python scripts/validate_result_freeze.py | tee round2_mp/provenance/GITHUB_ACTIONS_R2_BASE_FREEZE_VALIDATION.txt
+
+      - name: Compile Round-2 scripts
+        run: |
+          python -m py_compile round2_mp/scripts/*.py
+
+      - name: Regenerate representative MP figures from frozen source tables
+        run: |
+          sudo mkdir -p /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/source_tables
+          sudo mkdir -p /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures
+          sudo cp round2_mp/source_tables/*.csv /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/source_tables/
+          sudo cp round2_mp/scripts/make_mp_migration_figures.py /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/
+          sudo chown -R "$USER":"$USER" /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION
+          python /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/make_mp_migration_figures.py
+          test -s /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/Figure_3_MP.pdf
+          test -s /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/Figure_4_MP.pdf
+          test -s /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/Figure_S1_MP.pdf
+          test -s /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/Figure_S2_MP.pdf
+          sha256sum /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/*.pdf > round2_mp/provenance/GITHUB_ACTIONS_R2_REGENERATED_PDF_SHA256.txt
+
+      - name: Record clean-room environment
+        if: always()
+        run: |
+          {
+            uname -a
+            python --version
+            python -m pip freeze
+          } > round2_mp/provenance/GITHUB_ACTIONS_R2_ENVIRONMENT.txt
+
+      - name: Upload Round-2 clean-room records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jrsi-round2-rc-validation-${{ github.sha }}
+          path: |
+            round2_mp/provenance/GITHUB_ACTIONS_R2_*.txt
+            /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/*.pdf
+          if-no-files-found: warn
