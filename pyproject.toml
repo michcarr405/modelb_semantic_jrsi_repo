@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "modelb-semantic-jsri-repo"
-version = "2.0.0rc7"
+version = "2.0.0"
 description = "Original Model B reruns plus JSRI-oriented intervention-based semantic analysis with no-kmeans primary frontiers and alternative viability definitions."
 readme = "README.md"
 requires-python = ">=3.10"

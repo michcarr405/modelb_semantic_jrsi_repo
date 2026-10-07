@@ -1,11 +1,12 @@
 cff-version: 1.2.0
-title: "Model B marginal-preserving analysis: JRSI Round-2 reproducibility candidate"
+title: "Model B marginal-preserving analysis: JRSI Round-2 reproducibility release"
 message: "Please cite this software release when using its code or data."
 type: software
 authors:
   - family-names: Carr
     given-names: Michael J
-version: "2.0.0rc7"
+version: "2.0.0"
+date-released: "2026-10-07"
 repository-code: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
 license: MIT
 keywords:
@@ -14,5 +15,5 @@ keywords:
   - marginal-preserving intervention
   - reproducibility
 notes: >-
-  Release candidate; not yet publicly tagged. No v2 DOI has been assigned.
+  No v2 DOI is asserted before the Zenodo archive is verified.
   The MP operator is a documented functional reconstruction, not byte-identical recovery.

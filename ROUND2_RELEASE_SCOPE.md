@@ -11,4 +11,4 @@ All 29 current source CSVs are accounted for, including historical reader-record
 
 The original source of the MP module is reconstructed, not recovered byte-for-byte. Gate-8 records and original recovery reports are preserved for traceability. Manuscript and Supplement files are excluded; historical numerical audits are retained separately from publication assets.
 
-The current scope is a code-and-data scientific regeneration candidate with numerical reporting alignment. Publishing, tagging, DOI creation and submission are separate actions.
+The current scope is a code-and-data scientific regeneration release with numerical reporting alignment. Publishing, tagging, DOI creation and submission are separate actions.

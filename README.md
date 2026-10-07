@@ -1,6 +1,6 @@
-# Round-2 marginal-preserving reproducibility candidate
+# Round-2 marginal-preserving reproducibility release
 
-Candidate: `jrsi-reproducibility-v2.0.0-rc7`. This archive supports the Round-2 analysis of causal relevance of inherited sequence distinctions in a compositional-resampling model.
+Release: `jrsi-reproducibility-v2.0.0`. This archive supports the Round-2 analysis of causal relevance of inherited sequence distinctions in a compositional-resampling model.
 
 The primary intervention averages native local-state probabilities using the current population's motif frequencies within each group and positional segment. It preserves the expected one-site segment-conditioned marginal while allowing relational organization and subsequent fitness to change. The pre-softmax affinity-averaging intervention is an explicitly secondary comparator.
 
@@ -30,9 +30,9 @@ This copies immutable inputs and unmodified drivers, excludes previous Round-2 g
 
 `src/modelb_semantic_repo/mp_operator.py` is a documented functional reconstruction, not byte-identical recovery of lost source. `round2_mp/SOURCE_RECOVERY.md` explains its evidence and validation. Seed provenance combines the original recovered 27,139-record MP ledger with the recovered final causal-specificity supplement; see `round2_mp/provenance/CANONICAL_SEED_PROVENANCE.md`.
 
-Manuscript and Supplement prose, TeX sources, compiled PDFs, and publication-source ZIPs are maintained separately and are excluded from this repository. Prose-only changes do not require a repository update or a new computational release. Changes to data, numerical results, analysis code, methods implemented by the code, or reproducibility claims require the corresponding repository update. The numerical Table S4 correction remains documented under `round2_mp/reporting_corrections/`. Historical audit records describe earlier snapshots and do not control current manuscript wording. See `REPOSITORY_CONTENT_POLICY.md`.
+Manuscript and Supplement prose, TeX sources, complete document PDFs, and publication-source ZIPs are maintained separately and are excluded from this repository. Prose-only changes do not require a repository update or a new computational release. Changes to data, numerical results, analysis code, methods implemented by the code, or reproducibility claims require the corresponding repository update. The numerical Table S4 correction remains documented under `round2_mp/reporting_corrections/`. Historical audit records describe earlier snapshots and do not control current manuscript wording. See `REPOSITORY_CONTENT_POLICY.md`.
 
-This candidate has not been published or tagged, and no new DOI is claimed.
+The release preparation passed GitHub clean-install tests, integrated numerical evidence checks, packaging checks, and final-figure pixel comparisons. See `PUBLIC_VALIDATION_RECORD.md` for the exact tested commit and scope. No v2 DOI is claimed before the Zenodo record is verified.
 
 ## Current figures
 
