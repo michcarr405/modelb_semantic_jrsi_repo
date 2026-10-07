@@ -32,7 +32,7 @@ This copies immutable inputs and unmodified drivers, excludes previous Round-2 g
 
 Manuscript and Supplement prose, TeX sources, complete document PDFs, and publication-source ZIPs are maintained separately and are excluded from this repository. Prose-only changes do not require a repository update or a new computational release. Changes to data, numerical results, analysis code, methods implemented by the code, or reproducibility claims require the corresponding repository update. The numerical Table S4 correction remains documented under `round2_mp/reporting_corrections/`. Historical audit records describe earlier snapshots and do not control current manuscript wording. See `REPOSITORY_CONTENT_POLICY.md`.
 
-The release preparation passed GitHub clean-install tests, integrated numerical evidence checks, packaging checks, and final-figure pixel comparisons. See `PUBLIC_VALIDATION_RECORD.md` for the exact tested commit and scope. No v2 DOI is claimed before the Zenodo record is verified.
+The release preparation passed GitHub clean-install tests, integrated numerical evidence checks, packaging checks, and final-figure pixel comparisons. See `PUBLIC_VALIDATION_RECORD.md` for the exact tested commit and scope. The published v2 archive is https://doi.org/10.5281/zenodo.23223636. The immutable release tag points to commit `e6c0657af7cadf6f9b1d9e2508dee486772125e4`; later citation-only metadata updates do not alter that archive.
 
 ## Current figures
 

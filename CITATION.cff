@@ -6,6 +6,8 @@ authors:
   - family-names: Carr
     given-names: Michael J
 version: "2.0.0"
+doi: "10.5281/zenodo.23223636"
+url: "https://zenodo.org/records/23223636"
 date-released: "2026-10-07"
 repository-code: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
 license: MIT
@@ -15,5 +17,5 @@ keywords:
   - marginal-preserving intervention
   - reproducibility
 notes: >-
-  No v2 DOI is asserted before the Zenodo archive is verified.
+  The DOI identifies the immutable v2 archive from tag jrsi-reproducibility-v2.0.0.
   The MP operator is a documented functional reconstruction, not byte-identical recovery.
