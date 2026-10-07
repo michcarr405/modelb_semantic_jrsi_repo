@@ -7,17 +7,16 @@ The authoritative Round-2 evidence layer is under `round2_mp/`. The older Gate-8
 ## Candidate gates
 
 - RC0 scientific freeze: **PASS**
-- final main/Supplement synchronization: **PASS**
-- numerical audit: **75/75 PASS**
-- notation/value audit: **PASS**
 - RC1 release-tree assembly: **PASS**
-- RC2 provenance/hash verification: **NEXT**
-- RC3 packaged validation: pending
-- RC4 clean-room install/regeneration: pending
-- RC5 manuscript-repository consistency: pending
-- RC6 immutable lock/tag: pending
+- RC2 provenance/hash verification: **PASS**
+- RC3 packaged validation: **PASS**
+- RC4 clean-room install/regeneration: **PASS**
+- RC5 manuscript-repository consistency: **PASS**
+- RC6 immutable lock/tag: **NEXT**
 - Zenodo publication/DOI verification: pending
 
-No immutable Round-2 tag or GitHub Release has been created.
+Clean-room validation used Ubuntu 24.04 / Python 3.13.5, verified all 23 frozen Round-2 source/script hashes, passed 68 repository tests and 5/5 historical freeze checks, and regenerated MP figures from released source tables.
 
-See `ROUND2_RELEASE_CANDIDATE.md`, `round2_mp/README.md`, and `round2_mp/provenance/RC1_ASSEMBLY_RECORD.md`.
+No immutable Round-2 tag or GitHub Release has yet been created.
+
+See `ROUND2_RELEASE_CANDIDATE.md` and `round2_mp/provenance/`.

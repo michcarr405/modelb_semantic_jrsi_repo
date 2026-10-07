@@ -2,23 +2,24 @@
 
 Candidate branch: `round2-release-candidate-v2.0.0`
 
-Base repository commit: `dadee39c832751fe0be21bdcf26343a3039d757c`
+Historical base repository commit: `dadee39c832751fe0be21bdcf26343a3039d757c`
 
-This candidate layers the frozen Round-2 MP-primary evidence over the validated historical repository without mutating the Round-1 release state.
+The candidate layers the frozen Round-2 MP-primary evidence over the validated historical repository without rewriting the Round-1/Gate-8 scientific record.
+
+## Current gate status
+
+- RC0 scientific freeze: **PASS**
+- RC1 release-tree assembly: **PASS**
+- RC2 hash/provenance verification: **PASS**
+- RC3 packaged validation: **PASS**
+- RC4 clean-room reproduction: **PASS**
+- RC5 manuscript-repository consistency: **PASS**
+- RC6 immutable candidate lock/tag: **NEXT**
+- GitHub Release: not yet created
+- Zenodo publication/DOI verification: not yet completed
 
 ## Current-evidence scope
 
-Included:
-- frozen MP-primary source tables;
-- MP migration/diagnostic scripts;
-- exact MP migration SHA-256 provenance;
-- final manuscript/Supplement freeze hashes;
-- explicit supersession documentation.
+The authoritative Round-2 evidence is under `round2_mp/`. Historical affinity-logit primary analyses, S7-S9 Supplement assets, earlier 21-page/13-page builds, and Gate-8 publication figures remain provenance only.
 
-Not current evidence:
-- historical affinity-logit primary analyses;
-- historical Supplementary Figures S7-S9;
-- earlier 21-page main / 13-page Supplement builds;
-- older Gate-8 publication-figure outputs.
-
-Those remain historical provenance only.
+The candidate must not be tagged immutable until release metadata (README/CITATION/.zenodo/Data Accessibility targets) are synchronized and the final post-metadata validation passes.
