@@ -1,0 +1,10 @@
+confirm_id,method,n_maps,spearman_map_average
+D0,affinity_rank_group,9,0.8833333333333333
+D0,balanced_random_group,9,0.75
+D0,contiguous_substring,14,0.8637362637362638
+D1,affinity_rank_group,9,1.0
+D1,balanced_random_group,9,1.0
+D1,contiguous_substring,14,0.9208791208791209
+D2,affinity_rank_group,9,1.0
+D2,balanced_random_group,9,0.9833333333333333
+D2,contiguous_substring,14,0.956043956043956
