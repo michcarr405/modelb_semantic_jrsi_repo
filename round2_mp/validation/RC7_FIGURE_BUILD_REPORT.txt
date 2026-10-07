@@ -1,0 +1,11 @@
+JRSI ROUND-2 PORTABLE FIGURE BUILD — RC7, 2026-10-07
+
+PASS: 12 data figures regenerated from recovered plotting sources and numerical inputs; all are pixel-identical to the unchanged final masters at 144 dpi. Figures 1 and 2 are exact archived conceptual-diagram copies, not data regeneration.
+
+A fresh Python 3.12 plotting environment was installed with pinned dependencies and the build was run from a different working directory. Matplotlib 3.10.8, NumPy 2.3.5, pandas 2.2.3 and PyMuPDF 1.26.6 were used. Bundled Arimo fonts remove the system-font dependency. Rendering equivalence does not imply PDF byte identity.
+
+Recovered main-figure scripts and plot-only extracts from frozen Supplement packages are preserved with source hashes. The adapter reconstructs final Figure 4 ylabel overlays and final Figure 8 short labels, upper axis bound and label rotation. The original final build script is not claimed to have been recovered byte-for-byte.
+
+Current figure masters remain under round2_mp/figures/main and round2_mp/figures/supplement. Build instructions are in round2_mp/figure_build/README.md. Figure build validation is under round2_mp/validation/FIGURE_BUILD_VALIDATION.json. Plot-specific dependencies are separate from the simulation requirements.
+
+Scientific production code, source tables, seed ledgers, population states and final figure masters are unchanged. The previous 68-test foundation and 29-table scientific regeneration gate remain applicable; no full scientific campaign rerun was performed for this figure-build update. Manuscript and Supplement documents remain excluded. Public publication/tag/DOI verification remains pending authenticated user publication.

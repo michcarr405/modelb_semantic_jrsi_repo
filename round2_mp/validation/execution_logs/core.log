@@ -1,0 +1,41 @@
+core blocks 10/210
+core blocks 20/210
+core blocks 30/210
+core blocks 40/210
+core blocks 50/210
+core blocks 60/210
+core blocks 70/210
+core blocks 80/210
+core blocks 90/210
+core blocks 100/210
+core blocks 110/210
+core blocks 120/210
+core blocks 130/210
+core blocks 140/210
+core blocks 150/210
+core blocks 160/210
+core blocks 170/210
+core blocks 180/210
+core blocks 190/210
+core blocks 200/210
+core blocks 210/210
+{
+  "n_continuation_rows": 3200,
+  "n_seed_blocks": 400,
+  "max_abs_control_delta_mp": 0.0,
+  "control_exact_zero": true,
+  "n_continuations_per_block_unique": [
+    8
+  ]
+}
+ inherit_prob  mean_delta_mp  bootstrap_95_lower  bootstrap_95_upper  positive_blocks  n  p_value  q_value_bh_10
+          0.1       0.101799            0.092131            0.111204               20 20   0.0001         0.0001
+          0.2       0.098298            0.086011            0.110472               20 20   0.0001         0.0001
+          0.3       0.114799            0.101563            0.127731               20 20   0.0001         0.0001
+          0.4       0.119315            0.107709            0.132162               20 20   0.0001         0.0001
+          0.5       0.134553            0.125162            0.143699               20 20   0.0001         0.0001
+          0.6       0.167113            0.155468            0.178115               20 20   0.0001         0.0001
+          0.7       0.210428            0.193744            0.227695               20 20   0.0001         0.0001
+          0.8       0.308062            0.279192            0.336986               20 20   0.0001         0.0001
+          0.9       0.723521            0.663137            0.785602               20 20   0.0001         0.0001
+          1.0       2.248146            1.843924            2.640075               20 20   0.0001         0.0001

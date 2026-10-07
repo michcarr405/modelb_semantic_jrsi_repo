@@ -1,0 +1,11 @@
+{
+  "n_phase5_specs": 220,
+  "n_native_full_specs": 20,
+  "n_continuation_rows": 480,
+  "max_starting_expected_marginal_abs_error": 4.218847493575595e-14,
+  "max_original_seed_block_reconstruction_abs_error": 7.105427357601002e-15,
+  "all_six_mp_contrasts_pass": false,
+  "n_mp_contrasts_passed": 5,
+  "continuation_root_seed_reused_for_pairing": 2026073104,
+  "round2_analysis_root_seed": 2026100201
+}

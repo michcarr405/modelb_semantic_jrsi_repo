@@ -1,0 +1,56 @@
+pending continuation blocks: 719
+continuation blocks 20/719 elapsed=23.7s
+continuation blocks 40/719 elapsed=40.0s
+continuation blocks 60/719 elapsed=55.9s
+continuation blocks 80/719 elapsed=64.4s
+continuation blocks 100/719 elapsed=73.0s
+continuation blocks 120/719 elapsed=82.5s
+continuation blocks 140/719 elapsed=90.6s
+continuation blocks 160/719 elapsed=98.8s
+continuation blocks 180/719 elapsed=108.8s
+continuation blocks 200/719 elapsed=117.1s
+continuation blocks 220/719 elapsed=126.4s
+continuation blocks 240/719 elapsed=134.5s
+continuation blocks 260/719 elapsed=142.1s
+continuation blocks 280/719 elapsed=151.1s
+continuation blocks 300/719 elapsed=159.3s
+continuation blocks 320/719 elapsed=167.6s
+continuation blocks 340/719 elapsed=177.3s
+continuation blocks 360/719 elapsed=185.4s
+continuation blocks 380/719 elapsed=194.6s
+continuation blocks 400/719 elapsed=204.0s
+continuation blocks 420/719 elapsed=212.1s
+continuation blocks 440/719 elapsed=220.9s
+continuation blocks 460/719 elapsed=229.6s
+continuation blocks 480/719 elapsed=239.7s
+continuation blocks 500/719 elapsed=249.1s
+continuation blocks 520/719 elapsed=257.5s
+continuation blocks 540/719 elapsed=266.5s
+continuation blocks 560/719 elapsed=274.3s
+continuation blocks 580/719 elapsed=283.2s
+continuation blocks 600/719 elapsed=292.5s
+continuation blocks 620/719 elapsed=300.7s
+continuation blocks 640/719 elapsed=309.1s
+continuation blocks 660/719 elapsed=316.9s
+continuation blocks 680/719 elapsed=325.0s
+continuation blocks 700/719 elapsed=335.0s
+continuation blocks 719/719 elapsed=342.5s
+{
+  "n_baselines": 20,
+  "n_continuations_per_map": 64,
+  "target_reached": 20,
+  "identity_required_by_mean_frontier": 2,
+  "technical_precision_class_counts": {
+    "technically_unresolved": 14,
+    "technically_resolved_nonidentity": 6
+  },
+  "first_target_method_counts": {
+    "balanced_random_group": 10,
+    "contiguous_substring": 4,
+    "affinity_rank_group": 4,
+    "identity": 2
+  },
+  "mean_constant_intervention_loss": 2.285806070963543,
+  "median_target_tolerance": 0.022473788791232713,
+  "median_first_target_corrected_information": 0.22768918720326714
+}

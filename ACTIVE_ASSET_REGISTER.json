@@ -1,0 +1,9 @@
+{
+  "candidate": "jrsi-reproducibility-v2.0.0-rc4",
+  "scientific_source_tables": "round2_mp/source_tables/",
+  "validation": "round2_mp/validation/INTEGRATED_REGENERATION_VALIDATION.json",
+  "reconstruction": "src/modelb_semantic_repo/mp_operator.py",
+  "public_tag": null,
+  "new_live_doi": null,
+  "repository_scope": "Code, data, numerical outputs and reproducibility records; manuscript and Supplement publication files are excluded."
+}

@@ -1,0 +1,19 @@
+{
+  "design_id": "B2_met6",
+  "stage": "B2",
+  "family": "metabolite",
+  "replicate": 7,
+  "spec_json": "{\"b_ratio\": 1.6666666666666667, \"bias\": 2.0, \"fitness_mode\": \"count\", \"floor\": 0.1, \"jitter\": 0, \"motif_length\": 5, \"mutation_rate\": 0.001, \"n_cells\": 80, \"n_gens\": 150, \"n_metabolites\": 6, \"n_segments\": 4, \"n_seqs\": 8, \"p\": 1.0, \"penalty\": 0.5, \"penalty_ratio\": 0.25, \"reward\": 2.0, \"segment_order\": \"native\", \"seq_len\": 60, \"sigma\": 1.0, \"sigma_ratio\": 0.8333333333333334, \"stride\": 1, \"temperature\": 1.2}",
+  "baseline_seed": 14276861,
+  "corrected_information": 0.28458891043091705,
+  "conditional_information": 0.3351395100431588,
+  "permutation_mean": 0.05055059961224173,
+  "delta_mp": 1.658083767361112,
+  "delta_mp_cont_sd": 0.5070786056944653,
+  "adaptive_gain": 1.2754947916666666,
+  "final_mean_fitness": 51.5546875,
+  "state_hash": "af1e1f143d70532fa5c27ed0a75d7eb5c0a43927f23154378568a39de12f3e1d",
+  "trajectory_hash": "b48e4ca45ad7a020ff1f939a7e16f7a29a90d6ce78ed3306447ee250decf8d67",
+  "mp_marginal_max_abs_error": 6.078471059822732e-15,
+  "n_continuations": 8
+}

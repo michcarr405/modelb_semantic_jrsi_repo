@@ -1,0 +1,46 @@
+pending 256
+blocks 8/256 elapsed=15.9s
+blocks 16/256 elapsed=30.2s
+blocks 24/256 elapsed=41.4s
+blocks 32/256 elapsed=44.5s
+blocks 40/256 elapsed=57.6s
+blocks 48/256 elapsed=72.2s
+blocks 56/256 elapsed=82.7s
+blocks 64/256 elapsed=86.1s
+blocks 72/256 elapsed=99.5s
+blocks 80/256 elapsed=113.3s
+blocks 88/256 elapsed=123.7s
+blocks 96/256 elapsed=127.0s
+blocks 104/256 elapsed=140.2s
+blocks 112/256 elapsed=153.3s
+blocks 120/256 elapsed=164.3s
+blocks 128/256 elapsed=167.8s
+blocks 136/256 elapsed=180.6s
+blocks 144/256 elapsed=194.4s
+blocks 152/256 elapsed=205.1s
+blocks 160/256 elapsed=208.8s
+blocks 168/256 elapsed=222.1s
+blocks 176/256 elapsed=233.7s
+blocks 184/256 elapsed=242.3s
+blocks 192/256 elapsed=244.4s
+blocks 200/256 elapsed=256.3s
+blocks 208/256 elapsed=269.5s
+blocks 216/256 elapsed=280.1s
+blocks 224/256 elapsed=283.4s
+blocks 232/256 elapsed=295.6s
+blocks 240/256 elapsed=308.6s
+blocks 248/256 elapsed=318.1s
+blocks 256/256 elapsed=320.5s
+{
+  "n_population_rows": 256,
+  "n_landscapes": 8,
+  "n_pop_per_landscape_setting": 8,
+  "n_settings": 4,
+  "max_mp_marginal_abs_error": 0.0,
+  "all_landscape_setting_cells_complete": true
+}
+ design_id  n_landscapes  mean_delta_mp  landscape_boot_95_low  landscape_boot_95_high  positive_landscapes  exact_sign_p  replicated_across_landscapes  landscapes_regime_lower_gt_0p25  mean_corrected_information  mean_adaptive_gain
+   A_p2_a3             8       0.224930               0.081010                0.392865                    7      0.031250                          True                                3                    0.466967            0.047314
+B2_default             8       2.372421               2.175012                2.560271                    8      0.007812                          True                                8                    0.254679            4.327500
+B2_reward3             8       3.243945               2.923690                3.615868                    8      0.007812                          True                                8                    0.250983            6.120824
+B2_stride7             8       1.549566               1.481238                1.622904                    8      0.007812                          True                                8                    0.244998            1.270345

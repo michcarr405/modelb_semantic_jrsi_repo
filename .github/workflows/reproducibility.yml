@@ -1,71 +1,48 @@
-name: Reproducibility validation
-
+name: Round-2 release validation
 on:
   workflow_dispatch:
   push:
     tags:
-      - 'jrsi-reproducibility-v*'
-
+      - 'jrsi-reproducibility-v2*'
 jobs:
-  clean-room-validation:
+  validate:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
     steps:
-      - name: Check out release
-        uses: actions/checkout@v4
-
-      - name: Install publication fonts
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y fonts-croscore
-          fc-cache -f
-          {
-            echo "Runner: ubuntu-24.04"
-            echo "Arimo match:"
-            fc-match Arimo
-            echo "Installed croscore package:"
-            dpkg-query -W -f='${Package}=${Version}\n' fonts-croscore
-          } | tee reproduction/GITHUB_ACTIONS_RENDERING_ENVIRONMENT.txt
-
-      - name: Set up Python 3.13.5
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.13.5'
-          cache: 'pip'
-
-      - name: Install locked dependencies
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements-lock.txt
-          python -m pip install -e . --no-build-isolation
-
-      - name: Record environment
-        run: |
-          python --version | tee reproduction/GITHUB_ACTIONS_ENVIRONMENT.txt
-          python -m pip freeze | tee -a reproduction/GITHUB_ACTIONS_ENVIRONMENT.txt
-
-      - name: Run test suite
-        env:
-          PYTHONPATH: src
-        run: pytest -q | tee reproduction/GITHUB_ACTIONS_TEST_RESULTS.txt
-
-      - name: Validate result freeze
-        env:
-          PYTHONPATH: src
-        run: python scripts/validate_result_freeze.py | tee reproduction/GITHUB_ACTIONS_RESULT_FREEZE_VALIDATION.txt
-
-      - name: Verify archived publication assets
-        run: python scripts/verify_publication_figure_release.py | tee reproduction/GITHUB_ACTIONS_PUBLICATION_ASSET_VALIDATION.txt
-
-      - name: Regenerate quantitative publication figures
-        run: bash scripts/reproduce_publication_figures.sh
-
-      - name: Upload clean-room records
+      - name: Install
+        run: python -m pip install -r round2_mp/validation/requirements-validated.txt -e .
+      - name: Foundation tests
+        run: python -m pytest -q tests
+      - name: Integrated numerical evidence
+        run: python round2_mp/validation/validate_integrated.py
+      - name: Code and data packaging
+        run: python round2_mp/validation/validate_packaged.py
+      - uses: actions/upload-artifact@v4
         if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: jrsi-reproducibility-validation-${{ github.ref_name }}
+          name: round2-release-validation
           path: |
-            reproduction/GITHUB_ACTIONS_*.txt
-            reproduction/PUBLICATION_FIGURE_REGEN_HASH_COMPARISON.csv
-          if-no-files-found: error
+            round2_mp/validation/INTEGRATED_REGENERATION_VALIDATION.json
+            round2_mp/validation/RC7_PACKAGED_VALIDATION.json
+
+  figures:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install plotting dependencies
+        run: python -m pip install -r round2_mp/figure_build/requirements-figures.txt
+      - name: Build final figure layouts
+        run: python round2_mp/figure_build/build_figures.py --output ../round2-figure-replay
+      - name: Compare final figure pixels
+        run: python round2_mp/figure_build/verify_figures.py --generated ../round2-figure-replay
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: round2-figure-build-validation
+          path: ../round2-figure-replay/FIGURE_BUILD_VALIDATION.json

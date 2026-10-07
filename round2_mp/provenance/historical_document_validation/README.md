@@ -1,0 +1,1 @@
+Historical RC3 document/packaging validation records restored verbatim. They certify the archived RC3 snapshot only; document files are maintained separately and these records do not certify current prose.

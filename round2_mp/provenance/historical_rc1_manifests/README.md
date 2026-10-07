@@ -1,0 +1,1 @@
+Original RC1 assembly manifests retained as provenance. They include paths omitted from later candidates and are not inventories of RC4. The current authoritative manifest is RELEASE_MANIFEST_SHA256.txt at the repository root.

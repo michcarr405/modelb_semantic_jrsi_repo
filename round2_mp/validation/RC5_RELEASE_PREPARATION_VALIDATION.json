@@ -1,0 +1,23 @@
+{
+  "candidate": "jrsi-reproducibility-v2.0.0-rc5",
+  "fresh_install": "PASS",
+  "python": "3.12.14",
+  "foundation_tests": {
+    "passed": 68,
+    "total": 68
+  },
+  "integrated_recheck": {
+    "passed": 29,
+    "total": 29
+  },
+  "packaging_recheck": {
+    "passed": 12,
+    "total": 12
+  },
+  "scientific_assets_verified_unchanged": 6140,
+  "reader_projection_serialization_restored_to_rc4": [],
+  "requirements_change": "Removed one machine-specific editable install line; dependency pins unchanged.",
+  "public_tag_validation": "NOT_RUN: no authenticated git push or release/tag connector capability",
+  "v2_doi": "NOT_CREATED",
+  "full_campaign_rerun_in_rc5": false
+}

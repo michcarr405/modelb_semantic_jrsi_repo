@@ -1,0 +1,97 @@
+{
+  "historical_source_hashes": [
+    {
+      "file": "MP_PRIMARY_BUILD_FIGURES_2_4.py",
+      "sha256": "1ea4a048479f4f93532d1f1fa5c60ad2ab73d8b19aac6c4b285c16ecd0ff4f53"
+    },
+    {
+      "file": "MP_PRIMARY_BUILD_FIGURE_3_v4.py",
+      "sha256": "e3bfccabc17e22663a2ffc40dc45bae559c9b64d2a9038dedf49d1e5a8a30ec6"
+    },
+    {
+      "file": "MP_PRIMARY_BUILD_FIGURE_4_v6.py",
+      "sha256": "0dfb8c3dd8588defce6eb29d818b736d9dded75205751c33f7e704b848268a6b"
+    },
+    {
+      "file": "MP_PRIMARY_BUILD_FIGURE_5_v3.py",
+      "sha256": "bdfa47f03079244eceece8fcd4a23a3779d4264b73c9f9c03f5b664816e3307d"
+    },
+    {
+      "file": "MP_PRIMARY_BUILD_FIGURE_6_v3.py",
+      "sha256": "437ef3300415c36d4886978f56615009735f8fe9768a72e291cc59e3311dfa60"
+    },
+    {
+      "file": "MP_PRIMARY_BUILD_FIGURE_7_v2.py",
+      "sha256": "c7ea8ccc08373e88436731d48cec7e2f57ac7d8d7748ad36cda49f1eedb8dc4b"
+    },
+    {
+      "file": "MP_PRIMARY_BUILD_FIGURE_8_v2.py",
+      "sha256": "ae0f9f13ade48daedb1df0fd01faf3cf5072bcc43b26cc8433c3047db798a347"
+    },
+    {
+      "file": "legacy_migration.py",
+      "sha256": "3def794541232966eacc5f286af7d4fc21c6e0b02aa63b552a534eec0211227a"
+    },
+    {
+      "file": "remove_s5_title.py",
+      "sha256": "5684a7b3713575dbcf8213a9f7211261b100ac3ffa47b80a4cc34e4d82588994"
+    },
+    {
+      "file": "remove_s6_panel_d.py",
+      "sha256": "b338facc16c79f721693230cb2d93115bae87f116ab48e5101d7fb58ad7c27ee"
+    },
+    {
+      "file": "supplement_s2_plot.py",
+      "sha256": "a880f9d4dc3b8979c5f2a76e00689a7f05d265e35ad4d079aad540fe50f1a9b7"
+    },
+    {
+      "file": "supplement_s3_plot.py",
+      "sha256": "373ee1f81f1e148ab297cd020e81c56065712ecc7b8658c4fd959fa4738b59dd"
+    },
+    {
+      "file": "supplement_s4_plot.py",
+      "sha256": "4c1827554aa4ec25a5c00c6cc748ad98ccf8446ac35394c24891472869e5fc97"
+    }
+  ],
+  "recovery_archives": [
+    {
+      "filename": "JRSI_R2_FINAL_MAIN_SUPPLEMENT_NOTATION_CLOSED_2026-10-06.zip",
+      "sha256": "65494f0cdb9de927f7888d5550be04c2a84843be48669892bbe21d0fb283fc10"
+    },
+    {
+      "filename": "JRSI_R2_FROZEN_MAIN_FIGURES_1_8_2026-10-04.zip",
+      "sha256": "72d2383260bf5e271646132c5e743cf801c86a94c46c3e216c79761bfba24bc0"
+    },
+    {
+      "filename": "JRSI_R2_MP_CAUSAL_SPECIFICITY_FIGURES_2026-10-02.zip",
+      "sha256": "2aba975701ccfe1a5ccf10db37759de52ca26dd8e5a69fc154a4ea0bf4e0e753"
+    },
+    {
+      "filename": "JRSI_R2_MP_PRIMARY_FIGURES_2_4_FROZEN_SYNC_2026-10-03.zip",
+      "sha256": "79cbad69fe43056f57de039feaf2aedc29cd493363174c51db8cbac9abb058c3"
+    },
+    {
+      "filename": "JRSI_R2_MP_PRIMARY_FIGURES_2_4_PROGRAMMATIC_BUILD_2026-10-02.zip",
+      "sha256": "ffb4b843bfef8d232bc88fe33cd016bd1feebe77abad1c634f39993ca2b6c18c"
+    },
+    {
+      "filename": "JRSI_R2_MP_PRIMARY_FIGURE_1_FROZEN_2026-10-03.zip",
+      "sha256": "912722262e7661e15b835d57063a5652edfe2b21c87e8b5cb214d50771ec72e9"
+    },
+    {
+      "filename": "JRSI_R2_SUPPLEMENT_PREFREEZE_S3_NO_TITLE_2026-10-06.zip",
+      "sha256": "8868be6ed865957f753a35b6b9322709e337d9956a6817ed508cf7f8cd0b9837"
+    },
+    {
+      "filename": "JRSI_R2_SUPPLEMENT_PREFREEZE_S5_NO_TITLE_2026-10-06.zip",
+      "sha256": "07c355d40ade5a520663a07c765873a477a0f2439ac3b15e8ec937b207f6432a"
+    },
+    {
+      "filename": "JRSI_R2_SUPPLEMENT_PREFREEZE_S6_SPACING_2026-10-06.zip",
+      "sha256": "17b3970f386ba899c0db65ec3f5b8ad57da2cca6f4bb8e679206010ddd52e653"
+    }
+  ],
+  "individual_main_scripts": "Recovered as individual Library files MP_PRIMARY_BUILD_FIGURE_3_v4, _4_v6, _5_v3, _6_v3, _7_v2 and _8_v2; file hashes above.",
+  "supplement_sections": "Plot-only extracts from frozen S5_NO_TITLE_2026-10-06 package: refine_prefreeze_notation_tables_figures (S2), apply_redundancy_pruning (S3), revise_s4_stage_labels_and_portrait_s1 (S4), remove_s5_title (S5), remove_s6_panel_d (S6). S1 uses retained migration source.",
+  "adapter_reconstruction": "Final Figure 4 labels and Figure 8 short labels, upper axis bound and tick rotation reconstructed from immutable final masters; no scientific value retuning."
+}

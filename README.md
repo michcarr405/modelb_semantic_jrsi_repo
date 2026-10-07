@@ -1,106 +1,39 @@
-# Model B semantic-information analysis — JRSI frozen reproducibility release
+# Round-2 marginal-preserving reproducibility candidate
 
-This repository is the reproducibility release for manuscript **rsif-2026-0516**, *Counterfactual interventions reveal causal relevance of inherited sequence distinctions in a compositional-resampling model*.
+Candidate: `jrsi-reproducibility-v2.0.0-rc7`. This archive supports the Round-2 analysis of causal relevance of inherited sequence distinctions in a compositional-resampling model.
 
-## Frozen scientific provenance
+The primary intervention averages native local-state probabilities using the current population's motif frequencies within each group and positional segment. It preserves the expected one-site segment-conditioned marginal while allowing relational organization and subsequent fitness to change. The pre-softmax affinity-averaging intervention is an explicitly secondary comparator.
 
-The scientific results were frozen at Git commit:
+Current numerical evidence is under `round2_mp/source_tables/`. The model/state foundation remains under `src/` and `results/`. Frozen production drivers are installed unchanged under `round2/mp_migration/`; the recovered final 64-new causal-specificity driver is under `round2_mp/causal_specificity_high_continuation/`.
 
-`2c7d78694579755402c0a1896e109b29dec4d6a0`
+Read `ROUND2_RELEASE_CANDIDATE_README.md`, `round2_mp/validation/INTEGRATED_REGENERATION_VALIDATION.json`, and `round2_mp/validation/FULL_REGENERATION_STATUS.csv` for exact validation scope.
 
-The Gate 8 documentation/tag closure is:
-
-`phase7-gate8-passed-v1` at commit `36246a86320037506beed83d0f7366c33d2c59c5`.
-
-Files added after Gate 8 for public release, citation metadata, environment locking, and publication-figure reproducibility are **packaging/documentation only**. They do not alter the frozen simulations, estimators, intervention panel, inferential procedures, source tables, or numerical results.
-
-## Model scope
-
-Model B is a sequence-explicit, fitness-weighted, Wright–Fisher-like compositional-resampling model of abstract protocell-like population units. The parameter `p` is parental-composition coupling/compositional-transmission fidelity; it is not literal molecular retention. Local-state labels are transient probabilistic assignments rather than inherited molecular inventories.
-
-## What is in this release
-
-- `src/` — versioned scientific implementation.
-- `scripts/` — production, validation, result-freeze, and release-verification commands.
-- `tests/` — unit/integration tests.
-- `results/phase4_core/` — frozen corrected core outputs and evolved states.
-- `results/phase5_causal_specificity/` — frozen causal-specificity controls.
-- `results/phase6_generality/` — frozen staged generality/robustness outputs.
-- `results/result_freeze/` — result inventory, inferential audit, and the authoritative frozen figure-source tables.
-- `publication_figures/` — exact scripts, frozen source data, manifests, and final quantitative exports for manuscript Figures 3–8 and Supplementary Figures S1–S7.
-- `artwork/` — author-supplied editable SVG masters for Figures 1 and 2, final PDF/EPS/600 dpi grayscale PNG/TIFF exports, artwork validation, and checksums.
-- `reproduction/` — exact reproduction commands and release/clean-room records.
-- `requirements-lock.txt` and `environment-lock.yml` — machine-readable locked software environment.
-
-Historical submitted/paper-mode analyses retained elsewhere in the repository are provenance only and are **not** the evidence base for the revised manuscript. The revised scientific evidence is the Gate 8 frozen Phase 4–6 archive and its result-freeze source tables.
-
-## Environment
-
-Validated production/result-freeze environment:
-
-- Linux x86-64
-- Python 3.13.5
-- NumPy 2.3.5
-- pandas 2.2.3
-- SciPy 1.17.0
-- Numba 0.65.1
-- Matplotlib 3.10.8
-- scikit-learn 1.8.0 (Phase 6)
-- Pillow 12.3.0 (publication-figure export)
-- pytest 9.0.2 (validation)
-
-Create an isolated environment using the lock file appropriate to the local package manager. For a pip/venv installation:
+## Install and validate
 
 ```bash
-python3.13 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -r requirements-lock.txt
-python -m pip install -e . --no-build-isolation
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r round2_mp/validation/requirements-validated.txt -e .
+python -m pytest -q tests
+python round2_mp/validation/validate_integrated.py
 ```
 
-## Validate the frozen repository
+The packaged validator checks the recorded complete regeneration outputs. For a genuinely fresh production replay, choose a destination outside this repository that does not already exist:
 
 ```bash
-PYTHONPATH=src pytest -q
-PYTHONPATH=src python scripts/validate_result_freeze.py
-python scripts/verify_publication_figure_release.py
+python round2_mp/validation/run_full_cleanroom.py --destination ../fresh-round2-replay --workers 8
 ```
 
-## Reproduce manuscript-grade quantitative figures
+This copies immutable inputs and unmodified drivers, excludes previous Round-2 generated outputs, and regenerates every current scientific evidence family. The runner uses the Python interpreter in the environment where the package was installed. Full campaigns require sustained computation.
 
-The plotting scripts consume the frozen figure-source CSV files; they do **not** rerun production simulations.
+## Provenance
 
-```bash
-bash scripts/reproduce_publication_figures.sh
-```
+`src/modelb_semantic_repo/mp_operator.py` is a documented functional reconstruction, not byte-identical recovery of lost source. `round2_mp/SOURCE_RECOVERY.md` explains its evidence and validation. Seed provenance combines the original recovered 27,139-record MP ledger with the recovered final causal-specificity supplement; see `round2_mp/provenance/CANONICAL_SEED_PROVENANCE.md`.
 
-Equivalent individual commands are recorded in `reproduction/EXACT_COMMANDS.md`.
+Manuscript and Supplement prose, TeX sources, compiled PDFs, and publication-source ZIPs are maintained separately and are excluded from this repository. Prose-only changes do not require a repository update or a new computational release. Changes to data, numerical results, analysis code, methods implemented by the code, or reproducibility claims require the corresponding repository update. The numerical Table S4 correction remains documented under `round2_mp/reporting_corrections/`. Historical audit records describe earlier snapshots and do not control current manuscript wording. See `REPOSITORY_CONTENT_POLICY.md`.
 
-- Main Figures 3–8: `publication_figures/main/produce_publication_figures.py`
-- Supplementary Figures S1–S7: `publication_figures/supplementary/produce_supplementary_figures.py`
-- Frozen source data: `publication_figures/source_tables/`
+This candidate has not been published or tagged, and no new DOI is claimed.
 
-## Re-run the scientific analyses
+## Current figures
 
-Full production reruns are computationally heavier and are not needed to verify the frozen manuscript figures. Exact validated Phase 4–7 commands and their provenance are recorded in `reproduction/EXACT_COMMANDS.md` and the phase validation files.
-
-## Data integrity
-
-The Gate 8 result freeze verified 2,104 manifested Phase 4–6 files, 28 inferential/structural checks, and 11 frozen figure-source tables. `results/result_freeze/FILE_MANIFEST_SHA256.csv` and the release manifest provide file-level SHA-256 checksums.
-
-## Citation and DOI
-
-Citation metadata are provided in `CITATION.cff`. The permanent archive DOI for the final software record is **10.5281/zenodo.21852680**. The DOI was reserved before final publication so it could be embedded in the release metadata and archived files; it becomes publicly resolvable when the Zenodo record is published.
-
-Repository: `https://github.com/michcarr405/modelb_semantic_jrsi_repo`
-
-Permanent archive: `https://doi.org/10.5281/zenodo.21852680`
-
-## License
-
-This repository is released under the MIT License. See `LICENSE` for the full license text.
-
-## Figures 1 and 2
-
-Figures 1 and 2 are vector schematics rather than analytical plots. The release archives the author-supplied final editable vector masters as `artwork/masters/Figure_1.svg` and `artwork/masters/Figure_2.svg`, together with PDF, EPS, and 600 dpi grayscale PNG/TIFF derivatives in `artwork/exports/`. `artwork/ARTWORK_VALIDATION.md` records the final scientific-content and export proof against the controlling revised manuscript; `artwork/EDITABLE_VECTOR_ARTWORK_HANDOFF.md` retains the earlier master-artwork provenance and content lock.
+Standalone Round-2 figures are under `round2_mp/figures/main/` (Figures 1–8) and `round2_mp/figures/supplement/` (Figures S1–S6). Root `figures/paper/` contains historical outputs. The 14 current PDFs are exact recovered archived masters. A portable build regenerates the 12 data figures with rendered-pixel validation; the two conceptual diagrams are archived asset copies. See `round2_mp/figure_build/README.md`.

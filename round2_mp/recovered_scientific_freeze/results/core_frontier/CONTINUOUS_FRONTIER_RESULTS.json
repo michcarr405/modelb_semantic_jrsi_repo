@@ -1,0 +1,16 @@
+{
+  "n_baselines": 20,
+  "within_population_spearman_mean": 0.924033613445378,
+  "within_population_spearman_median": 0.9428571428571428,
+  "within_population_spearman_min": 0.5859434682964094,
+  "positive_spearman_populations": 20,
+  "map_average_spearman": 0.9905271199388846,
+  "mean_constant_delta_mp": 2.285806070963543,
+  "constant_delta_mp_bootstrap_95_low": 1.9121334593031154,
+  "constant_delta_mp_bootstrap_95_high": 2.6760253512064622,
+  "constant_delta_mp_positive_populations": 20,
+  "constant_delta_mp_sign_randomization_p_9999": 0.0001,
+  "secondary_99pct_identity_first": 2,
+  "secondary_99pct_resolved_nonidentity": 6,
+  "secondary_99pct_unresolved": 14
+}

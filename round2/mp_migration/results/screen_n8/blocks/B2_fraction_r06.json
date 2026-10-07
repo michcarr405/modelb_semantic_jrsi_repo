@@ -1,0 +1,19 @@
+{
+  "design_id": "B2_fraction",
+  "stage": "B2",
+  "family": "fitness",
+  "replicate": 6,
+  "spec_json": "{\"b_ratio\": 1.6666666666666667, \"bias\": 2.0, \"fitness_mode\": \"fraction\", \"floor\": 0.1, \"jitter\": 0, \"motif_length\": 5, \"mutation_rate\": 0.001, \"n_cells\": 80, \"n_gens\": 150, \"n_metabolites\": 4, \"n_segments\": 4, \"n_seqs\": 8, \"p\": 1.0, \"penalty\": 0.5, \"penalty_ratio\": 0.25, \"reward\": 2.0, \"segment_order\": \"native\", \"seq_len\": 60, \"sigma\": 1.0, \"sigma_ratio\": 0.8333333333333334, \"stride\": 1, \"temperature\": 1.2}",
+  "baseline_seed": 3527196420,
+  "corrected_information": 0.25823225819087875,
+  "conditional_information": 0.2884894094660194,
+  "permutation_mean": 0.03025715127514066,
+  "delta_mp": 0.0652656940498737,
+  "delta_mp_cont_sd": 0.011441600735763804,
+  "adaptive_gain": 0.09211410984848478,
+  "final_mean_fitness": 1.700596590909091,
+  "state_hash": "915adec5c3a617effce1546fa8971da058480c21bf76008020726225b6026c19",
+  "trajectory_hash": "01a8c42c91fb06aabf2b62ba5e4309ba072096ec5b60abd5e18408dd737d5182",
+  "mp_marginal_max_abs_error": 1.2323475573339238e-14,
+  "n_continuations": 8
+}

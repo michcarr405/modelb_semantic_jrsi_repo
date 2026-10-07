@@ -1,0 +1,17 @@
+{
+  "landscape": 1,
+  "design_id": "B2_reward3",
+  "replicate": 5,
+  "baseline_seed": 3035104477,
+  "state_hash": "1b5c727c21b6fc9dd031ea398d71dab90eb422782d4f6f0d228f5ee100c759bb",
+  "corrected_information": 0.23934861564266058,
+  "conditional_information": 0.26993614978761055,
+  "permutation_mean": 0.03058753414494997,
+  "adaptive_gain": 5.205234374999982,
+  "actual_viability": 56.87784016927083,
+  "mp_constant_viability": 53.73041585286458,
+  "delta_mp": 3.1474243164062496,
+  "delta_mp_cont_sd": 0.6381983158312307,
+  "n_continuations": 8,
+  "mp_marginal_max_abs_error": 0.0
+}

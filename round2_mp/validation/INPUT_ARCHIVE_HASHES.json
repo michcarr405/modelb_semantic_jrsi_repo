@@ -1,0 +1,37 @@
+[
+  {
+    "name": "JRSI_R2_MP_DRIVERS_AND_SEED_LEDGER_2026-10-07(1).zip",
+    "size_bytes": 2563472,
+    "sha256": "03e134f6d5cf8b5181bad77edd13df5728f3f55e1c7cc706252322d86fb67ddc"
+  },
+  {
+    "name": "JRSI_R2_R2.6_NARRATIVE_RECONSTRUCTION_2026-10-01(1).zip",
+    "size_bytes": 825242,
+    "sha256": "d9c07134a27f020e0bb364647e58f499fd369e321a24369f3e6d67da88536b4a"
+  },
+  {
+    "name": "JRSI_R2_MP_CAUSAL_SPECIFICITY_2026-10-02(1).zip",
+    "size_bytes": 170806,
+    "sha256": "c21924484f8dcebf8f72b3d534c35bdcca58bafc02c7ef8725c71f5808b893d7"
+  },
+  {
+    "name": "JRSI_R2_MP_MIGRATION_SCIENTIFIC_FREEZE_2026-10-02(2).zip",
+    "size_bytes": 121546,
+    "sha256": "501ff6a37b1e291716b8e04a8adca3e115b9737757a260d86cd0587088920774"
+  },
+  {
+    "name": "JRSI_R2_REPRODUCIBILITY_RC1_2026-10-07.zip",
+    "size_bytes": 122915917,
+    "sha256": "b4234ac887b4aadc052af84241c4886b547148b50728326d52e715148dc4cf11"
+  },
+  {
+    "name": "JRSI_R2_MP_OPERATOR_RECONSTRUCTION_2026-10-07.zip",
+    "size_bytes": 43331,
+    "sha256": "625f941b5696747e0a10221b77eaf68bbed4ca6444d33c0bda20b093cc1c3067"
+  },
+  {
+    "name": "JRSI_R2_HIGH_CONTINUATION_MP_CAUSAL_SPECIFICITY_2026-10-02.zip",
+    "size_bytes": 411306,
+    "sha256": "8ae26f4e8e6cf7cec59c07c4df36ace587bae6f18d43df3eeef3cfa7057afee7"
+  }
+]

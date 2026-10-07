@@ -1,0 +1,82 @@
+screen blocks 10/520
+screen blocks 20/520
+screen blocks 30/520
+screen blocks 40/520
+screen blocks 50/520
+screen blocks 60/520
+screen blocks 70/520
+screen blocks 80/520
+screen blocks 90/520
+screen blocks 100/520
+screen blocks 110/520
+screen blocks 120/520
+screen blocks 130/520
+screen blocks 140/520
+screen blocks 150/520
+screen blocks 160/520
+screen blocks 170/520
+screen blocks 180/520
+screen blocks 190/520
+screen blocks 200/520
+screen blocks 210/520
+screen blocks 220/520
+screen blocks 230/520
+screen blocks 240/520
+screen blocks 250/520
+screen blocks 260/520
+screen blocks 270/520
+screen blocks 280/520
+screen blocks 290/520
+screen blocks 300/520
+screen blocks 310/520
+screen blocks 320/520
+screen blocks 330/520
+screen blocks 340/520
+screen blocks 350/520
+screen blocks 360/520
+screen blocks 370/520
+screen blocks 380/520
+screen blocks 390/520
+screen blocks 400/520
+screen blocks 410/520
+screen blocks 420/520
+screen blocks 430/520
+screen blocks 440/520
+screen blocks 450/520
+screen blocks 460/520
+screen blocks 470/520
+screen blocks 480/520
+screen blocks 490/520
+screen blocks 500/520
+screen blocks 510/520
+screen blocks 520/520
+{
+  "max_abs_old_cohort_nonintervention_difference": 3.552713678800501e-15,
+  "old_cohort_state_hashes_all_match": true,
+  "n_old_hash_checks": 244,
+  "n_replicates": 520,
+  "n_settings": 65,
+  "replicates_per_setting": [
+    8
+  ],
+  "max_mp_marginal_abs_error": 1.2256862191861728e-13
+}
+
+Regime counts:
+ regime  R0_null  R1_syntactic_only  R2_viability_relevant  R3_strong_adaptation  boundary_uncertain
+stage                                                                                              
+A             8                 10                     10                     4                   0
+B1            2                 11                      1                     1                   1
+B2            0                  1                      1                    15                   0
+
+Stage C reps:
+  design_id                regime  boundary_distance  delta_mp_mean
+B2_default  R3_strong_adaptation           3.504251       2.588939
+B2_stride7 R2_viability_relevant           0.079688       1.386929
+
+Provisional Stage D:
+ confirm_id  design_id                regime    depth  boundary_distance  delta_mp_mean
+        D0    A_p2_a3 R2_viability_relevant 0.860406           0.860406       0.465101
+        D1 B2_reward3  R3_strong_adaptation 6.411104           6.411104       3.034100
+        D2 B2_stride7 R2_viability_relevant 0.079688           0.079688       1.386929
+        D3 B2_default  R3_strong_adaptation 3.504251           3.504251       2.588939

@@ -1,0 +1,119 @@
+{
+  "candidate": "jrsi-reproducibility-v2.0.0-rc1",
+  "rc2_provenance_checks": 21,
+  "rc2_provenance_passed": 21,
+  "all_provenance_checks_passed": true,
+  "checks": [
+    {
+      "check": "all_34_gate8_map_ids_present_in_round2",
+      "pass": true,
+      "detail": "round2=34 gate8=34"
+    },
+    {
+      "check": "all_round2_map_hashes_match_gate8_manifest",
+      "pass": true,
+      "detail": "rows=680"
+    },
+    {
+      "check": "map_methods_match_gate8_manifest",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "map_endpoint_types_match_gate8_manifest",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "map_actual_group_counts_match_gate8_manifest",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "constant_corrected_information_zero_within_1e-12",
+      "pass": true,
+      "detail": "maxabs=2.465e-32"
+    },
+    {
+      "check": "identity_corrected_information_matches_p1_baseline",
+      "pass": true,
+      "detail": "n=20/20"
+    },
+    {
+      "check": "first99_20_of_20_reached",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "first99_identity_first_2_of_20",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "first99_resolved_nonidentity_6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "first99_unresolved_14",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "causal_specificity_exactly_six_contrasts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "causal_specificity_five_pass_one_borderline",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "landscape_four_designs_eight_landscapes_each",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "screen_total_65",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "stage_c_12_rows_n8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "stage_d_3_settings_n8_all_identity_exact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "affinity_landscape_hashes_8_of_8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "supplement_source_map_files_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "core_replicates_have_inferential_and_nested_counts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "landscape_population_rows_have_seed_and_state_hash",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "release_gating_findings": {
+    "mp_production_driver_archived": false,
+    "mp_specific_complete_seed_ledger_archived": false,
+    "landscape_evolved_state_files_present_in_candidate": false,
+    "note": "Frozen outputs have source-table hashes and inferential identifiers; exact full production regeneration remains blocked by missing archived Round-2 production driver/complete seed ledger and landscape state archive."
+  }
+}

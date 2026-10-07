@@ -1,0 +1,81 @@
+Stage D prep 1 24
+Stage D prep 2 24
+Stage D prep 3 24
+Stage D prep 4 24
+Stage D prep 5 24
+Stage D prep 6 24
+Stage D prep 7 24
+Stage D prep 8 24
+Stage D prep 9 24
+Stage D prep 10 24
+Stage D prep 11 24
+Stage D prep 12 24
+Stage D prep 13 24
+Stage D prep 14 24
+Stage D prep 15 24
+Stage D prep 16 24
+Stage D prep 17 24
+Stage D prep 18 24
+Stage D prep 19 24
+Stage D prep 20 24
+Stage D prep 21 24
+Stage D prep 22 24
+Stage D prep 23 24
+Stage D prep 24 24
+Stage D maps 20 816
+Stage D maps 40 816
+Stage D maps 60 816
+Stage D maps 80 816
+Stage D maps 100 816
+Stage D maps 120 816
+Stage D maps 140 816
+Stage D maps 160 816
+Stage D maps 180 816
+Stage D maps 200 816
+Stage D maps 220 816
+Stage D maps 240 816
+Stage D maps 260 816
+Stage D maps 280 816
+Stage D maps 300 816
+Stage D maps 320 816
+Stage D maps 340 816
+Stage D maps 360 816
+Stage D maps 380 816
+Stage D maps 400 816
+Stage D maps 420 816
+Stage D maps 440 816
+Stage D maps 460 816
+Stage D maps 480 816
+Stage D maps 500 816
+Stage D maps 520 816
+Stage D maps 540 816
+Stage D maps 560 816
+Stage D maps 580 816
+Stage D maps 600 816
+Stage D maps 620 816
+Stage D maps 640 816
+Stage D maps 660 816
+Stage D maps 680 816
+Stage D maps 700 816
+Stage D maps 720 816
+Stage D maps 740 816
+Stage D maps 760 816
+Stage D maps 780 816
+Stage D maps 800 816
+Stage D maps 816 816
+{
+  "n_nondefault_confirmations": 3,
+  "n_replicates": 24,
+  "n_per_confirm": [
+    8
+  ],
+  "n_continuations": 16,
+  "max_mp_marginal_abs_error": 2.453592884421596e-14,
+  "identity_exact_all": true,
+  "expected_map_block_files": 816,
+  "observed_map_block_files": 816
+}
+confirm_id  design_id  n  delta_mp_mean  delta_mp_low  delta_mp_high  positive_confirmed  positive_blocks  median_within_population_spearman  mean_within_population_spearman  spearman_low  spearman_high  positive_spearman_blocks  map_average_spearman  identity_exact_all
+        D0    A_p2_a3  8       0.484523      0.460118       0.512749                True                8                           0.693048                         0.684072      0.584721       0.764407                         8              0.791291                True
+        D1 B2_reward3  8       3.502141      2.721882       4.642223                True                8                           0.920856                         0.915699      0.884528       0.943889                         8              0.976471                True
+        D2 B2_stride7  8       1.643618      1.259788       1.980839                True                8                           0.934795                         0.933686      0.925788       0.941327                         8              0.989610                True

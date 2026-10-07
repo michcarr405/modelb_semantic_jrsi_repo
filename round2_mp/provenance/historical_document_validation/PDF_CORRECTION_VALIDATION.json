@@ -1,0 +1,10 @@
+{
+  "pages": 14,
+  "changed_page": 7,
+  "old_value": "0.000885",
+  "corrected_value": "0.000886",
+  "unchanged_13_pages_pixel_identical": true,
+  "changed_page_word_multiset_only_one_value_changed": true,
+  "method": "PDF text replacement using existing embedded F62 font and original text origin/size",
+  "latex_build_limitation": "The installed TeX distribution lacks soul.sty; full TeX rebuild could not complete."
+}

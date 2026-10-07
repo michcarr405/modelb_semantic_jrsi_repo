@@ -1,0 +1,22 @@
+check,pass,detail
+all_34_gate8_map_ids_present_in_round2,True,round2=34 gate8=34
+all_round2_map_hashes_match_gate8_manifest,True,rows=680
+map_methods_match_gate8_manifest,True,
+map_endpoint_types_match_gate8_manifest,True,
+map_actual_group_counts_match_gate8_manifest,True,
+constant_corrected_information_zero_within_1e-12,True,maxabs=2.465e-32
+identity_corrected_information_matches_p1_baseline,True,n=20/20
+first99_20_of_20_reached,True,
+first99_identity_first_2_of_20,True,
+first99_resolved_nonidentity_6,True,
+first99_unresolved_14,True,
+causal_specificity_exactly_six_contrasts,True,
+causal_specificity_five_pass_one_borderline,True,
+landscape_four_designs_eight_landscapes_each,True,
+screen_total_65,True,
+stage_c_12_rows_n8,True,
+stage_d_3_settings_n8_all_identity_exact,True,
+affinity_landscape_hashes_8_of_8,True,
+supplement_source_map_files_present,True,
+core_replicates_have_inferential_and_nested_counts,True,
+landscape_population_rows_have_seed_and_state_hash,True,

@@ -1,0 +1,4 @@
+method,n_maps,spearman_map_average,strictly_nondecreasing_recovery
+affinity_rank_group,9,1.0,True
+balanced_random_group,9,1.0,True
+contiguous_substring,14,0.9428571428571428,False

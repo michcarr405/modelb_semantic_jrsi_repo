@@ -1,0 +1,20 @@
+{
+  "continuation_root": 2026100209,
+  "n_populations": 20,
+  "n_streams_per_population": 64,
+  "total_native_draws": 1280,
+  "windows_per_draw": 35840,
+  "maps": [
+    "m000_constant",
+    "m004_balanced_random_group",
+    "m015_affinity_rank_group",
+    "m024_contiguous_substring",
+    "m027_contiguous_substring",
+    "m029_contiguous_substring",
+    "m033_identity"
+  ],
+  "identity_pooled_tv_exact_zero": true,
+  "identity_single_stream_tv_exact_zero": true,
+  "max_nonidentity_mean_pooled_tv": 0.0007844979422433042,
+  "mean_native_split_half_tv": 0.0015523856026785738
+}

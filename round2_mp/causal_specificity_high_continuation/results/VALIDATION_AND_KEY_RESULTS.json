@@ -1,0 +1,16 @@
+{
+  "n_phase5_specs": 220,
+  "n_native_full_specs": 20,
+  "continuation_indices_primary": [
+    2,
+    65
+  ],
+  "n_new_continuations_per_evaluation": 64,
+  "n_primary_continuation_rows": 15360,
+  "max_starting_expected_marginal_abs_error": 4.218847493575595e-14,
+  "all_six_64new_contrasts_pass": false,
+  "n_64new_contrasts_passed": 5,
+  "continuation_root_seed": 2026073104,
+  "topology_schedule_root_seed": 2026073105,
+  "analysis_root_seed_primary": 2026100202
+}

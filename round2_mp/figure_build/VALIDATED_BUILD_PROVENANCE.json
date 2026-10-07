@@ -1,0 +1,211 @@
+{
+  "figures": [
+    {
+      "figure": "main/Figure_3.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "MP_PRIMARY_BUILD_FIGURE_3_v4.py",
+      "source_sha256": "e3bfccabc17e22663a2ffc40dc45bae559c9b64d2a9038dedf49d1e5a8a30ec6",
+      "inputs": [
+        {
+          "path": "source_tables/core_mp_replicates.csv",
+          "sha256": "9b5d9b7e99945c591bb02739c6c0e3e46d21c6196fdf3def7ffb1c1faeef9435"
+        },
+        {
+          "path": "source_tables/core_mp_inference.csv",
+          "sha256": "ea3bf31368a3b81e57b00a0837385a8b904de2b3eb1b8da30e8abaea59c88c70"
+        }
+      ]
+    },
+    {
+      "figure": "main/Figure_4.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "MP_PRIMARY_BUILD_FIGURE_4_v6.py",
+      "source_sha256": "0dfb8c3dd8588defce6eb29d818b736d9dded75205751c33f7e704b848268a6b",
+      "inputs": [
+        {
+          "path": "figure_build/historical_plot_inputs/map_summary_rep0.csv",
+          "sha256": "f4a730c90862ee91174fa05fbdd1ccd4e1bb41bb6c580f181d686ed50f6bae0b"
+        },
+        {
+          "path": "figure_build/historical_plot_inputs/map_across_population_summary.csv",
+          "sha256": "d09e9d54e48ae12b26d1472a9c46d25240af1da56086d40984da3f4ebc2b008b"
+        },
+        {
+          "path": "figure_build/historical_plot_inputs/within_population_monotonicity.csv",
+          "sha256": "bd7d81fd2fc0906a811ad716df1db798d468d8663b1e34aa76cdd47683ba20b8"
+        },
+        {
+          "path": "figure_build/historical_plot_inputs/family_monotonicity.csv",
+          "sha256": "fbc877c295fec3f3af507ffe78893619d9788ff46d3c3ce127fd002cd31dbbd7"
+        }
+      ]
+    },
+    {
+      "figure": "main/Figure_5.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "MP_PRIMARY_BUILD_FIGURE_5_v3.py",
+      "source_sha256": "bdfa47f03079244eceece8fcd4a23a3779d4264b73c9f9c03f5b664816e3307d",
+      "inputs": [
+        {
+          "path": "source_tables/causal_specificity_seed_blocks_64new.csv",
+          "sha256": "d87b36d1d9d528c9793b64f797db5813fd3cb6af37ad03b92369e78e3224731e"
+        }
+      ]
+    },
+    {
+      "figure": "main/Figure_6.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "MP_PRIMARY_BUILD_FIGURE_6_v3.py",
+      "source_sha256": "437ef3300415c36d4886978f56615009735f8fe9768a72e291cc59e3311dfa60",
+      "inputs": [
+        {
+          "path": "source_tables/population_level.csv",
+          "sha256": "e3363128d6dc588e32e3f678bbe1aa718bd99295c2dbbbd2f0e5971557310f09"
+        },
+        {
+          "path": "source_tables/landscape_level.csv",
+          "sha256": "e09057ec4fa30b3fbecafe6d60e34b327411aa7e380db381598e38fe6499f868"
+        },
+        {
+          "path": "source_tables/landscape_inference.csv",
+          "sha256": "650f6b36885b8694a809c9fdd18b35786f18692fd85118b8ab00f3931ce287b0"
+        }
+      ]
+    },
+    {
+      "figure": "main/Figure_7.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "MP_PRIMARY_BUILD_FIGURE_7_v2.py",
+      "source_sha256": "c7ea8ccc08373e88436731d48cec7e2f57ac7d8d7748ad36cda49f1eedb8dc4b",
+      "inputs": [
+        {
+          "path": "source_tables/stage_ab_summary_n8_mp.csv",
+          "sha256": "f7ca78c7a0c4ae86f2dcfde330b059114a07fe7ab1c709b63b4ea319f1f7c32b"
+        },
+        {
+          "path": "source_tables/regime_counts_n8_mp.csv",
+          "sha256": "80116622130f49b4aebf440b4ceb5759ad40160cd2808448013b88b9422beb41"
+        }
+      ]
+    },
+    {
+      "figure": "main/Figure_8.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "MP_PRIMARY_BUILD_FIGURE_8_v2.py",
+      "source_sha256": "ae0f9f13ade48daedb1df0fd01faf3cf5072bcc43b26cc8433c3047db798a347",
+      "inputs": [
+        {
+          "path": "source_tables/stage_c_summary_n8_mp.csv",
+          "sha256": "5e47067ffa6e61fc0e63526b296404bd5940b2aedd63165db06ce59324da56ec"
+        },
+        {
+          "path": "source_tables/stage_d_confirmation_summary.csv",
+          "sha256": "2c5f2b14a23f440436c5d3af2f41f34ed4c5de7618b7e90472b37ecf24569625"
+        },
+        {
+          "path": "source_tables/stage_d_replicate_summary.csv",
+          "sha256": "6101a7aa9dbdb0513f00dd7a4982dcbe31858867c63635692a447b6373202b5f"
+        },
+        {
+          "path": "source_tables/core_mp_replicates.csv",
+          "sha256": "9b5d9b7e99945c591bb02739c6c0e3e46d21c6196fdf3def7ffb1c1faeef9435"
+        },
+        {
+          "path": "source_tables/core_mp_inference.csv",
+          "sha256": "ea3bf31368a3b81e57b00a0837385a8b904de2b3eb1b8da30e8abaea59c88c70"
+        }
+      ]
+    },
+    {
+      "figure": "supplement/Figure_S1_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "legacy_migration.py",
+      "source_sha256": "3def794541232966eacc5f286af7d4fc21c6e0b02aa63b552a534eec0211227a",
+      "inputs": [
+        {
+          "path": "source_tables/core_p1_map_summary.csv",
+          "sha256": "baf36bc0565a64c46acc7d47ea82f1cfbbc57c94ea50ccffdade00119906ce06"
+        },
+        {
+          "path": "source_tables/core_p1_frontier_points.csv",
+          "sha256": "35665a9b582a16e6cd76d6f50fdf4a65d2c6d62f511228d2b79e263f7d6a8b28"
+        }
+      ]
+    },
+    {
+      "figure": "supplement/Figure_S2_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "supplement_s2_plot.py",
+      "source_sha256": "a880f9d4dc3b8979c5f2a76e00689a7f05d265e35ad4d079aad540fe50f1a9b7",
+      "inputs": [
+        {
+          "path": "source_tables/core_mp_inference.csv",
+          "sha256": "ea3bf31368a3b81e57b00a0837385a8b904de2b3eb1b8da30e8abaea59c88c70"
+        },
+        {
+          "path": "source_tables/core_mp_replicates.csv",
+          "sha256": "9b5d9b7e99945c591bb02739c6c0e3e46d21c6196fdf3def7ffb1c1faeef9435"
+        }
+      ]
+    },
+    {
+      "figure": "supplement/Figure_S3_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "supplement_s3_plot.py",
+      "source_sha256": "373ee1f81f1e148ab297cd020e81c56065712ecc7b8658c4fd959fa4738b59dd",
+      "inputs": [
+        {
+          "path": "source_tables/causal_specificity_seed_blocks_64new.csv",
+          "sha256": "d87b36d1d9d528c9793b64f797db5813fd3cb6af37ad03b92369e78e3224731e"
+        }
+      ]
+    },
+    {
+      "figure": "supplement/Figure_S4_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "supplement_s4_plot.py",
+      "source_sha256": "4c1827554aa4ec25a5c00c6cc748ad98ccf8446ac35394c24891472869e5fc97",
+      "inputs": [
+        {
+          "path": "source_tables/stage_ab_summary_n8_mp.csv",
+          "sha256": "f7ca78c7a0c4ae86f2dcfde330b059114a07fe7ab1c709b63b4ea319f1f7c32b"
+        }
+      ]
+    },
+    {
+      "figure": "supplement/Figure_S5_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "remove_s5_title.py",
+      "source_sha256": "5684a7b3713575dbcf8213a9f7211261b100ac3ffa47b80a4cc34e4d82588994",
+      "inputs": [
+        {
+          "path": "source_tables/stage_c_summary_n8_mp.csv",
+          "sha256": "5e47067ffa6e61fc0e63526b296404bd5940b2aedd63165db06ce59324da56ec"
+        }
+      ]
+    },
+    {
+      "figure": "supplement/Figure_S6_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "source": "remove_s6_panel_d.py",
+      "source_sha256": "b338facc16c79f721693230cb2d93115bae87f116ab48e5101d7fb58ad7c27ee",
+      "inputs": [
+        {
+          "path": "source_tables/mp_marginal_diagnostics_summary.csv",
+          "sha256": "4dc5f0e98dc0b7aac4cb121fcd885839eba65e40a54185c482f718afad236841"
+        }
+      ]
+    },
+    {
+      "figure": "main/Figure_1.pdf",
+      "route": "archived_conceptual_diagram_copy",
+      "note": "No numerical source-data regeneration claimed."
+    },
+    {
+      "figure": "main/Figure_2.pdf",
+      "route": "archived_conceptual_diagram_copy",
+      "note": "No numerical source-data regeneration claimed."
+    }
+  ],
+  "note": "Figure 4 labels and Figure 8 short labels, 4.1 upper axis limit and 12-degree label rotation are reconstructed from final masters; final render equivalence is tested separately."
+}

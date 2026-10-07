@@ -1,0 +1,9 @@
+{
+  "n_continuation_rows": 3200,
+  "n_seed_blocks": 400,
+  "max_abs_control_delta_mp": 0.0,
+  "control_exact_zero": true,
+  "n_continuations_per_block_unique": [
+    8
+  ]
+}

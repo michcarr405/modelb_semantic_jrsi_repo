@@ -1,0 +1,1 @@
+Historical validation scripts and RC1/RC2 status records preserve earlier coverage and unresolved-item statements. They are not the current release gate. The active gate is INTEGRATED_REGENERATION_VALIDATION.json.

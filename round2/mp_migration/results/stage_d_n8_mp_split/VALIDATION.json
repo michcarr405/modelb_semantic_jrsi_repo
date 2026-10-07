@@ -1,0 +1,12 @@
+{
+  "n_nondefault_confirmations": 3,
+  "n_replicates": 24,
+  "n_per_confirm": [
+    8
+  ],
+  "n_continuations": 16,
+  "max_mp_marginal_abs_error": 2.453592884421596e-14,
+  "identity_exact_all": true,
+  "expected_map_block_files": 816,
+  "observed_map_block_files": 816
+}

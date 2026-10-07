@@ -1,5 +1,5 @@
 {
-  "title": "Model B semantic-information analysis: JRSI frozen reproducibility release",
+  "title": "Model B marginal-preserving analysis: JRSI Round-2 reproducibility release",
   "upload_type": "software",
   "license": "MIT",
   "creators": [
@@ -7,13 +7,11 @@
       "name": "Carr, Michael J"
     }
   ],
-  "description": "Frozen code, simulation outputs, validation records, seed ledgers, evolved states, figure-source tables, and publication-figure scripts supporting JRSI manuscript rsif-2026-0516, Counterfactual interventions reveal causal relevance of inherited sequence distinctions in a compositional-resampling model.",
+  "description": "Code, immutable states, seed ledgers, numerical source tables, scientific outputs and validation records for JRSI manuscript rsif-2026-0516. Round-2 probability-space marginal-preserving intervention is primary. The MP operator is a provenance-documented functional reconstruction. Manuscript and Supplement prose and TeX/PDF assets are maintained separately. Full regeneration scope is described in the archived evidence matrix.",
   "keywords": [
     "semantic information",
     "compositional heredity",
-    "counterfactual intervention",
-    "origins of life",
-    "protocell model",
+    "marginal-preserving intervention",
     "reproducibility"
   ],
   "related_identifiers": [
@@ -23,6 +21,6 @@
       "resource_type": "software"
     }
   ],
-  "version": "1.0.0",
+  "version": "2.0.0rc7",
   "access_right": "open"
 }

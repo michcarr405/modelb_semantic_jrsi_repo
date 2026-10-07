@@ -1,4 +1,0 @@
-PUBLICATION FIGURE RELEASE VERIFICATION: PASS
-- publication source tables match the Gate 8 frozen figure sources exactly
-- required archived quantitative figure exports are present
-- regenerated PNG/TIFF exports match archived publication exports exactly

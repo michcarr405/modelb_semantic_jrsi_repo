@@ -1,0 +1,15 @@
+stream_family,root_seed,use
+R1 Phase-4 baseline/information,2026073104,historical core / permutation correction
+R1 Phase-6 baseline/generalization,2026073106,"Stage A/B/C/D baseline, info and permutation streams"
+R2 MP core continuation,2026100205,"core sweep, 8 continuations"
+R2 MP Stage A/B continuation,2026100206,"65-setting screen, 8 continuations"
+R2 MP Stage C continuation,2026100207,"protocol variants, 8 continuations"
+R2 MP Stage D continuation,2026100208,"nondefault full pipeline, 16 continuations"
+R2 p=1 frontier continuation,2026100209,20 baselines x 64 new continuations
+R2 migration inference/bootstrap,2026100210,core/screen/stage-C inference and marginal checks
+R2 landscape generation,2026100211,8 independent affinity matrices
+R2 landscape population,2026100212,256 evolved populations and info observations
+R2 landscape continuation,2026100213,8 continuations per landscape population
+R2 landscape permutation,2026100214,200 within-segment permutations per population
+R2 landscape inference,2026100215,nested-pop and landscape bootstrap; marginal check
+R2 high-cont causal specificity,UNRECOVERED,"64 new streams/evaluation, indices 2-65; exact root absent from currently mounted archives"

@@ -1,0 +1,252 @@
+{
+  "all_passed": true,
+  "figures": [
+    {
+      "figure": "main/Figure_1.pdf",
+      "route": "archived_conceptual_diagram_copy",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1020,
+        708
+      ],
+      "generated_pixel_size": [
+        1020,
+        708
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "2c8bb662f5cc52f08d644970741ce9f36daaa802985493609d0339eaf1830133",
+      "generated_sha256": "2c8bb662f5cc52f08d644970741ce9f36daaa802985493609d0339eaf1830133"
+    },
+    {
+      "figure": "main/Figure_2.pdf",
+      "route": "archived_conceptual_diagram_copy",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        938,
+        669
+      ],
+      "generated_pixel_size": [
+        938,
+        669
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "d7029ee9532c538e2271144a3244f94b41c9b965b794f678dce25df9843d1f93",
+      "generated_sha256": "d7029ee9532c538e2271144a3244f94b41c9b965b794f678dce25df9843d1f93"
+    },
+    {
+      "figure": "main/Figure_3.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1016,
+        899
+      ],
+      "generated_pixel_size": [
+        1016,
+        899
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "99163202ad4e71c0885cebbfb2c68448e79f4e8a87f1f7e0beb7f45030f283db",
+      "generated_sha256": "a6139de8addafa083260df52de0349f634c832d4a52fd3b031f549ce06120398"
+    },
+    {
+      "figure": "main/Figure_4.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1012,
+        886
+      ],
+      "generated_pixel_size": [
+        1012,
+        886
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "a3e304a75255006f9ddb13d37fb1043f878f11abd8520f7e3fc5a78b87f5e1ad",
+      "generated_sha256": "19753ef8b9c351fd456f24f42b392fa1d34ecad176b42fd27aa84f3d3bb9ea92"
+    },
+    {
+      "figure": "main/Figure_5.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1009,
+        1048
+      ],
+      "generated_pixel_size": [
+        1009,
+        1048
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "96791e491b9a206bc60101ca01a1b2ebd2a6c52d27f13ea35a900b3673c50030",
+      "generated_sha256": "36ad17337b522522640cd030464d4589fa5be91c0e9feb8f5a67ae3393277a88"
+    },
+    {
+      "figure": "main/Figure_6.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1041,
+        862
+      ],
+      "generated_pixel_size": [
+        1041,
+        862
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "61cf0b8849b31ece7cb1d86848f598ff8a8cb9e00b3473159c5517340d48be29",
+      "generated_sha256": "ad1fd21c2ff551a7b9f25a950b24ce39e5bf82c726b3364eaa3fca805686a802"
+    },
+    {
+      "figure": "main/Figure_7.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1037,
+        951
+      ],
+      "generated_pixel_size": [
+        1037,
+        951
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "ec63b1d34f436f077bfdf0e77034a3b37f3a1b567e6b65930e2495cb2af48914",
+      "generated_sha256": "673258210d5ec830f3dadf6a669ae7536b609729e01b2f08af8eec6c8a946af7"
+    },
+    {
+      "figure": "main/Figure_8.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1037,
+        843
+      ],
+      "generated_pixel_size": [
+        1037,
+        843
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "800ef61fb1ac4c76c87bc6e44c2dba54fef5b73ef8ca49641a5faaf8d99efee1",
+      "generated_sha256": "c2095510151a028398629bdd7af25c3b71a8fb297bc680b4d15b0c28dc84e980"
+    },
+    {
+      "figure": "supplement/Figure_S1_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1037,
+        1246
+      ],
+      "generated_pixel_size": [
+        1037,
+        1246
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "9a90d67ac7435ba2352eef8abca031ed158d443965207dc82f142eceab856744",
+      "generated_sha256": "7655ad9692e8e9fac34455404a81c20e6c0aaf234051a662644c9e1d027c7d66"
+    },
+    {
+      "figure": "supplement/Figure_S2_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1054,
+        485
+      ],
+      "generated_pixel_size": [
+        1054,
+        485
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "5f413b54559778a7facb4c4d1fc2eb5fcd169854ee3a5304e5b670f40b8815e6",
+      "generated_sha256": "f7807c29490bb97bc0b8fd06ec1e36adb90e71fbaed55fb24c231a5ae897163b"
+    },
+    {
+      "figure": "supplement/Figure_S3_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1598,
+        629
+      ],
+      "generated_pixel_size": [
+        1598,
+        629
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "8c494babe5cd7a9d0721b06f34e027d98acff5daedca501abace60c6eb8368cb",
+      "generated_sha256": "6abcd470cd908a0a39a8d98cb2181612c71656b6b9acc0f9532435d01754fa75"
+    },
+    {
+      "figure": "supplement/Figure_S4_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1034,
+        1115
+      ],
+      "generated_pixel_size": [
+        1034,
+        1115
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "16befa6cfd25f2e0a71ecca36e99f4dbc0b0638581a6f58e4b3fc1577682acd9",
+      "generated_sha256": "fefa6c6124650bb4c43bb71d80daf1cb0406d8dcf48fdf043e15c149e9bc015b"
+    },
+    {
+      "figure": "supplement/Figure_S5_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1035,
+        1123
+      ],
+      "generated_pixel_size": [
+        1035,
+        1123
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "e2c36ab447f7a1a251655cdf460ec92a565e9b3bb9d798ede249a512b0d29a3a",
+      "generated_sha256": "4cc865f195a90e0e560563e0e1b9f9e2b508e5fece2ccb3b40fa9a6b454bffc3"
+    },
+    {
+      "figure": "supplement/Figure_S6_MP.pdf",
+      "route": "regenerated_from_plot_source",
+      "pass": true,
+      "render_dpi": 144,
+      "reference_pixel_size": [
+        1135,
+        760
+      ],
+      "generated_pixel_size": [
+        1135,
+        760
+      ],
+      "different_pixel_fraction": 0.0,
+      "reference_sha256": "4fc77bbd92f635a70a4b73f442f4d74f568dbc2e07c72d0d5526e39abb39e17f",
+      "generated_sha256": "39ed53855239f59f26dd5f01c711ca54c8f5111a55555a29987abb7a320b073e"
+    }
+  ],
+  "regenerated_figures": 12,
+  "archived_diagram_copies": 2,
+  "environment": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "PyMuPDF": "1.26.6"
+  },
+  "scope": "Pixel equivalence at recorded resolution, not PDF byte identity. Figures 1 and 2 are copied conceptual diagrams."
+}

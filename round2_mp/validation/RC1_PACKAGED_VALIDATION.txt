@@ -1,0 +1,74 @@
+{
+  "candidate": "jrsi-reproducibility-v2.0.0-rc1",
+  "n_checks": 13,
+  "n_passed": 13,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "original_mp_hashes_24_of_24",
+      "pass": true,
+      "detail": "n=24"
+    },
+    {
+      "check": "no_current_s7_s9_publication_files",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "present_JRSI_R2_MAIN_NOTATION_CLOSED_2026-10-06.pdf",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "present_JRSI_R2_SUPPLEMENT_NOTATION_CLOSED_2026-10-06.pdf",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exact_regeneration_mp_marginal_diagnostics_replicates.csv",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exact_regeneration_mp_marginal_diagnostics_summary.csv",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exact_regeneration_empirical_marginal_summary.csv",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "empirical_identity_pooled_tv_zero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "empirical_identity_single_stream_tv_zero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "empirical_mp_below_native_split_reference",
+      "pass": true,
+      "detail": "0.0007844979422433042 < 0.0015523856026785738"
+    },
+    {
+      "check": "present_FINAL_INTEGRATED_MAIN_SUPPLEMENT_FREEZE_AUDIT.md",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "present_FINAL_NUMERICAL_SYNC_AUDIT_75_OF_75.md",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "present_FINAL_REVIEWER_NOTATION_VALUE_AUDIT.md",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "known_release_gate": "MP production driver for every MP-primary source table remains unlocated; this validator does not claim full production regeneration."
+}

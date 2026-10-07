@@ -1,0 +1,17 @@
+{
+  "landscape": 7,
+  "design_id": "B2_stride7",
+  "replicate": 0,
+  "baseline_seed": 1736493575,
+  "state_hash": "1cf3fdee1716f8af604f4b8d3d363cbf929a3bee1b2d24545e730851ec79c82e",
+  "corrected_information": 0.19468836488083446,
+  "conditional_information": 0.2198271357631553,
+  "permutation_mean": 0.025138770882320846,
+  "adaptive_gain": 0.8954687500000009,
+  "actual_viability": 7.631882052951388,
+  "mp_constant_viability": 5.746875,
+  "delta_mp": 1.8850070529513887,
+  "delta_mp_cont_sd": 0.08754458969652498,
+  "n_continuations": 8,
+  "mp_marginal_max_abs_error": 0.0
+}

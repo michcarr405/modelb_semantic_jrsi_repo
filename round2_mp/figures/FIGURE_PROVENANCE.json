@@ -1,0 +1,77 @@
+{
+  "source_archive": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07.zip",
+  "source_archive_sha256": "55610820a9294ffc5fb579f3a9b2e15e5031f79572a3275072e32aac7a7c2782",
+  "note": "Exact archived standalone PDFs restored from final main and final Supplement figure folders. This is asset recovery, not fresh figure regeneration. Historical plotting scripts are not claimed to rebuild all final layouts.",
+  "figures": [
+    {
+      "path": "round2_mp/figures/main/Figure_1.pdf",
+      "sha256": "2c8bb662f5cc52f08d644970741ce9f36daaa802985493609d0339eaf1830133",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_main/figures/Figure_1.pdf"
+    },
+    {
+      "path": "round2_mp/figures/main/Figure_2.pdf",
+      "sha256": "d7029ee9532c538e2271144a3244f94b41c9b965b794f678dce25df9843d1f93",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_main/figures/Figure_2.pdf"
+    },
+    {
+      "path": "round2_mp/figures/main/Figure_3.pdf",
+      "sha256": "99163202ad4e71c0885cebbfb2c68448e79f4e8a87f1f7e0beb7f45030f283db",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_main/figures/Figure_3.pdf"
+    },
+    {
+      "path": "round2_mp/figures/main/Figure_4.pdf",
+      "sha256": "a3e304a75255006f9ddb13d37fb1043f878f11abd8520f7e3fc5a78b87f5e1ad",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_main/figures/Figure_4.pdf"
+    },
+    {
+      "path": "round2_mp/figures/main/Figure_5.pdf",
+      "sha256": "96791e491b9a206bc60101ca01a1b2ebd2a6c52d27f13ea35a900b3673c50030",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_main/figures/Figure_5.pdf"
+    },
+    {
+      "path": "round2_mp/figures/main/Figure_6.pdf",
+      "sha256": "61cf0b8849b31ece7cb1d86848f598ff8a8cb9e00b3473159c5517340d48be29",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_main/figures/Figure_6.pdf"
+    },
+    {
+      "path": "round2_mp/figures/main/Figure_7.pdf",
+      "sha256": "ec63b1d34f436f077bfdf0e77034a3b37f3a1b567e6b65930e2495cb2af48914",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_main/figures/Figure_7.pdf"
+    },
+    {
+      "path": "round2_mp/figures/main/Figure_8.pdf",
+      "sha256": "800ef61fb1ac4c76c87bc6e44c2dba54fef5b73ef8ca49641a5faaf8d99efee1",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_main/figures/Figure_8.pdf"
+    },
+    {
+      "path": "round2_mp/figures/supplement/Figure_S1_MP.pdf",
+      "sha256": "9a90d67ac7435ba2352eef8abca031ed158d443965207dc82f142eceab856744",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_supplement/figures/Figure_S1_MP.pdf"
+    },
+    {
+      "path": "round2_mp/figures/supplement/Figure_S2_MP.pdf",
+      "sha256": "5f413b54559778a7facb4c4d1fc2eb5fcd169854ee3a5304e5b670f40b8815e6",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_supplement/figures/Figure_S2_MP.pdf"
+    },
+    {
+      "path": "round2_mp/figures/supplement/Figure_S3_MP.pdf",
+      "sha256": "8c494babe5cd7a9d0721b06f34e027d98acff5daedca501abace60c6eb8368cb",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_supplement/figures/Figure_S3_MP.pdf"
+    },
+    {
+      "path": "round2_mp/figures/supplement/Figure_S4_MP.pdf",
+      "sha256": "16befa6cfd25f2e0a71ecca36e99f4dbc0b0638581a6f58e4b3fc1577682acd9",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_supplement/figures/Figure_S4_MP.pdf"
+    },
+    {
+      "path": "round2_mp/figures/supplement/Figure_S5_MP.pdf",
+      "sha256": "e2c36ab447f7a1a251655cdf460ec92a565e9b3bb9d798ede249a512b0d29a3a",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_supplement/figures/Figure_S5_MP.pdf"
+    },
+    {
+      "path": "round2_mp/figures/supplement/Figure_S6_MP.pdf",
+      "sha256": "4fc77bbd92f635a70a4b73f442f4d74f568dbc2e07c72d0d5526e39abb39e17f",
+      "original_rc3_entry": "JRSI_R2_REPRODUCIBILITY_RC3_2026-10-07/repository/round2_mp/publication/final_supplement/figures/Figure_S6_MP.pdf"
+    }
+  ]
+}

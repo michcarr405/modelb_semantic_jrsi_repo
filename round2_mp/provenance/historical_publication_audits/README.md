@@ -1,0 +1,1 @@
+Historical audits of the pre-RC4 publication snapshot, retained for numerical provenance only. Manuscript and Supplement files are maintained separately; these audits do not certify later prose revisions or impose paper synchronization on this repository.

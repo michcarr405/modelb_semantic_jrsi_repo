@@ -1,8 +1,0 @@
-# Exclude local/editor transient artifacts from git-archive release packages.
-**/.DS_Store export-ignore
-**/.pytest_cache export-ignore
-**/.pytest_cache/** export-ignore
-**/.ipynb_checkpoints export-ignore
-**/.ipynb_checkpoints/** export-ignore
-**/__MACOSX export-ignore
-**/__MACOSX/** export-ignore

@@ -1,0 +1,41 @@
+MP causal-specificity jobs 20/240
+MP causal-specificity jobs 40/240
+MP causal-specificity jobs 60/240
+MP causal-specificity jobs 80/240
+MP causal-specificity jobs 100/240
+MP causal-specificity jobs 120/240
+MP causal-specificity jobs 140/240
+MP causal-specificity jobs 160/240
+MP causal-specificity jobs 180/240
+MP causal-specificity jobs 200/240
+MP causal-specificity jobs 220/240
+MP causal-specificity jobs 240/240
+{
+  "n_phase5_specs": 220,
+  "n_native_full_specs": 20,
+  "n_continuation_rows": 480,
+  "max_starting_expected_marginal_abs_error": 4.218847493575595e-14,
+  "max_original_seed_block_reconstruction_abs_error": 7.105427357601002e-15,
+  "all_six_mp_contrasts_pass": false,
+  "n_mp_contrasts_passed": 5,
+  "continuation_root_seed_reused_for_pairing": 2026073104,
+  "round2_analysis_root_seed": 2026100201
+}
+
+MP contrasts:
+                         contrast  mean_difference  median_difference  bootstrap_95_lower  bootstrap_95_upper  positive_seed_blocks  negative_seed_blocks  p_value_two_sided  n_seed_blocks  q_value_bh_six_contrasts  contrast_passed
+              full_minus_neutral         1.677491           1.769873            1.246674            2.091488                    18                     2             0.0001             20                   0.00030             True
+              full_minus_reduced         0.977206           0.815620            0.356083            1.626005                    16                     4             0.0045             20                   0.00675             True
+native_minus_affinity_reassigned         0.552998           0.456063            0.137009            1.010192                    14                     6             0.0167             20                   0.02004             True
+  native_minus_topology_mismatch         0.204773           0.093886           -0.140612            0.548877                    11                     9             0.2706             20                   0.27060            False
+  alternative_native_minus_cross         0.869269           1.055469            0.521363            1.226596                    17                     3             0.0001             20                   0.00030             True
+           stable_minus_unstable         0.962181           1.253196            0.536276            1.383801                    14                     6             0.0008             20                   0.00160             True
+
+Comparison:
+                         contrast  original_mean_contrast  mean_difference  median_difference  bootstrap_95_lower  bootstrap_95_upper  positive_seed_blocks  negative_seed_blocks  p_value_two_sided  n_seed_blocks  q_value_bh_six_contrasts  contrast_passed  mp_over_original_ratio  mean_contrast_attenuation  seed_block_sign_concordance  both_positive_blocks
+              full_minus_neutral                6.016079         1.677491           1.769873            1.246674            2.091488                    18                     2             0.0001             20                   0.00030             True                0.278835                   4.338588                         0.90                    18
+              full_minus_reduced                3.516104         0.977206           0.815620            0.356083            1.626005                    16                     4             0.0045             20                   0.00675             True                0.277923                   2.538898                         0.90                    16
+native_minus_affinity_reassigned                5.215617         0.552998           0.456063            0.137009            1.010192                    14                     6             0.0167             20                   0.02004             True                0.106027                   4.662619                         0.70                    14
+  native_minus_topology_mismatch                1.823035         0.204773           0.093886           -0.140612            0.548877                    11                     9             0.2706             20                   0.27060            False                0.112326                   1.618262                         0.65                    11
+  alternative_native_minus_cross                2.776109         0.869269           1.055469            0.521363            1.226596                    17                     3             0.0001             20                   0.00030             True                0.313125                   1.906841                         0.90                    17
+           stable_minus_unstable                1.334748         0.962181           1.253196            0.536276            1.383801                    14                     6             0.0008             20                   0.00160             True                0.720871                   0.372567                         0.70                    13

@@ -1,0 +1,11 @@
+{
+  "max_abs_old_cohort_nonintervention_difference": 3.552713678800501e-15,
+  "old_cohort_state_hashes_all_match": true,
+  "n_old_hash_checks": 244,
+  "n_replicates": 520,
+  "n_settings": 65,
+  "replicates_per_setting": [
+    8
+  ],
+  "max_mp_marginal_abs_error": 1.2256862191861728e-13
+}

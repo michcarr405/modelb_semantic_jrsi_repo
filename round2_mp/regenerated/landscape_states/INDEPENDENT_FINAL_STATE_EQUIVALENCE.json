@@ -1,0 +1,9 @@
+{
+  "baseline_state_hash": "e019b056eca51dd152dcc98b774b33f7e7437de0004e3b096a0fa796447557fd",
+  "reference_viability": 36.59750434027778,
+  "reconstructed_viability": 36.59750434027778,
+  "reference_final_hash": "4ea046ebde5f4f020b136ddb1f95200c4d0446758c49178248eb12e1a4e66926",
+  "reconstructed_final_hash": "4ea046ebde5f4f020b136ddb1f95200c4d0446758c49178248eb12e1a4e66926",
+  "exact_final_state_match": true,
+  "viability_exact": true
+}

@@ -1,0 +1,47 @@
+JRSI ROUND-2 INTEGRATED REGENERATION REPORT — 2026-10-07
+
+Disposition: SCIENTIFIC REGENERATION GATE PASSED; RC4 SEPARATES PUBLICATION FILES.
+The full production campaigns and 68-test foundation validation were completed for RC3. RC4 retains those scientific assets unchanged and repeats the integrated numerical/packaging checks; no full campaign rerun is claimed for this packaging change.
+Candidate: jrsi-reproducibility-v2.0.0-rc4.
+
+Validation
+- Fresh isolated Python environment and network-enabled dependency installation succeeded.
+- Gate-8 foundation: 68/68 tests passed.
+- RC4 code-and-data packaging checks are recorded in RC4_PACKAGED_VALIDATION.json. The earlier 13-check RC3 publication-inclusive suite is superseded.
+- Integrated validation: 29/29 checks passed.
+- Current source-table matrix: 29/29 CSVs passed. Twenty-five are byte-identical to their current reference targets. Four reader-record projections differ only by floating-point serialization/representation, at most 8.881784197001252e-16; all categorical values match.
+
+Full scientific campaign coverage
+- Core: all 400 baseline-population rows and ten inference rows reproduced. All 200 selective and 200 control populations were continued under eight paired streams. The original frozen core table leaves viability levels missing for 124 control rows; its exact archival missingness footprint is preserved in a transparent projection. The complete newly computed control levels remain separately available. Every finite frozen value matches.
+- Screening: all 65 settings x 8 populations = 520 initial-seed evolutionary runs reproduced the frozen setting summaries and regime counts.
+- Stage C: all 12 protocol settings x 8 populations = 96 runs reproduced the frozen summaries.
+- Stage D: all three nondefault settings x 8 populations, 34 maps plus native, and 16 nested continuation streams reproduced the frozen replicate, confirmation and family summaries. The generated continuation table has 13,440 rows and retains newly generated final-state hashes.
+- Frontier: all 20 populations, 34 maps plus native, and 64 nested streams reproduced the frozen corrected coordinates, 680 map rows, 680 frontier rows, and 20 first-target rows. The generated continuation table has 44,800 rows.
+- Independent landscapes: all 8 landscapes x 4 settings x 8 populations = 256 baseline states were regenerated from initial seeds, retained as NPZ files, and matched the frozen canonical population hashes. All population-, landscape- and inference-level source tables reproduced exactly.
+- Final causal specificity: all 240 evaluation realizations x 64 new streams = 15,360 paired continuation rows were regenerated. The raw CSV is byte-identical to the frozen archive, SHA256 94c01d71029606db905f9a859ae238d83b591942af9c619fa30be23f2b996df7. The 20 x 19 seed-block table and six inferential contrasts are also byte-identical. Five contrasts pass; native versus topology mismatch remains non-passing (BH q=0.0501). The inferential unit remains 20 independently evolved seed blocks.
+- Expected and realized marginal diagnostics: all three full diagnostic CSVs reproduce byte-for-byte; identity realization is exact and pooled nonidentity differences remain below the native split-half reference.
+
+Source reconstruction and provenance
+The distributed mp_operator.py is a functional reconstruction, not byte-identical recovery of lost source. Its SHA256 remains cd01290a16234700898e7c5040abc33a72fc620aac8221100250d151d2ee7ccc. All six recovered interfaces are preserved. The independent L0/B2_default/r00/c00 final population has the same canonical hash under the reference and reconstructed implementations: 4ea046ebde5f4f020b136ddb1f95200c4d0446758c49178248eb12e1a4e66926. Original archived Stage-D final continuation hashes were unavailable; the independent landscape test is not presented as a historical Stage-D final-hash comparison.
+
+Five recovered MP migration drivers remain byte-unchanged. Portable adapters restore their expected layout, preserve generated states and complete control outputs through the unchanged archived core job. The original 27,139-record MP ledger has zero SeedSequence entropy mismatches. A 32,012-record supplemental final causal-specificity ledger records observation, propagation, dynamic topology and primary inference keys. The 53 non-self/non-cache entries in recovered manifests pass; two compiled-cache entries are absent, and the original scientific-freeze self-hash entry is invalid and explicitly excluded. Original archive hashes and source-recovery records are retained.
+
+Reporting alignment
+One compact empirical diagnostic record contained small stale entries (maximum discrepancy 8.196149553511747e-7). Its numerical columns now project the byte-reproduced detailed tables; the original is preserved. At six-decimal Supplement display precision, one Table S4(b) value changes: 0.000885 to 0.000886 for the maximum pooled TV of substring start 3, length 2. This is a reporting correction, not a change to an estimand, parameter, seed, inferential result or conclusion. Manuscript and Supplement publication files are maintained separately and excluded from RC4, including historical copies. The numerical correction and original compact CSV are retained in the repository. No paper-source compilation is required for a repository release.
+
+Scope and remaining actions
+Core, frontier and causal-specificity regeneration starts from immutable archived Round-1 states; this gate does not claim all Round-1 evolution was rerun from initial seeds. Screening, Stage C/D and landscapes were regenerated from initial seeds. Reader records use frozen display labels and regenerated numerical columns. The frozen Stage-D design selection is an experimental input.
+
+RC4 changes repository packaging and validation requirements only. All recorded scientific assets are compared against RC3 in RC4_SCIENTIFIC_ASSET_COMPARISON.json. Prose-only changes to the abstract, introduction, discussion or Supplement do not require a repository update. Changes to numerical results, data, analysis code or implemented methods require corresponding repository changes. No public tag, GitHub release or DOI was created. The exact final public repository/tag installation and public metadata checks remain separate release steps.
+
+Key records inside the candidate
+- round2_mp/validation/INTEGRATED_REGENERATION_VALIDATION.json
+- round2_mp/validation/FULL_REGENERATION_STATUS.csv
+- round2_mp/validation/execution_logs/
+- round2_mp/validation/run_full_cleanroom.py
+- round2_mp/SOURCE_RECOVERY.md
+- round2_mp/provenance/CANONICAL_SEED_PROVENANCE.md
+- round2_mp/provenance/FINAL_64NEW_CAUSAL_SPECIFICITY_SEED_LEDGER.csv
+- round2_mp/reporting_corrections/
+- round2_mp/regenerated/landscape_states/
+- round2/mp_migration/results/

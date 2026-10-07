@@ -1,0 +1,20 @@
+{
+  "design_id": "C_g250_B2_stride7",
+  "source_design_id": "B2_stride7",
+  "stage": "C",
+  "replicate": 1,
+  "spec_json": "{\"b_ratio\": 1.6666666666666667, \"bias\": 2.0, \"fitness_mode\": \"count\", \"floor\": 0.1, \"jitter\": 0, \"motif_length\": 5, \"mutation_rate\": 0.001, \"n_cells\": 80, \"n_gens\": 250, \"n_metabolites\": 4, \"n_segments\": 4, \"n_seqs\": 8, \"p\": 1.0, \"penalty\": 0.5, \"penalty_ratio\": 0.25, \"reward\": 2.0, \"segment_order\": \"native\", \"seq_len\": 60, \"sigma\": 1.0, \"sigma_ratio\": 0.8333333333333334, \"stride\": 7, \"temperature\": 1.2}",
+  "horizon": 36,
+  "baseline_seed": 551081565,
+  "corrected_information": 0.27309631606662316,
+  "conditional_information": 0.2983060948602828,
+  "permutation_mean": 0.02520977879365964,
+  "delta_mp": 1.6217963324652775,
+  "delta_mp_cont_sd": 0.18114613584216746,
+  "adaptive_gain": 0.7255937499999989,
+  "final_mean_fitness": 7.296875,
+  "state_hash": "048e9cf6245b40edd64db5a2b01a4e8c2de02e26f2564f10415ddbaeddf23ad6",
+  "trajectory_hash": "e085d9aa5a3871cf993b56f81430c98c655aacd5ed58d3f82f52de0101da5cae",
+  "mp_marginal_max_abs_error": 6.661338147750939e-15,
+  "n_continuations": 8
+}

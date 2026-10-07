@@ -1,0 +1,8 @@
+{
+  "n_population_rows": 256,
+  "n_landscapes": 8,
+  "n_pop_per_landscape_setting": 8,
+  "n_settings": 4,
+  "max_mp_marginal_abs_error": 0.0,
+  "all_landscape_setting_cells_complete": true
+}

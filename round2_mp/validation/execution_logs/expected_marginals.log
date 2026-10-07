@@ -1,0 +1,10 @@
+                 condition                              label  n  mean_segment_tv  max_segment_tv  mean_adjacency_tv  mean_promoting  mean_reducing  mean_neutral  mean_expected_initial_fitness
+                    native                      Actual/native 20     0.000000e+00    0.000000e+00           0.000000        0.453735       0.435421      0.110843                      38.936778
+        submitted_constant Submitted constant (logit average) 20     1.165518e-01    1.585715e-01           0.096511        0.370886       0.531498      0.097616                      27.181277
+             m000_constant                        MP constant 20     5.058636e-14    6.471559e-14           0.014324        0.441631       0.448382      0.109987                      37.248949
+m004_balanced_random_group      MP balanced-random, 16 groups 20     1.742937e-14    2.522114e-14           0.008694        0.447024       0.442918      0.110057                      37.992437
+  m015_affinity_rank_group        MP affinity-rank, 64 groups 20     1.213283e-14    2.045066e-14           0.003472        0.451879       0.436742      0.111380                      38.696279
+ m024_contiguous_substring     MP substring start 0, length 2 20     1.743284e-14    2.491583e-14           0.008678        0.446825       0.442205      0.110969                      37.990127
+ m027_contiguous_substring     MP substring start 3, length 2 20     1.832744e-14    2.953193e-14           0.008451        0.446934       0.442692      0.110374                      37.988741
+ m029_contiguous_substring     MP substring start 1, length 3 20     1.628151e-14    2.297468e-14           0.004161        0.450824       0.438415      0.110761                      38.534227
+             m033_identity                        MP identity 20     0.000000e+00    0.000000e+00           0.000000        0.453735       0.435421      0.110843                      38.936778

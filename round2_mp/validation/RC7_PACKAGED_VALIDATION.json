@@ -1,0 +1,79 @@
+{
+  "candidate": "jrsi-reproducibility-v2.0.0-rc7",
+  "n_checks": 14,
+  "n_passed": 14,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "original_mp_hashes_24_of_24",
+      "pass": true,
+      "detail": "n=24"
+    },
+    {
+      "check": "no_packaged_tex_files",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_manuscript_or_supplement_document_pdfs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "all_14_current_figures_match_archived_hashes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_embedded_publication_archives",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exact_regeneration_mp_marginal_diagnostics_replicates.csv",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exact_regeneration_mp_marginal_diagnostics_summary.csv",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exact_regeneration_empirical_marginal_summary.csv",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "empirical_identity_pooled_tv_zero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "empirical_identity_single_stream_tv_zero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "empirical_mp_below_native_split_reference",
+      "pass": true,
+      "detail": "0.0007844979422433042 < 0.0015523856026785738"
+    },
+    {
+      "check": "integrated_evidence_passed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "scientific_assets_unchanged_from_rc3",
+      "pass": true,
+      "detail": "n=6140"
+    },
+    {
+      "check": "portable_figure_build_12_regenerated_2_archived",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "known_release_gate": "Code-and-data packaging checks only; complete regeneration is documented in INTEGRATED_REGENERATION_VALIDATION.json."
+}

@@ -1,0 +1,9 @@
+condition,inherit_prob,replicate,baseline_replicate,continuation_index,actual_viability,mp_constant_viability,delta_mp,analytical_exact_zero
+control,0.7,1,control_p0.7_r01,0,27.139561631944446,27.139561631944446,0.0,False
+control,0.7,1,control_p0.7_r01,1,27.186827256944447,27.186827256944447,0.0,False
+control,0.7,1,control_p0.7_r01,2,27.254036458333335,27.254036458333335,0.0,False
+control,0.7,1,control_p0.7_r01,3,27.102430555555557,27.102430555555557,0.0,False
+control,0.7,1,control_p0.7_r01,4,27.2525390625,27.2525390625,0.0,False
+control,0.7,1,control_p0.7_r01,5,27.04225260416667,27.04225260416667,0.0,False
+control,0.7,1,control_p0.7_r01,6,27.104774305555555,27.104774305555555,0.0,False
+control,0.7,1,control_p0.7_r01,7,27.121332465277774,27.121332465277774,0.0,False

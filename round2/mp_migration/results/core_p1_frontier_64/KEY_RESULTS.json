@@ -1,0 +1,19 @@
+{
+  "n_baselines": 20,
+  "n_continuations_per_map": 64,
+  "target_reached": 20,
+  "identity_required_by_mean_frontier": 2,
+  "technical_precision_class_counts": {
+    "technically_unresolved": 14,
+    "technically_resolved_nonidentity": 6
+  },
+  "first_target_method_counts": {
+    "balanced_random_group": 10,
+    "contiguous_substring": 4,
+    "affinity_rank_group": 4,
+    "identity": 2
+  },
+  "mean_constant_intervention_loss": 2.285806070963543,
+  "median_target_tolerance": 0.022473788791232713,
+  "median_first_target_corrected_information": 0.2276891872032672
+}

@@ -1,0 +1,28 @@
+                    map_id                      map_label  n_populations  n_streams_per_population  mean_pooled_64_tv  median_pooled_64_tv  max_pooled_64_tv  mean_pooled_64_max_abs  max_pooled_64_max_abs  mean_single_stream_tv  median_single_stream_tv  mean_native_split_half_tv  median_ratio_to_native_split_half  max_ratio_to_native_split_half
+             m000_constant                    MP constant             20                        64           0.000784             0.000772          0.001117                0.001065               0.001594               0.006256                 0.006166                   0.001552                           0.512203                        0.736311
+m004_balanced_random_group  MP balanced-random, 16 groups             20                        64           0.000654             0.000644          0.001164                0.000881               0.001561               0.004988                 0.004883                   0.001552                           0.428998                        0.769164
+  m015_affinity_rank_group    MP affinity-rank, 64 groups             20                        64           0.000410             0.000422          0.000655                0.000551               0.000848               0.003030                 0.002930                   0.001552                           0.269850                        0.410788
+ m024_contiguous_substring MP substring start 0, length 2             20                        64           0.000637             0.000621          0.000978                0.000883               0.001974               0.004963                 0.004855                   0.001552                           0.400258                        0.644058
+ m027_contiguous_substring MP substring start 3, length 2             20                        64           0.000632             0.000606          0.000886                0.000799               0.001231               0.005084                 0.005022                   0.001552                           0.424472                        0.716581
+ m029_contiguous_substring MP substring start 1, length 3             20                        64           0.000470             0.000477          0.000672                0.000653               0.001003               0.003622                 0.003627                   0.001552                           0.327960                        0.489627
+             m033_identity                    MP identity             20                        64           0.000000             0.000000          0.000000                0.000000               0.000000               0.000000                 0.000000                   0.001552                           0.000000                        0.000000
+{
+  "continuation_root": 2026100209,
+  "n_populations": 20,
+  "n_streams_per_population": 64,
+  "total_native_draws": 1280,
+  "windows_per_draw": 35840,
+  "maps": [
+    "m000_constant",
+    "m004_balanced_random_group",
+    "m015_affinity_rank_group",
+    "m024_contiguous_substring",
+    "m027_contiguous_substring",
+    "m029_contiguous_substring",
+    "m033_identity"
+  ],
+  "identity_pooled_tv_exact_zero": true,
+  "identity_single_stream_tv_exact_zero": true,
+  "max_nonidentity_mean_pooled_tv": 0.0007844979422433042,
+  "mean_native_split_half_tv": 0.0015523856026785738
+}

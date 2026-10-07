@@ -1,0 +1,23 @@
+{
+  "n_rows": 96,
+  "n_designs": 12,
+  "n_per_design": [
+    8
+  ],
+  "max_mp_marginal_abs_error": 3.0753177782116836e-14,
+  "default_old_state_hashes_all_match": true,
+  "max_abs_default_old_nonintervention_diff": 8.881784197001252e-16
+}
+        design_id source_design_id  delta_mp_mean  delta_mp_low  delta_mp_high  corrected_information_mean  adaptive_gain_mean                regime
+C_g100_B2_default       B2_default       2.415706      1.775090       3.174083                    0.253028            3.871206  R3_strong_adaptation
+C_g100_B2_stride7       B2_stride7       1.055078      0.904405       1.214566                    0.200790            1.050610 R2_viability_relevant
+C_g150_B2_default       B2_default       2.485701      1.813560       3.321551                    0.251431            4.354450  R3_strong_adaptation
+C_g150_B2_stride7       B2_stride7       1.473388      1.142091       1.796976                    0.224596            1.334561  R3_strong_adaptation
+C_g250_B2_default       B2_default       3.094129      2.392200       3.923113                    0.256028            5.000186  R3_strong_adaptation
+C_g250_B2_stride7       B2_stride7       1.621429      1.312510       1.898941                    0.277981            1.107883 R2_viability_relevant
+ C_h24_B2_default       B2_default       2.037823      1.373192       2.744090                    0.247279            2.933483  R3_strong_adaptation
+ C_h24_B2_stride7       B2_stride7       1.684915      1.520274       1.833584                    0.252642            1.357992  R3_strong_adaptation
+ C_h36_B2_default       B2_default       2.055034      1.427346       2.615143                    0.258000            4.668177  R3_strong_adaptation
+ C_h36_B2_stride7       B2_stride7       1.760176      1.422517       2.110001                    0.254795            1.469336  R3_strong_adaptation
+ C_h60_B2_default       B2_default       2.587281      2.133040       3.060496                    0.265507            3.842692  R3_strong_adaptation
+ C_h60_B2_stride7       B2_stride7       1.440636      1.109985       1.822395                    0.223626            1.098229 R2_viability_relevant

@@ -1,0 +1,5 @@
+123a203 Freeze integrated study-wide MP migration conclusions
+a6b1b4f Freeze MP frontier and affinity landscape generality results
+33e9380 Clarify independent marginal-preservation validation
+3449ab2 Implement prespecified affinity landscape MP generality
+027cf7a Prespecify independent affinity landscape MP generality

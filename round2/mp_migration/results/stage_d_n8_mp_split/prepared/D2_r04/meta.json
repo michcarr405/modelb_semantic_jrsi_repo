@@ -1,0 +1,14 @@
+{
+  "confirm_id": "D2",
+  "design_id": "B2_stride7",
+  "replicate": 4,
+  "baseline_replicate": "D2_r04",
+  "baseline_seed": 289117020,
+  "spec_json": "{\"b_ratio\": 1.6666666666666667, \"bias\": 2.0, \"fitness_mode\": \"count\", \"floor\": 0.1, \"jitter\": 0, \"motif_length\": 5, \"mutation_rate\": 0.001, \"n_cells\": 80, \"n_gens\": 150, \"n_metabolites\": 4, \"n_segments\": 4, \"n_seqs\": 8, \"p\": 1.0, \"penalty\": 0.5, \"penalty_ratio\": 0.25, \"reward\": 2.0, \"segment_order\": \"native\", \"seq_len\": 60, \"sigma\": 1.0, \"sigma_ratio\": 0.8333333333333334, \"stride\": 7, \"temperature\": 1.2}",
+  "state_hash": "cb4aebabeb99728bc9b8b39f4ed3fa7f0a8048d8f7d1336b6698bded647808e0",
+  "trajectory_hash": "4949c525b1c4d84c17cd4be9bbe82a7b841eaef4dc0a955d7e9d3fc436f16e49",
+  "baseline_corrected_information": 0.2963557731503828,
+  "max_mp_marginal_abs_error": 4.3298697960381105e-15,
+  "n_continuations": 16,
+  "horizon": 36
+}

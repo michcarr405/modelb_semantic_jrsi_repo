@@ -1,0 +1,9 @@
+Using Python 3.12.14 environment at: cleanroom/.venv
+Resolved 1 package in 12ms
+   Building modelb-semantic-jsri-repo @ file:///workspace/scratch/7e439ea73225/cleanroom/JRSI_R2_REPRODUCIBILITY_RC1_2026-10-07/repository
+      Built modelb-semantic-jsri-repo @ file:///workspace/scratch/7e439ea73225/cleanroom/JRSI_R2_REPRODUCIBILITY_RC1_2026-10-07/repository
+Prepared 1 package in 623ms
+Uninstalled 1 package in 4ms
+Installed 1 package in 0.83ms
+ - modelb-semantic-jsri-repo==0.2.0 (from file:///workspace/scratch/7e439ea73225/cleanroom/JRSI_R2_REPRODUCIBILITY_RC1_2026-10-07/repository)
+ + modelb-semantic-jsri-repo==2.0.0rc3 (from file:///workspace/scratch/7e439ea73225/cleanroom/JRSI_R2_REPRODUCIBILITY_RC1_2026-10-07/repository)

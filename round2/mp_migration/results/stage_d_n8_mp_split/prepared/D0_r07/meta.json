@@ -1,0 +1,14 @@
+{
+  "confirm_id": "D0",
+  "design_id": "A_p2_a3",
+  "replicate": 7,
+  "baseline_replicate": "D0_r07",
+  "baseline_seed": 34394800,
+  "spec_json": "{\"b_ratio\": 1.6666666666666667, \"bias\": 2.0, \"fitness_mode\": \"count\", \"floor\": 0.1, \"jitter\": 0, \"motif_length\": 5, \"mutation_rate\": 0.001, \"n_cells\": 80, \"n_gens\": 150, \"n_metabolites\": 4, \"n_segments\": 4, \"n_seqs\": 8, \"p\": 0.75, \"penalty\": 0.5, \"penalty_ratio\": 0.25, \"reward\": 2.0, \"segment_order\": \"native\", \"seq_len\": 60, \"sigma\": 1.62, \"sigma_ratio\": 1.35, \"stride\": 1, \"temperature\": 1.2}",
+  "state_hash": "fb99d0e779eb06eb4deb476cec41cd597eb0fc6cadfaef13969bcd7a1377a450",
+  "trajectory_hash": "c39f3ccdd1ffa5ded89a699dfe3a2ddee7f5f519b46b1a1a0ea163f4f86284c2",
+  "baseline_corrected_information": 0.4623589766531877,
+  "max_mp_marginal_abs_error": 2.7755575615628914e-15,
+  "n_continuations": 16,
+  "horizon": 36
+}

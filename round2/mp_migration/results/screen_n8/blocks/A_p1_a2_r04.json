@@ -1,0 +1,19 @@
+{
+  "design_id": "A_p1_a2",
+  "stage": "A",
+  "family": "",
+  "replicate": 4,
+  "spec_json": "{\"b_ratio\": 1.6666666666666667, \"bias\": 2.0, \"fitness_mode\": \"count\", \"floor\": 0.1, \"jitter\": 0, \"motif_length\": 5, \"mutation_rate\": 0.001, \"n_cells\": 80, \"n_gens\": 150, \"n_metabolites\": 4, \"n_segments\": 4, \"n_seqs\": 8, \"p\": 0.6, \"penalty\": 0.5, \"penalty_ratio\": 0.25, \"reward\": 2.0, \"segment_order\": \"native\", \"seq_len\": 60, \"sigma\": 1.08, \"sigma_ratio\": 0.9, \"stride\": 1, \"temperature\": 1.2}",
+  "baseline_seed": 986208572,
+  "corrected_information": 0.2431613690326211,
+  "conditional_information": 0.5273896640555049,
+  "permutation_mean": 0.2842282950228838,
+  "delta_mp": 0.19231499565972232,
+  "delta_mp_cont_sd": 0.08428258487619207,
+  "adaptive_gain": 0.020703124999997158,
+  "final_mean_fitness": 33.803125,
+  "state_hash": "481b4acea25872b9947f70fe85a68858d23686efee9086c995d19d94467aa3a9",
+  "trajectory_hash": "8dae4497e05a943737446b0fea631f0323340a58a643cbf3490950a00ba4d79f",
+  "mp_marginal_max_abs_error": 5.329070518200751e-15,
+  "n_continuations": 8
+}

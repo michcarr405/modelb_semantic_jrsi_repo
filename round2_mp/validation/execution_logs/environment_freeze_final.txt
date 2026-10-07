@@ -1,0 +1,23 @@
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.66.1
+iniconfig==2.3.1
+kiwisolver==1.5.1
+llvmlite==0.50.0
+matplotlib==3.11.2
+-e file:///workspace/scratch/7e439ea73225/cleanroom/JRSI_R2_REPRODUCIBILITY_RC1_2026-10-07/repository
+numba==0.68.0
+numpy==2.5.3
+packaging==26.3
+pandas==3.0.6
+pillow==12.3.0
+pluggy==1.6.0
+pygments==2.21.0
+pyparsing==3.3.3
+pytest==9.1.1
+python-dateutil==2.9.0.post0
+scipy==1.18.1
+setuptools==84.0.0
+six==1.17.0
+tqdm==4.70.1
+wheel==0.48.0

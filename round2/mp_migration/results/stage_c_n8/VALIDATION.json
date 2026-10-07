@@ -1,0 +1,10 @@
+{
+  "n_rows": 96,
+  "n_designs": 12,
+  "n_per_design": [
+    8
+  ],
+  "max_mp_marginal_abs_error": 3.0753177782116836e-14,
+  "default_old_state_hashes_all_match": true,
+  "max_abs_default_old_nonintervention_diff": 8.881784197001252e-16
+}

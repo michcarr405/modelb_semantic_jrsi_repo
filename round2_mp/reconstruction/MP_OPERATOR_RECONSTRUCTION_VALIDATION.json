@@ -1,0 +1,114 @@
+{
+  "status": "FUNCTIONAL_RECONSTRUCTION_VALIDATED_IN_LAYERS",
+  "byte_identity_claim": false,
+  "reconstruction_sha256": "cd01290a16234700898e7c5040abc33a72fc620aac8221100250d151d2ee7ccc",
+  "input_archives": {
+    "JRSI_R2_MP_CAUSAL_SPECIFICITY_2026-10-02(1).zip": "c21924484f8dcebf8f72b3d534c35bdcca58bafc02c7ef8725c71f5808b893d7",
+    "JRSI_R2_MP_MIGRATION_SCIENTIFIC_FREEZE_2026-10-02(2).zip": "501ff6a37b1e291716b8e04a8adca3e115b9737757a260d86cd0587088920774",
+    "JRSI_R2_MP_DRIVERS_AND_SEED_LEDGER_2026-10-07(1).zip": "03e134f6d5cf8b5181bad77edd13df5728f3f55e1c7cc706252322d86fb67ddc"
+  },
+  "api_equivalence": {
+    "status": "PASS",
+    "exports": [
+      "simulate_core_actual(population, params, matrix, inherit_prob, horizon, root_seed, baseline_id, continuation_index)",
+      "simulate_core_grouped(population, params, matrix, inherit_prob, labels, horizon, root_seed, baseline_id, continuation_index)",
+      "simulate_phase6_grouped(population, m, labels, horizon, root_seed, baseline_id, continuation_index, reproduce_fn)",
+      "simulate_core_constant(population, params, matrix, inherit_prob, horizon, root_seed, baseline_id, continuation_index)",
+      "simulate_phase6_constant(population, m, horizon, root_seed, baseline_id, continuation_index, reproduce_fn)",
+      "expected_marginal_error_general(population, m, labels, offsets=None)"
+    ]
+  },
+  "marginal_preservation": {
+    "status": "PASS",
+    "representative_errors": {
+      "B2_default_rep0": 1.2545520178264269e-14,
+      "B2_jitter_rep0": 1.2878587085651816e-14,
+      "B2_stride7_rep0": 6.494804694057166e-15,
+      "StageD_D0_rep0": 4.163336342344337e-15
+    },
+    "frozen_campaign_bounds": {
+      "screen_max_reported": 3.3e-13,
+      "stage_c_max_reported": 1.40e-13,
+      "stage_d_max_reported": 1.29e-13
+    }
+  },
+  "continuation_equivalence": {
+    "status": "PASS_FOR_RETAINED_AND_SELF_CONTAINED_REFERENCES",
+    "p1_frontier_rep0_cont3": {
+      "m000_constant_difference": 0.0,
+      "balanced_random_16_difference": 0.0,
+      "affinity_rank_64_difference": 0.0,
+      "contiguous_substring_16_difference": 0.0
+    },
+    "core_p1_rep0_8continuation_aggregate": {
+      "actual": 39.28175998263889,
+      "mp_constant": 37.68868272569445,
+      "delta_mp": 1.5930772569444436,
+      "difference_from_frozen": 0.0
+    },
+    "causal_specificity_native_seedblock0_two_retained_continuations": {
+      "max_difference_actual": 0.0,
+      "max_difference_mp_constant": 0.0,
+      "max_difference_delta_mp": 0.0,
+      "max_difference_marginal_error": 0.0
+    }
+  },
+  "state_equivalence": {
+    "status": "PASS_FOR_INDEPENDENT_SELF_CONTAINED_PHASE6_REFERENCE; STAGE_D_ARCHIVED_FINAL_HASH_REFERENCE_NOT_PRESENT",
+    "affinity_landscape_L0_B2_default_r0": {
+      "baseline_seed": 2642101240,
+      "baseline_state_hash_matches_frozen_population_table": true,
+      "continuation_index": 0,
+      "reference_mp_viability": 36.59750434027778,
+      "reconstructed_mp_viability": 36.59750434027778,
+      "reference_final_population_sha256": "4ea046ebde5f4f020b136ddb1f95200c4d0446758c49178248eb12e1a4e66926",
+      "reconstructed_final_population_sha256": "4ea046ebde5f4f020b136ddb1f95200c4d0446758c49178248eb12e1a4e66926",
+      "final_population_hash_match": true
+    },
+    "stage_d_note": "The provided three archives do not retain the original Stage-D continuation-level final_population_hash table, so direct comparison to an archived Stage-D final hash is not possible from these materials alone."
+  },
+  "campaign_equivalence": {
+    "core": {
+      "status": "PASS_PARTIAL_CAMPAIGN",
+      "completed_selective_blocks": 60,
+      "inheritance_values_fully_checked": [0.1, 0.2, 0.3],
+      "max_abs_actual_difference": 7.105427357601002e-15,
+      "max_abs_mp_difference": 7.105427357601002e-15,
+      "max_abs_delta_difference": 9.71445146547012e-17
+    },
+    "screening": {
+      "status": "PASS_FULL_SETTING_B2_DEFAULT_N8",
+      "delta_mp_mean_generated": 2.5889387342664922,
+      "delta_mp_mean_frozen": 2.588938734266492,
+      "regime": "R3_strong_adaptation",
+      "all_other_summary_fields_checked": true
+    },
+    "stage_c": {
+      "status": "PASS_FULL_SETTING_C_g150_B2_default_N8",
+      "delta_mp_mean": 2.485701158311632,
+      "delta_mp_low": 1.8135600195990675,
+      "delta_mp_high": 3.3215505133734817,
+      "regime": "R3_strong_adaptation",
+      "all_reported_summary_fields_match_to_floating_roundoff": true
+    },
+    "stage_d": {
+      "status": "PASS_COMPLETE_REPLICATE_D0_R00_34_MAPS_X16_CONTINUATIONS",
+      "actual_mean": 37.65237223307292,
+      "constant_mean": 37.21698133680556,
+      "delta_mp_generated": 0.43539089626735716,
+      "delta_mp_frozen": 0.4353908962673571,
+      "spearman_generated": 0.40840336134453775,
+      "spearman_frozen": 0.4084033613445377,
+      "identity_exact": true
+    },
+    "frontier": {
+      "status": "PASS_REPRESENTATIVE_MAP_LEVEL_EXACT",
+      "note": "Four representative map families at a retained p=1 continuation matched the self-contained frozen frontier driver exactly. Full 20x64x34 campaign was not rerun in this reconstruction pass."
+    },
+    "affinity_landscapes": {
+      "status": "PASS_STATE_AND_CONTINUATION_REFERENCE_SAMPLE",
+      "note": "The independent-landscape production driver is self-contained; one frozen population baseline hash and one full MP continuation final-state hash were checked exactly against the reconstructed phase6 constant implementation. The driver package separately records 256/256 baseline-state hash regeneration."
+    }
+  },
+  "release_interpretation": "Suitable as a canonical reconstructed Round-2 reproducibility implementation if distributed with an explicit source-recovery provenance note. It must not be represented as the byte-identical lost production source."
+}

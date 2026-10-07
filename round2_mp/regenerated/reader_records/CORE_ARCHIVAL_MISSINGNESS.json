@@ -1,0 +1,5 @@
+{
+  "frozen_missing_control_viability_cells": 248,
+  "convention": "Preserve the exact frozen null/missingness footprint for archival table reproduction; complete fresh control levels remain in round2/mp_migration/results/core/core_mp_replicates.csv.",
+  "no_finite_frozen_value_replaced": true
+}

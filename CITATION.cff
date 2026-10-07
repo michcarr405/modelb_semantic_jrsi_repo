@@ -1,32 +1,18 @@
 cff-version: 1.2.0
-title: "Model B semantic-information analysis: JRSI frozen reproducibility release"
-message: "If you use this software or frozen analysis archive, please cite the associated JRSI manuscript and this software release."
+title: "Model B marginal-preserving analysis: JRSI Round-2 reproducibility candidate"
+message: "Please cite this software release when using its code or data."
 type: software
 authors:
   - family-names: Carr
     given-names: Michael J
-version: "1.0.0"
-date-released: 2026-08-08
+version: "2.0.0rc7"
 repository-code: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
-doi: "10.5281/zenodo.21852680"
-url: "https://doi.org/10.5281/zenodo.21852680"
+license: MIT
 keywords:
   - semantic information
   - compositional heredity
-  - counterfactual intervention
-  - origins of life
-  - protocell model
-license: "MIT"
+  - marginal-preserving intervention
+  - reproducibility
 notes: >-
-  Frozen scientific results originate from commit
-  2c7d78694579755402c0a1896e109b29dec4d6a0. The permanent archive DOI is
-  10.5281/zenodo.21852680; it was reserved before final publication so the DOI could be embedded
-  in the release metadata and archived files.
-preferred-citation:
-  type: article
-  title: "Counterfactual interventions reveal causal relevance of inherited sequence distinctions in a compositional-resampling model"
-  authors:
-    - family-names: Carr
-      given-names: Michael J
-  journal: "Journal of the Royal Society Interface"
-  notes: "Manuscript rsif-2026-0516; update with final bibliographic metadata after publication."
+  Release candidate; not yet publicly tagged. No v2 DOI has been assigned.
+  The MP operator is a documented functional reconstruction, not byte-identical recovery.

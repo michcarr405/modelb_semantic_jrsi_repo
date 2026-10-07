@@ -1,0 +1,17 @@
+{
+  "landscape": 6,
+  "design_id": "B2_default",
+  "replicate": 2,
+  "baseline_seed": 3253756175,
+  "state_hash": "c613df4776ba445b9f96f3765f886b045a3ad6631b8fe9c9d094894d1c39ce0c",
+  "corrected_information": 0.27124140018841575,
+  "conditional_information": 0.29937980159389854,
+  "permutation_mean": 0.02813840140548278,
+  "adaptive_gain": 4.861588541666663,
+  "actual_viability": 40.5840087890625,
+  "mp_constant_viability": 37.49926486545139,
+  "delta_mp": 3.0847439236111134,
+  "delta_mp_cont_sd": 0.5868222184268383,
+  "n_continuations": 8,
+  "mp_marginal_max_abs_error": 0.0
+}
