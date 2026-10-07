@@ -38,11 +38,11 @@ jobs:
       - name: Install plotting dependencies
         run: python -m pip install -r round2_mp/figure_build/requirements-figures.txt
       - name: Build final figure layouts
-        run: python round2_mp/figure_build/build_figures.py --output ../round2-figure-replay
+        run: python round2_mp/figure_build/build_figures.py --output ${{ runner.temp }}/round2-figure-replay
       - name: Compare final figure pixels
-        run: python round2_mp/figure_build/verify_figures.py --generated ../round2-figure-replay
+        run: python round2_mp/figure_build/verify_figures.py --generated ${{ runner.temp }}/round2-figure-replay
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: round2-figure-build-validation
-          path: ../round2-figure-replay/FIGURE_BUILD_VALIDATION.json
+          path: ${{ runner.temp }}/round2-figure-replay/FIGURE_BUILD_VALIDATION.json
