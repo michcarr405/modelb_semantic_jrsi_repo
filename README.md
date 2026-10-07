@@ -6,7 +6,9 @@ This repository contains the reproducibility record for manuscript **rsif-2026-0
 
 The authoritative Round-2 evidence layer is under `round2_mp/`.
 
-It contains frozen source tables for the MP core sweep, corrected retained-information frontiers, first-99 diagnostic, six causal-specificity contrasts, independent affinity-landscape replication, expected/empirical marginal diagnostics, the complete 65-setting screen, Stage C protocol sensitivity, and Stage D targeted confirmations.
+It contains frozen source tables for the MP core sweep, corrected retained-information frontiers, first-99 diagnostic, six causal-specificity contrasts, independent affinity-landscape replication, expected and realized marginal diagnostics, the complete 65-setting screen, Stage C protocol sensitivity, and Stage D targeted confirmations.
+
+The final Supplement source map and reader-facing Table S2 records are archived explicitly. The empirical marginal-preservation diagnostic is reproducible from the archived Phase-4 states, grouping maps, fixed continuation root, and repository-native validation script. Per-stream and per-population diagnostic tables are regenerated in the clean-room workflow rather than duplicated as tracked derivative data.
 
 The older Gate-8 / Round-1 directories retained elsewhere in the repository are **historical provenance only** and are not the current evidence base.
 
@@ -18,9 +20,10 @@ The older Gate-8 / Round-1 directories retained elsewhere in the repository are 
 - RC3 packaged validation: **PASS**
 - RC4 clean-room install/regeneration: **PASS**
 - RC5 manuscript-repository consistency: **PASS**
-- RC6 immutable lock/tag: pending final post-metadata validation
+- final Supplement evidence closure: **PASS**
+- RC6 immutable lock/tag: **READY after the final candidate workflow passes**
 
-External GitHub Actions validation used Ubuntu 24.04 / Python 3.13.5, verified all 23 frozen Round-2 source/script hashes, passed 68 repository tests and 5/5 historical freeze checks, and regenerated MP figures from released source tables.
+External GitHub Actions validation uses Ubuntu 24.04 / Python 3.13.5. It verifies the original 23 frozen MP source/script hashes plus seven final-Supplement evidence hashes, validates the numerical records, runs the repository tests and historical freeze audit, reproduces the empirical marginal diagnostic from archived states, regenerates MP figures, and builds the public v2.0.0 archive.
 
 ## Version and archive
 
@@ -52,7 +55,10 @@ Round-2 validation:
 
 ```bash
 sha256sum -c round2_mp/provenance/RC1_SOURCE_SHA256.txt
+sha256sum -c round2_mp/provenance/RC5_SUPPLEMENT_EVIDENCE_SHA256.txt
 python round2_mp/validation/validate_round2_tables.py
+python round2_mp/validation/validate_supplement_evidence.py
+python round2_mp/validation/reproduce_empirical_marginal_validation.py
 PYTHONPATH=src pytest -q
 PYTHONPATH=src python scripts/validate_result_freeze.py
 ```

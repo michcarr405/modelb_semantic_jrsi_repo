@@ -11,20 +11,26 @@
 - [x] Nineteen authoritative MP source tables archived.
 - [x] Four exact MP migration/diagnostic scripts archived.
 - [x] Original MP migration SHA-256 manifest archived.
-- [x] RC2 all 23 current source/script hashes verified.
+- [x] Final Supplement source-record map archived.
+- [x] Final Table S2 compact and full reader records archived.
+- [x] Empirical marginal prespecification, frozen summary, reader diagnostic table, and exact original script archived.
+- [x] Repository-native empirical marginal reproduction added.
+- [x] RC2 frozen-source hashes verified.
 - [x] RC3 locked-environment package install and validation passed.
-- [x] Repository test suite: 68/68 passed.
-- [x] Historical result-freeze validation: 5/5 passed.
-- [x] RC4 clean-room MP figure regeneration passed on GitHub Actions.
+- [x] Repository test suite: 68/68 passed on validated candidates.
+- [x] Historical result-freeze validation: 5/5 passed on validated candidates.
+- [x] RC4 clean-room MP figure regeneration passed.
+- [x] RC4 empirical marginal diagnostic reproduction added and required for final candidate.
 - [x] RC5 manuscript-repository consistency passed.
+- [x] Public archive builder updated to v2.0.0.
 - [x] Round-2 metadata updated to version 2.0.0.
 - [x] MIT license retained.
 - [x] DOI 10.5281/zenodo.21852680 retained as the reserved archive DOI.
 
 ## Still required
 
-- [ ] Post-metadata candidate validation passes.
-- [ ] RC6 final candidate commit locked and recorded.
+- [ ] Final complete-candidate GitHub Actions workflow passes.
+- [ ] RC6 exact candidate commit locked.
 - [ ] Immutable Git tag `jrsi-reproducibility-v2.0.0` created.
 - [ ] GitHub Release created from the exact frozen tag.
 - [ ] Tagged release archived to the existing Zenodo draft.

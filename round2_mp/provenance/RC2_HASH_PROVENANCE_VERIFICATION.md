@@ -2,11 +2,27 @@
 
 Status: **PASS**
 
-Validated on GitHub Actions run **37608812728** at commit `d3811eab2ed3d7d8edc5fea8c75d8ad4bb2212e6`.
+The Round-2 release carries two frozen-source hash sets.
 
-- all 23 Round-2 MP source/script files matched the SHA-256 values from the frozen MP migration manifest;
-- the files comprise 19 frozen source tables and 4 exact MP migration/diagnostic scripts;
-- no source-hash mismatch was detected;
-- the historical Gate-8 repository remained intact and separately validated.
+## MP migration evidence
 
-The authoritative expected hashes are in `RC1_SOURCE_SHA256.txt`.
+`RC1_SOURCE_SHA256.txt` verifies:
+- 19 frozen MP-primary source tables;
+- 4 exact MP migration/diagnostic scripts.
+
+All 23 matched the SHA-256 values from the frozen MP migration manifest.
+
+## Final Supplement evidence
+
+`RC5_SUPPLEMENT_EVIDENCE_SHA256.txt` verifies seven additional exact final-Supplement evidence artifacts:
+- final Supplement source-record map;
+- empirical marginal-preservation prespecification;
+- empirical marginal reader diagnostic table;
+- empirical marginal frozen summary;
+- Table S2 compact reader record;
+- Table S2 full reader record;
+- exact original empirical marginal validation script.
+
+These hashes were taken from the controlling final-Supplement evidence package and are checked in the clean-room workflow.
+
+The repository-native empirical reproduction script is new release packaging code and is validated by execution rather than represented as a frozen pre-existing source artifact.

@@ -11,9 +11,12 @@ Consistency evidence:
 - integrated main/Supplement numerical synchronization audit: 75/75 PASS;
 - reviewer-specific notation/value audit: PASS;
 - terminology scrub: PASS;
-- all 23 current Round-2 MP source/script files match the frozen MP migration SHA-256 manifest;
-- GitHub clean-room validation reproduces the released numerical-record checks and MP figure generation;
-- current Supplement ends at Figure S6;
+- the final Supplement source-record map is archived;
+- both final Table S2 reader records are archived and match the 65-setting n=8 screen;
+- expected and realized marginal-diagnostic source records and prespecification are archived;
+- empirical marginal diagnostics can be regenerated from archived Phase-4 states and fixed continuation streams and are compared directly with the frozen summary;
+- all current Round-2 MP source/script files retain frozen hashes;
+- the current Supplement ends at Figure S6;
 - historical S7-S9 assets and older 21-page/13-page working builds are explicitly historical provenance and not current evidence;
 - the historical pre-softmax affinity-averaging operator is retained only as a secondary diagnostic comparator, not as a primary causal analysis.
 
