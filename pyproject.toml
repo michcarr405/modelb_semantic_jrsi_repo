@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "modelb-semantic-jsri-repo"
-version = "0.2.0"
-description = "Original Model B reruns plus JSRI-oriented intervention-based semantic analysis with no-kmeans primary frontiers and alternative viability definitions."
+version = "2.0.0"
+description = "Reproducibility implementation and frozen Round-2 MP-primary evidence for JRSI manuscript rsif-2026-0516."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["numpy", "scipy", "matplotlib", "pandas", "numba", "tqdm"]

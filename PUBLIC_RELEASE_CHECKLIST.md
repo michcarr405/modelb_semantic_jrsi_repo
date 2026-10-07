@@ -1,35 +1,35 @@
-# Public reproducibility release checklist
+# Round-2 public reproducibility release checklist
 
-## Completed in this release candidate
+## Closed
 
-- [x] Frozen scientific commit explicitly recorded.
-- [x] Gate 8 closure/tag explicitly recorded.
-- [x] Full frozen Phase 4–6 outputs retained.
-- [x] Evolved states retained.
-- [x] Seed ledgers retained.
-- [x] Result-freeze integrity manifests retained.
-- [x] Frozen figure-source tables retained and copied into publication-figure workspace.
-- [x] Exact current plotting script for manuscript Figures 3–8 archived.
-- [x] Exact current plotting script for Supplementary Figures S1–S7 archived.
-- [x] Current quantitative figure exports archived.
-- [x] Exact figure-generation commands documented.
-- [x] Machine-readable environment lock files added.
-- [x] Public-facing README drafted.
-- [x] Citation metadata drafted.
-- [x] Release provenance documented.
-- [x] Quantitative Figures 3–8 and S1–S7 regenerated from frozen source tables in the validated environment; PNG/TIFF hashes match archived publication outputs exactly.
-- [x] Clean Git-tracked release-archive builder added; it excludes local caches and hidden transient files.
+- [x] RC0 scientific state frozen.
+- [x] Final main manuscript and Supplement frozen.
+- [x] Main/Supplement numerical synchronization: 75/75 PASS.
+- [x] Reviewer-specific notation/value audit: PASS.
+- [x] Reader-facing terminology scrub: PASS.
+- [x] RC1 Round-2 MP release tree assembled.
+- [x] Nineteen authoritative MP source tables archived.
+- [x] Four exact MP migration/diagnostic scripts archived.
+- [x] Original MP migration SHA-256 manifest archived.
+- [x] RC2 all 23 current source/script hashes verified.
+- [x] RC3 locked-environment package install and validation passed.
+- [x] Repository test suite: 68/68 passed.
+- [x] Historical result-freeze validation: 5/5 passed.
+- [x] RC4 clean-room MP figure regeneration passed on GitHub Actions.
+- [x] RC5 manuscript-repository consistency passed.
+- [x] Round-2 metadata updated to version 2.0.0.
+- [x] MIT license retained.
+- [x] DOI 10.5281/zenodo.21852680 retained as the reserved archive DOI.
 
-## Must be closed before final public release
+## Still required
 
-- [x] Author selected MIT License and root `LICENSE` is present.
-- [x] `CITATION.cff` and `.zenodo.json` license metadata updated to `MIT`.
-- [x] Author-supplied final editable SVG masters for Figures 1 and 2 archived in `artwork/masters/`.
-- [x] Final standalone PDF/EPS and 600 dpi grayscale PNG/TIFF exports for Figures 1 and 2 archived and visually checked against the controlling revised manuscript.
-- [x] Release-candidate clean-room rerun completed on RC5 and `reproduction/CLEAN_ROOM_RERUN_RECORD.md` closed for pre-release validation.
-- [x] Release-candidate repository tree published and browsable on GitHub (RC4/RC5 branches); final default/current branch activation remains pending.
-- [ ] Final public Git tag/release created.
-- [x] Permanent archive DOI reserved: `10.5281/zenodo.21852680`.
-- [ ] Zenodo record published so the reserved DOI is registered/resolvable.
-- [x] Reserved DOI added to `CITATION.cff`, README, release notes, and prepared Data Accessibility text.
-- [ ] Final release manifest generated after all above changes.
+- [ ] Post-metadata candidate validation passes.
+- [ ] RC6 final candidate commit locked and recorded.
+- [ ] Immutable Git tag `jrsi-reproducibility-v2.0.0` created.
+- [ ] GitHub Release created from the exact frozen tag.
+- [ ] Tagged release archived to the existing Zenodo draft.
+- [ ] Zenodo record published.
+- [ ] DOI independently verified as publicly resolvable.
+- [ ] GitHub tag/release and Zenodo archive contents cross-checked.
+- [ ] Manuscript Data Accessibility statement updated with verified live locations.
+- [ ] Final response letter and submission package audited.

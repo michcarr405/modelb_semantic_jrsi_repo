@@ -1,27 +1,29 @@
 cff-version: 1.2.0
-title: "Model B semantic-information analysis: JRSI frozen reproducibility release"
+title: "Model B semantic-information analysis: JRSI Round-2 reproducibility release"
 message: "If you use this software or frozen analysis archive, please cite the associated JRSI manuscript and this software release."
 type: software
 authors:
   - family-names: Carr
     given-names: Michael J
-version: "1.0.0"
-date-released: 2026-08-08
+version: "2.0.0"
+date-released: 2026-10-07
 repository-code: "https://github.com/michcarr405/modelb_semantic_jrsi_repo"
 doi: "10.5281/zenodo.21852680"
 url: "https://doi.org/10.5281/zenodo.21852680"
 keywords:
   - semantic information
   - compositional heredity
+  - marginal-preserving intervention
   - counterfactual intervention
   - origins of life
-  - protocell model
+  - compositional resampling
 license: "MIT"
 notes: >-
-  Frozen scientific results originate from commit
-  2c7d78694579755402c0a1896e109b29dec4d6a0. The permanent archive DOI is
-  10.5281/zenodo.21852680; it was reserved before final publication so the DOI could be embedded
-  in the release metadata and archived files.
+  Version 2.0.0 is the Round-2 MP-primary reproducibility release for manuscript
+  rsif-2026-0516. The Round-2 scientific evidence is under round2_mp/. Historical
+  Gate-8/Round-1 analyses remain provenance only. DOI 10.5281/zenodo.21852680
+  was reserved before publication; the record must be published and independently
+  verified before the manuscript describes the DOI as publicly resolvable.
 preferred-citation:
   type: article
   title: "Counterfactual interventions reveal causal relevance of inherited sequence distinctions in a compositional-resampling model"

@@ -1,38 +1,29 @@
-# Author actions required before final public release
+# Author actions required before final Round-2 public release
 
-The scientific analysis is frozen. The items below are release/rights/publication actions only and do not require any scientific rerun or retuning.
+The scientific analysis, manuscript/Supplement freeze, release-candidate assembly, hash verification, packaged validation, clean-room regeneration, and manuscript-repository consistency checks are closed.
 
-## 1. Repository license — CLOSED
+## Closed before immutable release
 
-The author selected the MIT License on 2026-08-08. The standard MIT text is present as root `LICENSE`, `CITATION.cff` records the SPDX identifier `MIT`, `.zenodo.json` records the same license, the README has been updated, and `LICENSE_PENDING.md` has been removed. No further license-selection action is required for this release candidate.
+- RC0 scientific freeze: PASS.
+- RC1 Round-2 release tree assembly: PASS.
+- RC2 SHA-256/provenance verification: PASS.
+- RC3 packaged validation: PASS.
+- RC4 external GitHub Actions clean-room validation: PASS.
+- RC5 manuscript-repository consistency: PASS.
+- MIT license: unchanged and valid.
+- Round-2 release metadata prepared as version 2.0.0.
+- Reserved DOI retained: 10.5281/zenodo.21852680.
 
-## 2. Figures 1 and 2 source artwork — CLOSED
+## Remaining publication actions
 
-The author supplied final editable vector masters as `artwork/masters/Figure_1.svg` and `artwork/masters/Figure_2.svg` on 2026-08-08. PDF, EPS, and 600 dpi grayscale PNG/TIFF derivatives are archived in `artwork/exports/`. The vector exports were re-rendered and visually checked against the supplied masters and the controlling revised manuscript. `artwork/ARTWORK_VALIDATION.md` and `artwork/ARTWORK_MANIFEST_SHA256.csv` record the proof and checksums. No further Figure 1/2 artwork action is required unless the author later replaces these files with newer approved masters.
+1. Allow the post-metadata GitHub Actions validation to pass on the final candidate commit.
+2. Lock RC6 and record the final candidate commit SHA.
+3. Create immutable tag `jrsi-reproducibility-v2.0.0`.
+4. Create a GitHub Release from that exact tag.
+5. Upload/archive that exact tagged release to the existing Zenodo draft associated with reserved DOI `10.5281/zenodo.21852680`.
+6. Publish the Zenodo record.
+7. Independently verify that the DOI resolves publicly and that the archive content corresponds to the tagged GitHub release.
+8. Only then replace the manuscript Data Accessibility placeholder with the verified repository release and DOI.
+9. Run the final submission-package audit and response-letter closure.
 
-## 3. Publish the repository tree to GitHub — RELEASE-CANDIDATE BRANCH CLOSED
-
-The RC4/RC5 repository tree is publicly browsable on GitHub. The original `main` branch has intentionally not yet been replaced. Final default/current branch activation remains a post-final-tag publication step.
-
-## 4. Run the clean-room validation on GitHub Actions — PRE-RELEASE CLOSED
-
-Release candidate `jrsi-reproducibility-v1.0.0-rc5` at commit `a1537a895e619173d3da24c54ff6efc0b56a9634` passed the external GitHub Actions clean-room validation on 2026-08-08, including test-suite execution, result-freeze validation, archived publication-asset verification, and exact quantitative-figure regeneration/verification. The clean-room record is closed for the release candidate. The same workflow must still pass on the final `v1.0.0` tag.
-
-## 5. Reserve a permanent DOI before the final immutable archive — CLOSED
-
-Zenodo DOI `10.5281/zenodo.21852680` has been reserved and inserted into the final release citation/documentation metadata. The Zenodo draft must not be deleted before publication because the reserved DOI belongs to that draft. Upload the final tagged archive to this draft and publish it only after the final-tag clean-room run passes.
-
-## 6. Create final tag and archive
-
-After the license and artwork closures, and after DOI metadata and the clean-room record are closed:
-
-- version metadata is now prepared as `1.0.0`;
-- create the final annotated tag `jrsi-reproducibility-v1.0.0`;
-- run `scripts/build_public_release_archive.sh jrsi-reproducibility-v1.0.0`;
-- verify the archive and regenerate the final SHA-256 manifest;
-- publish the Zenodo record;
-- update the manuscript/response letter with the final DOI and repository citation.
-
-## 7. Gate 6 closure
-
-Run the short integrated Gate 6 closure audit. No new scientific analysis is required.
+Do not retune or regenerate scientific results during these publication steps. Any scientific change reopens the scientific freeze under a new version.
