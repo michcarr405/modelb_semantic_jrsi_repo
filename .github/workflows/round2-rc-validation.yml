@@ -9,10 +9,12 @@ on:
 jobs:
   round2-clean-room:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - name: Check out release candidate
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python 3.13.5
         uses: actions/setup-python@v5
@@ -26,13 +28,21 @@ jobs:
           python -m pip install -r requirements-lock.txt
           python -m pip install -e . --no-build-isolation
 
-      - name: Verify exact Round-2 source hashes
+      - name: Verify exact Round-2 MP source hashes
         run: |
           sha256sum -c round2_mp/provenance/RC1_SOURCE_SHA256.txt | tee round2_mp/provenance/GITHUB_ACTIONS_R2_HASH_VALIDATION.txt
+
+      - name: Verify final Supplement evidence hashes
+        run: |
+          sha256sum -c round2_mp/provenance/RC5_SUPPLEMENT_EVIDENCE_SHA256.txt | tee round2_mp/provenance/GITHUB_ACTIONS_R2_SUPPLEMENT_HASH_VALIDATION.txt
 
       - name: Validate Round-2 frozen numerical records
         run: |
           python round2_mp/validation/validate_round2_tables.py | tee round2_mp/provenance/GITHUB_ACTIONS_R2_TABLE_VALIDATION.txt
+
+      - name: Validate final Supplement evidence records
+        run: |
+          python round2_mp/validation/validate_supplement_evidence.py | tee round2_mp/provenance/GITHUB_ACTIONS_R2_SUPPLEMENT_VALIDATION.txt
 
       - name: Run repository test suite
         env:
@@ -48,7 +58,15 @@ jobs:
 
       - name: Compile Round-2 scripts
         run: |
-          python -m py_compile round2_mp/scripts/*.py
+          python -m py_compile round2_mp/scripts/*.py round2_mp/validation/*.py
+
+      - name: Reproduce empirical marginal-preservation validation
+        run: |
+          python round2_mp/validation/reproduce_empirical_marginal_validation.py | tee round2_mp/provenance/GITHUB_ACTIONS_R2_EMPIRICAL_MARGINAL_REPRODUCTION.txt
+          test -s round2_mp/validation/generated_empirical/empirical_marginal_per_stream.csv
+          test -s round2_mp/validation/generated_empirical/empirical_marginal_per_population.csv
+          test -s round2_mp/validation/generated_empirical/empirical_marginal_summary.csv
+          test -s round2_mp/validation/generated_empirical/VALIDATION.json
 
       - name: Regenerate representative MP figures from frozen source tables
         run: |
@@ -63,6 +81,11 @@ jobs:
           test -s /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/Figure_S1_MP.pdf
           test -s /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/Figure_S2_MP.pdf
           sha256sum /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/*.pdf > round2_mp/provenance/GITHUB_ACTIONS_R2_REGENERATED_PDF_SHA256.txt
+
+      - name: Build public release archive
+        run: |
+          bash scripts/build_public_release_archive.sh HEAD modelb_semantic_jrsi_reproducibility_release_v2.0.0.zip | tee round2_mp/provenance/GITHUB_ACTIONS_R2_RELEASE_ARCHIVE_BUILD.txt
+          sha256sum modelb_semantic_jrsi_reproducibility_release_v2.0.0.zip > round2_mp/provenance/GITHUB_ACTIONS_R2_RELEASE_ARCHIVE_SHA256.txt
 
       - name: Record clean-room environment
         if: always()
@@ -80,5 +103,8 @@ jobs:
           name: jrsi-round2-rc-validation-${{ github.sha }}
           path: |
             round2_mp/provenance/GITHUB_ACTIONS_R2_*.txt
+            round2_mp/validation/generated_empirical/*.csv
+            round2_mp/validation/generated_empirical/*.json
             /mnt/data/JRSI_R2_MP_FIGURE_MIGRATION/figures/*.pdf
+            modelb_semantic_jrsi_reproducibility_release_v2.0.0.zip
           if-no-files-found: warn
