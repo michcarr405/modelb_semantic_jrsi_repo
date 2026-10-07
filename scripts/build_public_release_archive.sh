@@ -2,11 +2,11 @@
 set -euo pipefail
 
 ref="${1:-HEAD}"
-root_name="modelb_semantic_jrsi_reproducibility_release_v1.0.0"
+root_name="modelb_semantic_jrsi_reproducibility_release_v2.0.0"
 out="${2:-${root_name}.zip}"
 
 # Build only from Git-tracked content at the requested ref. This excludes
-# .git metadata, pytest caches, .DS_Store files, notebooks checkpoints, and
+# .git metadata, pytest caches, .DS_Store files, notebook checkpoints, and
 # any other untracked/ignored local artifacts.
 git rev-parse --verify "${ref}^{commit}" >/dev/null
 git archive --format=zip --prefix="${root_name}/" -o "$out" "$ref"
